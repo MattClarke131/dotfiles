@@ -107,4 +107,4 @@ export JAVA_HOME=`/usr/libexec/java_home`
 export PATH=$PATH:/opt/apache-maven/bin
 
 # mclarke scripts
-source ~/.zsh_scripts/mclarke_scripts .
+source ~/dotfiles/mclarke
