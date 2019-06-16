@@ -106,5 +106,7 @@ export JAVA_HOME=`/usr/libexec/java_home`
 
 export PATH=$PATH:/opt/apache-maven/bin
 
-# mclarke scripts
-source ~/dotfiles/mclarke
+# aliases
+for file in $(ls -A ~/dotfiles/aliases | grep -vE '\.exclude' ) ; do
+    source file
+done
