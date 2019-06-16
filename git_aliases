@@ -1,4 +1,2 @@
-# mclarke aliases
-
 # git aliases
 alias rpull="pull --rebase"
