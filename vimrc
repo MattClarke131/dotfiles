@@ -1,7 +1,6 @@
 "mclarke vimrc
 
 " VIM PLUG BUNDLER
-
   if empty(glob('~/.vim/autoload/plug.vim'))
     silent !curl -flo ~/.vim/autoload/plug.vim --create-dirs
       \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -10,7 +9,6 @@
 
 
 " BUNDLES / PLUGINS
-
   call plug#begin('~/.vim/bundle')
     Plug 'scrooloose/nerdtree'
   call plug#end()
