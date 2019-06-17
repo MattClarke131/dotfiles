@@ -4,8 +4,11 @@ clone repo into ~/dotfiles
 
 ### inspirations
 https://github.com/ajmalsiddiqui/dotfiles
+
 https://github.com/mathiasbynens/dotfiles
+
 https://github.com/paulmillr/dotfiles
+
 https://github.com/holman/dotfiles
 
 ### notes / to do
