@@ -3,6 +3,9 @@ clone repo into ~/dotfiles
 
 `$ ./bootstrap.sh`
 
+### customization
+git ignores files ending in `.local`. These files are for commands that I don't want on a public repo
+
 ### inspirations
 https://github.com/ajmalsiddiqui/dotfiles
 
