@@ -110,5 +110,5 @@ source $ZSH/oh-my-zsh.sh
 
 # aliases
 for file in $(ls -A ~/dotfiles/aliases | grep -vE '\.exclude' ) ; do
-    source file
+    source ~/dotfiles/aliases/$file
 done
