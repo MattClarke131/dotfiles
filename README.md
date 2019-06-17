@@ -1,5 +1,6 @@
 ### setup
 clone repo into ~/dotfiles
+
 `$ ./bootstrap.sh`
 
 ### inspirations
