@@ -19,4 +19,4 @@ My goals for this repo are
 3. I don't create global variables to bootstrap
 
 afaic I have achieved 2 and 3, but I need to work on 1.
-I have hardcoded the path to aliases in z.zshrc`
+I have hardcoded the path to aliases in `.zshrc`
