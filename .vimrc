@@ -59,3 +59,7 @@
       nnoremap : ;
   " bind 'kj' to esc. `^ is to keep cursor in it's position
       inoremap kj <esc>`^
+  " bind 'lkj' to esc and save.
+      inoremap lkj <esc>`^:w<CR>
+  " bind ';lkj' to esc and save.
+      inoremap ;lkj <esc>`^:wq<CR>
