@@ -14,6 +14,11 @@
   call plug#end()
 
 
+" NAVIGATION"
+  " keeps lines above and below when scrolling
+    set scrolloff=20
+
+
 " DISPLAY
   " displays whitespace characters
       if has("patch-7.4.710")
