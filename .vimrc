@@ -16,23 +16,29 @@
 
 " NAVIGATION"
   " keeps lines above and below when scrolling
-    set scrolloff=20
+      set scrolloff=20
+  " use mouse for navigation
+      set mouse=a
 
 
 " DISPLAY
+  " displays command always
+      set showcmd
   " displays whitespace characters
-      if has("patch-7.4.710")
-        set listchars+=space:·,eol:¬,tab:>-
-      else
-        set listchars+=eol:¬,tab:>-
-      endif
-      set list
+"      if has("patch-7.4.710")
+"        set listchars+=space:·,eol:¬,tab:>-
+"      else
+"        set listchars+=eol:¬,tab:>-
+"      endif
+"      set list
   " displays status line always
       set laststatus=2
   " displays line numbers
       set number
   " highlight matching parentheses / brackets
       set showmatch
+  " syntax highlighting
+      syntax on
 
 
 " FORMATTING
