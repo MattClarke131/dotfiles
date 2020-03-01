@@ -31,7 +31,7 @@ link_file () {
 
 
   if [ $proceed = true ] ; then
-    ln -sv "$source" "$destination"
+    ln -sfv "$source" "$destination"
   fi
 }
 
