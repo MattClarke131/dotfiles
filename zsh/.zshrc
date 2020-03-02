@@ -110,5 +110,5 @@ source $ZSH/oh-my-zsh.sh
 
 # aliases
 for file in $(ls -A ~/dotfiles/aliases) ; do
-    source ~/dotfiles/aliases/$file
+    source $HOME/dotfiles/aliases/$file
 done
