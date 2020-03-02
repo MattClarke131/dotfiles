@@ -1,2 +1,4 @@
 # Ignore local files
 *.local
+*.exclude
+*.secret
