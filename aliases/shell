@@ -1,1 +1,10 @@
+# ALIASES
 alias lA="ls -A"
+
+# FUNCTIONS
+
+# ls after cd
+function cs() {
+  cd $1
+  ls
+}
