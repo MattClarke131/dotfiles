@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
-#
-# create symlinks dot files 
-
+# create symlinks to dot files
 
 # Exit if a command exits with a non-zero status
 # Some people on the internet think this isn't a great practice
@@ -21,10 +19,10 @@ link_file () {
   local proceed=true
 
   # Does the destination file already exist?
-  if test -f $destination ; then
-    echo $destination "exists. Overwrite? (y/n)"
-    read resp
-    if [ "$resp" != 'y' -a "$resp" != 'Y' ] ; then
+  if test -f "$destination" ; then
+    echo "$destination" "exists. Overwrite? (y/n)"
+    read -r resp
+    if [ "$resp" != 'y' ] && [ "$resp" != 'Y' ] ; then
       proceed=false
     fi
   fi
@@ -35,10 +33,10 @@ link_file () {
   fi
 }
 
+# Create symlinks
+link_file "$DOTFILES_ROOT"/.vimrc ~/.vimrc
+link_file "$DOTFILES_ROOT"/zsh/.zshrc ~/.zshrc
+link_file "$DOTFILES_ROOT"/.tmux.conf ~/.tmux.conf
 
-link_file $DOTFILES_ROOT/.vimrc ~/.vimrc
-link_file $DOTFILES_ROOT/zsh/.zshrc ~/.zshrc
-link_file $DOTFILES_ROOT/.tmux.conf ~/.tmux.conf
-
-
-source ~/.zshrc
+# Load dotfiles in current session
+source $HOME/.zshrc
