@@ -109,6 +109,6 @@ source $ZSH/oh-my-zsh.sh
 # export PATH=$PATH:/opt/apache-maven/bin
 
 # aliases
-for file in $(ls -A ~/dotfiles/aliases) ; do
+for file in $(ls -A $HOME/dotfiles/aliases | grep '[^.swp]$') ; do
     source $HOME/dotfiles/aliases/$file
 done
