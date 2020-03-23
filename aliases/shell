@@ -8,3 +8,9 @@ function cs() {
   cd $1
   ls
 }
+
+# mkdir and change to it
+function mcd () {
+  mkdir -p $1
+  cd $1
+}
