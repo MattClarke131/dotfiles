@@ -2,3 +2,4 @@
 *.local
 *.exclude
 *.secret
+*.swp
