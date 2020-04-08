@@ -112,3 +112,8 @@ source $ZSH/oh-my-zsh.sh
 for file in $(ls -A $HOME/dotfiles/aliases | grep '[^.swp]$') ; do
     source $HOME/dotfiles/aliases/$file
 done
+
+# scripts
+for file in $(ls -A $HOME/dotfiles/scripts | grep '[^.swp]$') ; do
+    source $HOME/dotfiles/aliases/$file
+done
