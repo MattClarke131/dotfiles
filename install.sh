@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
-# create symlinks to dot files
+# ^ logical link to path
+
+# This script will create symlinks to dot files
 
 # Exit if a command exits with a non-zero status
 # Some people on the internet think this isn't a great practice
 set -e
 
-
+# change to parent directory of this script
 cd "$(dirname "$0")"
 DOTFILES_ROOT=$(pwd -P)
 
