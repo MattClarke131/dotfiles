@@ -115,5 +115,5 @@ done
 
 # scripts
 for file in $(ls -A $HOME/dotfiles/scripts | grep '[^.swp]$') ; do
-    source $HOME/dotfiles/aliases/$file
+    source $HOME/dotfiles/scripts/$file
 done
