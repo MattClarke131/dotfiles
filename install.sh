@@ -35,10 +35,10 @@ link_file () {
   fi
 }
 
-# Create symlinks
-link_file "$DOTFILES_ROOT"/.vimrc ~/.vimrc
-link_file "$DOTFILES_ROOT"/zsh/.zshrc ~/.zshrc
-link_file "$DOTFILES_ROOT"/.tmux.conf ~/.tmux.conf
 
-# Load dotfiles in current session
-source $HOME/.zshrc
+#create symlinks for dotfiles
+link_file "$DOTFILES_ROOT"/.vimrc $HOME/.vimrc
+link_file "$DOTFILES_ROOT"/zsh/.zshrc $HOME/.zshrc
+link_file "$DOTFILES_ROOT"/.tmux.conf $HOME/.tmux.conf
+
+source "$HOME"/.zshrc
