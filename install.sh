@@ -37,8 +37,8 @@ link_file () {
 
 
 #create symlinks for dotfiles
-link_file "$DOTFILES_ROOT"/.vimrc $HOME/.vimrc
-link_file "$DOTFILES_ROOT"/zsh/.zshrc $HOME/.zshrc
-link_file "$DOTFILES_ROOT"/.tmux.conf $HOME/.tmux.conf
+link_file "$DOTFILES_ROOT"/.vimrc "$HOME"/.vimrc
+link_file "$DOTFILES_ROOT"/zsh/.zshrc "$HOME"/.zshrc
+link_file "$DOTFILES_ROOT"/.tmux.conf "$HOME"/.tmux.conf
 
 source "$HOME"/.zshrc

@@ -1,4 +1,6 @@
+#!/usr/bin/env bash
 # git aliases
+
 alias rpull="pull --rebase"
 alias gcob="git checkout -b"
 alias grbo='git rebase origin "$(git_current_branch)"'
