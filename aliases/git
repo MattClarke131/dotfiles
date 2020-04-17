@@ -1,3 +1,10 @@
 # git aliases
 alias rpull="pull --rebase"
 alias gcob="git checkout -b"
+alias grbo='git rebase origin "$(git_current_branch)"'
+
+# remove oh my zsh git pull aliases
+unalias gl
+unalias ggpull
+unalias glum
+unalias gpoat
