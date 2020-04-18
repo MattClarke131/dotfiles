@@ -51,7 +51,7 @@
 " FORMATTING
   " auto indent
       set autoindent
-  " 4 spaces instead of tabs
+  " 2 spaces instead of tabs
       set shiftwidth=2
       set softtabstop=2
       set expandtab
