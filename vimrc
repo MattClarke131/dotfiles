@@ -82,7 +82,7 @@
       inoremap kj <esc>`^
   " bind 'lkj' to esc and save.
       inoremap lkj <esc>`^:w<CR>
-      nnoremap lkj <esc>`^:w<CR>
+      nnoremap lkj :w<CR>
   " bind ';lkj' to esc and save.
       inoremap ;lkj <esc>`^:wq<CR>
-      nnoremap ;lkj <esc>`^:wq<CR>
+      nnoremap ;lkj :wq<CR>
