@@ -88,25 +88,6 @@ source $ZSH/oh-my-zsh.sh
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# launch stuff
-# export EDITOR="/usr/local/bin/atom --wait"
-# source /usr/local/share/chruby/chruby.sh
-# source /usr/local/share/chruby/auto.sh
-# export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/10/bin
-# export PGHOST=localhost
-#
-# # nvm stuff
-# export NVM_DIR=~/.nvm
-# source $(brew --prefix nvm)/nvm.sh
-#
-# export JAVA_HOME=`/usr/libexec/java_home`
-#
-# export PATH=$PATH:/opt/apache-maven/bin
 
 # aliases
 for file in $(ls -A $HOME/dotfiles/aliases | grep '[^.swp]$') ; do
