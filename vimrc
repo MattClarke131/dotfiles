@@ -17,6 +17,7 @@
 " BUNDLES / PLUGINS
   call plug#begin('~/.vim/bundle')
     Plug 'scrooloose/nerdtree'
+    Plug 'airblade/vim-gitgutter'
   call plug#end()
 
 
