@@ -13,7 +13,7 @@ DOTFILES_ROOT=$(pwd -P)
 
 #create subdirectory for current time this script is run
 DOTFILES_OLD_DIR=$DOTFILES_ROOT/dotfiles_old/$(date +%G-%m-%d_%H-%M-%S)
-mkdir -p $DOTFILES_OLD_DIR
+mkdir -p "$DOTFILES_OLD_DIR"
 
 
 
@@ -32,7 +32,7 @@ install_dotfile () {
 
 create_backup_file () {
   local source=$1 destination=$2
-  cp $1 $2
+  cp "$1" "$2"
 }
 
 # Install dotfiles
