@@ -20,6 +20,13 @@
     Plug 'airblade/vim-gitgutter'
   call plug#end()
 
+" GITGUTTER
+  " MAPPING
+  " wanted default mappings
+      nmap ]c <Plug>(GitGutterNextHunk)
+      nmap [c <Plug>(GitGutterPrevHunk)
+      nmap <Leader>hp <Plug>(GitGutterPreviewHunk)
+      nmap <Leader>hs <Plug>(GitGutterStageHunk)
 
 " MAPPING
   " Switch ; and : mappin in normal mode
