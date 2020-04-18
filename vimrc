@@ -20,9 +20,25 @@
     Plug 'airblade/vim-gitgutter'
   call plug#end()
 
-  " BEHAVIOR
-    " Controls how quickly vim write a swp file (among other things)
-      set updatetime=100
+
+" MAPPING
+  " Switch ; and : mappin in normal mode
+      " nnoremap ; :
+      " nnoremap : ;
+  " bind 'kj' to esc. `^ is to keep cursor in it's position
+      inoremap kj <esc>`^
+  " bind 'lkj' to esc and save.
+      inoremap lkj <esc>`^:w<CR>
+      nnoremap lkj :w<CR>
+  " bind ';lkj' to esc and save.
+      inoremap ;lkj <esc>`^:wq<CR>
+      nnoremap ;lkj :wq<CR>
+
+
+" BEHAVIOR
+  " Controls how quickly vim write a swp file (among other things)
+    set updatetime=100
+
 
 " NAVIGATION"
   " keeps lines above and below when scrolling
@@ -72,17 +88,3 @@
       set hlsearch
   " unhighlight matches on pressing enter
       nnoremap <silent> <CR> :nohls<CR><CR>
-
-
-" MAPPING
-  " Switch ; and : mappin in normal mode
-      " nnoremap ; :
-      " nnoremap : ;
-  " bind 'kj' to esc. `^ is to keep cursor in it's position
-      inoremap kj <esc>`^
-  " bind 'lkj' to esc and save.
-      inoremap lkj <esc>`^:w<CR>
-      nnoremap lkj :w<CR>
-  " bind ';lkj' to esc and save.
-      inoremap ;lkj <esc>`^:wq<CR>
-      nnoremap ;lkj :wq<CR>
