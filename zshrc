@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+export ZSH="$HOME"/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -62,7 +62,7 @@ plugins=(
   git
 )
 
-source $ZSH/oh-my-zsh.sh
+source "$ZSH"/oh-my-zsh.sh
 
 # User configuration
 
@@ -98,16 +98,16 @@ export EDITOR="vim"
 # unsetopt LIST_BEEP
 
 # aliases
-for file in $(ls -A $HOME/dotfiles/aliases | grep '[^.swp]$') ; do
-    source $HOME/dotfiles/aliases/$file
+for file in $(ls -A "$HOME"/dotfiles/aliases | grep '[^.swp]$'); do
+    source "$HOME"/dotfiles/aliases/$file
 done
 
 # scripts
 for file in $(ls -A $HOME/dotfiles/scripts | grep '[^.swp]$') ; do
-    source $HOME/dotfiles/scripts/$file
+    source "$HOME"/dotfiles/scripts/$file
 done
 
 # zsh
 if [[ -f $HOME/dotfiles/zshrc.local ]]; then
-  source zshrc.local
+  source "$HOME"/dotfiles/zshrc.local
 fi
