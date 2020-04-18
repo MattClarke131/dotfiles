@@ -103,3 +103,10 @@
       set hlsearch
   " unhighlight matches on pressing enter
       nnoremap <silent> <CR> :nohls<CR><CR>
+
+" VIM COMMANDS
+  " Hitting TAB in command mode will show possible completions
+    set wildmenu
+    set wildchar=<TAB>
+    set wildmode=list:longest,full
+    set wildignore+=*.DS_STORE,*.db,node_modules/**,*.jpg,*.png,*.gif
