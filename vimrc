@@ -1,11 +1,17 @@
 "mclarke vimrc
 
-" VIM PLUG BUNDLER
+" VIM PLUG BUNDLER INIT
   if empty(glob('~/.vim/autoload/plug.vim'))
     silent !curl -flo ~/.vim/autoload/plug.vim --create-dirs
       \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
   endif
+
+" CHECK FOR AND INSTALL PLUGINS
+  autocmd VimEnter *
+    \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+    \|   PlugInstall --sync | q
+    \| endif
 
 
 " BUNDLES / PLUGINS
