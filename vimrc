@@ -20,6 +20,9 @@
     Plug 'airblade/vim-gitgutter'
   call plug#end()
 
+  " BEHAVIOR
+    " Controls how quickly vim write a swp file (among other things)
+      set updatetime=100
 
 " NAVIGATION"
   " keeps lines above and below when scrolling
