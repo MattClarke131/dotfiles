@@ -27,6 +27,8 @@
       nmap [c <Plug>(GitGutterPrevHunk)
       nmap <Leader>hp <Plug>(GitGutterPreviewHunk)
       nmap <Leader>hs <Plug>(GitGutterStageHunk)
+  " unwanted default mappings
+      nmap \hu nop
 
 " MAPPING
   " Switch ; and : mappin in normal mode
