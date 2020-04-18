@@ -89,6 +89,9 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
+
+export EDITOR="vim"
+
 # aliases
 for file in $(ls -A $HOME/dotfiles/aliases | grep '[^.swp]$') ; do
     source $HOME/dotfiles/aliases/$file
