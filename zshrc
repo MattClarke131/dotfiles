@@ -117,3 +117,8 @@ done
 for file in $(ls -A $HOME/dotfiles/scripts | grep '[^.swp]$') ; do
     source $HOME/dotfiles/scripts/$file
 done
+
+# zsh
+if [[ -f $HOME/dotfiles/zshrc.local ]]; then
+  source zshrc.local
+fi
