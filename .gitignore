@@ -3,3 +3,6 @@
 *.exclude
 *.secret
 *.swp
+
+Ignore backup dotfiles
+dotfiles_old
