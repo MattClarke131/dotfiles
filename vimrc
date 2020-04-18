@@ -30,6 +30,7 @@
     " hunk stage
       nmap <Leader>hs <Plug>(GitGutterStageHunk)
     " git highlight
+      nmap <Plug>(GitGutterLineHightlightsToggle) :GitGutterLineHighlightsToggle<CR>
       nmap <Leader>gh <Plug>(GitGutterLineHightlightsToggle)
 
   " unwanted default mappings
