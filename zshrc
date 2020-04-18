@@ -92,6 +92,11 @@ source $ZSH/oh-my-zsh.sh
 
 export EDITOR="vim"
 
+# Turn off all beeps
+  unsetopt BEEP
+# Turn off autocomplete beeps
+# unsetopt LIST_BEEP
+
 # aliases
 for file in $(ls -A $HOME/dotfiles/aliases | grep '[^.swp]$') ; do
     source $HOME/dotfiles/aliases/$file
