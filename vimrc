@@ -59,6 +59,9 @@
 
 
 " NAVIGATION"
+  " Quick buffer navigation
+    nnoremap <Leader>bl :bnext<CR>
+    nnoremap <Leader>bh :bprev<CR>
   " keeps lines above and below when scrolling
       set scrolloff=20
   " use mouse for navigation
