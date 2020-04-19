@@ -110,3 +110,9 @@
     set wildchar=<TAB>
     set wildmode=list:longest,full
     set wildignore+=*.DS_STORE,*.db,node_modules/**,*.jpg,*.png,*.gif
+
+" SOURCE LOCAL VIMRC
+try
+  so $HOME/.vim/vimrc.local
+catch
+endtry
