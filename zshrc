@@ -98,6 +98,8 @@ export EDITOR="vim"
 # unsetopt LIST_BEEP
 
 # aliases
+# WARNING: currently file is becoming a global variable. I don't know how to stop that
+# TODO
 for file in $(ls -A "$HOME"/dotfiles/aliases | grep '[^.swp]$'); do
     source "$HOME"/dotfiles/aliases/$file
 done
