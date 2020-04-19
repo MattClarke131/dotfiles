@@ -61,10 +61,11 @@
   " use mouse for navigation
       set mouse=a
 
-
 " DISPLAY
   " displays command always
       set showcmd
+  " displays line char length guide
+    set colorcolumn=81
   " displays whitespace characters
 "      if has("patch-7.4.710")
 "        set listchars+=space:·,eol:¬,tab:>-
