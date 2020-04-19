@@ -71,7 +71,8 @@
   " displays command always
       set showcmd
   " displays line char length guide
-    set colorcolumn=81
+      set colorcolumn=81
+      highlight ColorColumn ctermbg=7 guibg=lightgrey
   " displays whitespace characters
 "      if has("patch-7.4.710")
 "        set listchars+=space:·,eol:¬,tab:>-
