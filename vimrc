@@ -53,6 +53,9 @@
 " BEHAVIOR
   " Controls how quickly vim write a swp file (among other things)
     set updatetime=100
+  " Turn off bell
+    set vb t_vb=
+    set visualbell
 
 
 " NAVIGATION"
