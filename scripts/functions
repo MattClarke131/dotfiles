@@ -1,8 +1,0 @@
-# VIM
-alias vims="open_vim_session"
-
-open_vim_session () {
-  local session_name=$1
-
-  $(vim -S $HOME/.vim/sessions/$session_name)
-}
