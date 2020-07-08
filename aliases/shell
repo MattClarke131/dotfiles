@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#
+
 # ALIASES
 alias lA="ls -A"
 alias -g g="| grep"

@@ -100,12 +100,12 @@ export EDITOR="vim"
 # aliases
 # WARNING: currently file is becoming a global variable. I don't know how to stop that
 # TODO
-for file in $(ls -A "$HOME"/dotfiles/aliases | grep '[^.swp]$'); do
+for file in $(ls -A "$HOME"/dotfiles/aliases | grep -E '[^s][^w].$'); do
     source "$HOME"/dotfiles/aliases/$file
 done
 
 # scripts
-for file in $(ls -A $HOME/dotfiles/scripts | grep '[^.swp]$') ; do
+for file in $(ls -A $HOME/dotfiles/scripts | grep '[^s][^w].$') ; do
     source "$HOME"/dotfiles/scripts/$file
 done
 
