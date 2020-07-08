@@ -3,5 +3,5 @@
 # VIM
 alias vims="vim_session"
 function vim_session() {
-  vim -S $HOME/.vim/session/$1 || exit
+  vim -S "$HOME"/.vim/session/"$1" || exit
 }
