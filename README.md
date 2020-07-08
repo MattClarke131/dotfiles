@@ -1,7 +1,7 @@
 ### setup
 clone repo
 
-`$ ./install.shh`
+`$ ./install.sh`
 
 ### customization
 git ignores files ending in `.local`. These files are for commands that I don't want on a public repo
