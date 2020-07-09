@@ -5,6 +5,7 @@ alias rpull="pull --rebase"
 alias gcob="git checkout -b"
 alias gcop="git checkout -p"
 alias grbo='git rebase origin "$(git_current_branch)"'
+alias gbm='git branch --move'
 
 # remove oh my zsh git pull aliases
 unalias gl
