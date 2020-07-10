@@ -25,11 +25,11 @@
   " wanted default mappings
       nmap ]c <Plug>(GitGutterNextHunk)
       nmap [c <Plug>(GitGutterPrevHunk)
-    " hunk preview
+  " hunk preview
       nmap <Leader>hp <Plug>(GitGutterPreviewHunk)
-    " hunk stage
+  " hunk stage
       nmap <Leader>hs <Plug>(GitGutterStageHunk)
-    " git highlight
+  " git highlight
       nmap <Plug>(GitGutterLineHightlightsToggle) :GitGutterLineHighlightsToggle<CR>
       nmap <Leader>gh <Plug>(GitGutterLineHightlightsToggle)
 
@@ -40,12 +40,12 @@
   " Switch ; and : mappin in normal mode
       " nnoremap ; :
       " nnoremap : ;
-  " bind 'kj' to esc. `^ is to keep cursor in it's position
+  " map 'kj' to esc. `^ is to keep cursor in it's position
       inoremap kj <esc>`^
-  " bind 'lkj' to esc and save.
+  " map 'lkj' to esc and save.
       inoremap lkj <esc>`^:w<CR>
       nnoremap lkj :w<CR>
-  " bind ';lkj' to esc and save.
+  " map ';lkj' to esc and save.
       inoremap ;lkj <esc>`^:wq<CR>
       nnoremap ;lkj :wq<CR>
 
@@ -68,21 +68,21 @@
       set mouse=a
 
 " DISPLAY
-  " displays command always
+  " display command always
       set showcmd
-  " displays line char length guide
+  " display line char length guide
       set colorcolumn=81
       highlight ColorColumn ctermbg=7 guibg=lightgrey
-  " displays whitespace characters
+  " display whitespace characters
 "      if has("patch-7.4.710")
 "        set listchars+=space:·,eol:¬,tab:>-
 "      else
 "        set listchars+=eol:¬,tab:>-
 "      endif
 "      set list
-  " displays status line always
+  " display status line always
       set laststatus=2
-  " displays line numbers
+  " display line numbers
       set number
   " highlight matching parentheses / brackets
       set showmatch
