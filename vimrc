@@ -59,6 +59,12 @@
   " map ';lkj' to esc and save.
       inoremap ;lkj <esc>`^:wq<CR>
       nnoremap ;lkj :wq<CR>
+  " move normally between wrapped lines
+      nmap j gj
+      nmap k gk
+  " begin / end line map
+      nmap H ^
+      nmap L $
 
 
 " BEHAVIOR
