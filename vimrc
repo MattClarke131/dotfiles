@@ -20,6 +20,17 @@
     Plug 'airblade/vim-gitgutter'
   call plug#end()
 
+" NERDTREE
+  " OPTIONS
+  " Close nerd tree on file open
+      let NERDTreeQuitOnOpen = 1
+  " Delete buffer if file is deleted with NERDTree
+      let NERDTreeAutoDeleteBuffer = 1
+  " MAPPING
+      nnoremap <Leader>nf :NERDTreeToggle<Enter>
+      nnoremap <silent> <Leader>nv :NERDTreeFind<Enter>
+
+
 " GITGUTTER
   " MAPPING
   " wanted default mappings
