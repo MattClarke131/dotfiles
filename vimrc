@@ -101,6 +101,8 @@
       set laststatus=2
   " display line numbers
       set number
+  " display cursor line
+      set cursorline
   " highlight matching parentheses / brackets
       set showmatch
   " syntax highlighting
