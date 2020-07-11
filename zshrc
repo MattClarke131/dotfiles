@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -101,15 +103,15 @@ export EDITOR="vim"
 # WARNING: currently file is becoming a global variable. I don't know how to stop that
 # TODO
 for file in $(ls -A "$HOME"/dotfiles/aliases | grep -E '[^s][^w].$'); do
-    source "$HOME"/dotfiles/aliases/$file
+    source "$HOME"/dotfiles/aliases/"$file"
 done
 
 # scripts
-for file in $(ls -A $HOME/dotfiles/scripts | grep '[^s][^w].$') ; do
-    source "$HOME"/dotfiles/scripts/$file
+for file in $(ls -A "$HOME"/dotfiles/scripts | grep '[^s][^w].$') ; do
+    source "$HOME"/dotfiles/scripts/"$file"
 done
 
 # zsh
-if [[ -f $HOME/dotfiles/zshrc.local ]]; then
+if [[ -f "$HOME"/dotfiles/zshrc.local ]]; then
   source "$HOME"/dotfiles/zshrc.local
 fi
