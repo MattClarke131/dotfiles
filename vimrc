@@ -77,6 +77,9 @@
   " Turn off bell
     set vb t_vb=
     set visualbell
+  " Vim monitors file changes in realtime
+  " autoread only reads the file when vim does an action
+    set autoread
 
 
 " NAVIGATION"
