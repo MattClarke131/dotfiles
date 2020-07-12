@@ -51,6 +51,8 @@
   " Switch ; and : mappin in normal mode
       " nnoremap ; :
       " nnoremap : ;
+  " unmap EX mode
+     nmap Q <nop>
   " map 'kj' to esc. `^ is to keep cursor in it's position
       inoremap kj <esc>`^
   " map 'lkj' to esc and save.
