@@ -65,6 +65,8 @@
   " begin / end line map
       nmap H ^
       nmap L $
+  " togglepaste
+      set pastetoggle=<Leader>tp
 
 
 " BEHAVIOR
