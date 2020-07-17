@@ -8,6 +8,9 @@ declare -ar REPOSITORIES=(
 
 for REPO in "${REPOSITORIES[@]}"
 do
-  cd "$REPO" # || exit
-  git fetch
+  if [ -d REPO ]
+  then
+    cd "$REPO" || exit
+    git fetch
+  fi
 done
