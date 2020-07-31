@@ -22,6 +22,7 @@
     Plug 'junegunn/fzf.vim'
   call plug#end()
 
+
 " NERDTREE
   " OPTIONS
   " Close nerd tree on file open
@@ -31,6 +32,11 @@
   " MAPPING
       nnoremap <Leader>nf :NERDTreeToggle<Enter>
       nnoremap <silent> <Leader>nv :NERDTreeFind<Enter>
+
+
+" FZF
+  " MAPPING
+      nnoremap <Leader>f :FZF<Enter>
 
 
 " GITGUTTER
