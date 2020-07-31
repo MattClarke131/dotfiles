@@ -115,3 +115,5 @@ done
 if [[ -f "$HOME"/dotfiles/zshrc.local ]]; then
   source "$HOME"/dotfiles/zshrc.local
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -18,6 +18,8 @@
   call plug#begin('~/.vim/bundle')
     Plug 'scrooloose/nerdtree'
     Plug 'airblade/vim-gitgutter'
+    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+    Plug 'junegunn/fzf.vim'
   call plug#end()
 
 " NERDTREE
