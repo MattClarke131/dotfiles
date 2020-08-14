@@ -3,6 +3,11 @@ clone repo
 
 `$ ./install.sh`
 
+setup crons
+  e.g. scripts/git-fetch.sh
+
+`$ crontab -e`
+
 ### customization
 git ignores files ending in `.local`. These files are for commands that I don't want on a public repo
 
