@@ -117,3 +117,8 @@ if [[ -f "$HOME"/dotfiles/zshrc.local ]]; then
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# git config
+if [[ -f "$HOME"/dotfiles/git-config.sh ]]; then
+  source "$HOME"/dotfiles/git-config.sh
+fi
