@@ -41,6 +41,7 @@ install_dotfile "$DOTFILES_ROOT"/vimrc "$HOME"/.vimrc "$DOTFILES_OLD_DIR"/vimrc
 install_dotfile "$DOTFILES_ROOT"/zshrc "$HOME"/.zshrc "$DOTFILES_OLD_DIR"/zshrc
 install_dotfile "$DOTFILES_ROOT"/tmux.conf "$HOME"/.tmux.conf "$DOTFILES_OLD_DIR"/tmux.conf
 install_dotfile "$DOTFILES_ROOT"/rsync-excludes "$HOME"/.rsync-excludes "$DOTFILES_OLD_DIR"/rsync-excludes
+install_dotfile "$DOTFILES_ROOT"/gitconfig "$HOME"/.gitconfig "$DOTFILES_OLD_DIR"/gitconfig
 echo "symlinks created"
 
 echo "sourcing zshrc"
