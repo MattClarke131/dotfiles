@@ -4,7 +4,9 @@ clone repo
 `$ ./install.sh`
 
 setup crons
-  e.g. scripts/git-fetch.sh
+  # Git fetch every repo every 5 minutes
+  `*/5 * * * * "$HOME"/dotfiles/scripts/git-fetch.sh > /dev/null &>`
+
 
 `$ crontab -e`
 
