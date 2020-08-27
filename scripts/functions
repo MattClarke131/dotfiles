@@ -3,5 +3,9 @@
 # VIM
 alias vims="vim_session"
 function vim_session() {
-  vim -S "$HOME"/.vim/sessions/"$1" || exit
+  if [ -f "$HOME"/.vim/sessions/"$1" ]; then
+    vim -S "$HOME"/.vim/sessions/"$1" || exit
+  else
+    echo "No session name \"$1\""
+  fi
 }
