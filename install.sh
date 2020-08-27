@@ -16,7 +16,6 @@ DOTFILES_OLD_DIR=$DOTFILES_ROOT/dotfiles_old/$(date +%G-%m-%d_%H-%M-%S)
 mkdir -p "$DOTFILES_OLD_DIR"
 
 
-
 install_dotfile () {
   local source=$1 destination=$2 backup_destination=$3
 
@@ -44,6 +43,7 @@ create_backup_file () {
 [ -d $HOME/.vim ] || mkdir $HOME/.vim
 
 # Install dotfiles
+echo "################################################################################"
 echo "Creating symlinks for dot files"
 install_dotfile "$DOTFILES_ROOT"/vimrc "$HOME"/.vimrc "$DOTFILES_OLD_DIR"/vimrc
 install_dotfile "$DOTFILES_ROOT"/vimrc.local "$HOME"/.vim/vimrc.local "$DOTFILES_OLD_DIR"/vimrc.local
@@ -52,6 +52,7 @@ install_dotfile "$DOTFILES_ROOT"/tmux.conf "$HOME"/.tmux.conf "$DOTFILES_OLD_DIR
 install_dotfile "$DOTFILES_ROOT"/rsync-excludes "$HOME"/.rsync-excludes "$DOTFILES_OLD_DIR"/rsync-excludes
 install_dotfile "$DOTFILES_ROOT"/gitconfig "$HOME"/.gitconfig "$DOTFILES_OLD_DIR"/gitconfig
 echo "symlinks created"
+echo "################################################################################"
 
 echo "sourcing zshrc"
 source "$HOME"/.zshrc
