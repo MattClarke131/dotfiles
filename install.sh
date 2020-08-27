@@ -20,6 +20,11 @@ mkdir -p "$DOTFILES_OLD_DIR"
 install_dotfile () {
   local source=$1 destination=$2 backup_destination=$3
 
+  # return out of install_dotfile() if source file does not exist
+  if [ ! -f "$source" ]; then
+    return
+  fi
+
   # Create copy of destination in backup_destination
   if test -f "$destination" ; then
     create_backup_file "$destination" "$backup_destination"
@@ -38,6 +43,7 @@ create_backup_file () {
 # Install dotfiles
 echo "Creating symlinks for dot files"
 install_dotfile "$DOTFILES_ROOT"/vimrc "$HOME"/.vimrc "$DOTFILES_OLD_DIR"/vimrc
+install_dotfile "$DOTFILES_ROOT"/vimrc.local "$HOME"/.vimrc.local "$DOTFILES_OLD_DIR"/vimrc.local
 install_dotfile "$DOTFILES_ROOT"/zshrc "$HOME"/.zshrc "$DOTFILES_OLD_DIR"/zshrc
 install_dotfile "$DOTFILES_ROOT"/tmux.conf "$HOME"/.tmux.conf "$DOTFILES_OLD_DIR"/tmux.conf
 install_dotfile "$DOTFILES_ROOT"/rsync-excludes "$HOME"/.rsync-excludes "$DOTFILES_OLD_DIR"/rsync-excludes
