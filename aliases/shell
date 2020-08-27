@@ -6,6 +6,10 @@ alias -g g="| grep"
 alias -g gi="| grep -i"
 alias cddot="cd ~/dotfiles"
 alias cl="clear"
+alias ..='cd ..; ls'
+alias ...='cd ...; ls'
+alias ....='cd ....; ls'
+alias -='cd -; ls'
 
 # FUNCTIONS
 # ls after cd
