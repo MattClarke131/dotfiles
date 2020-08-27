@@ -106,9 +106,9 @@ for file in $(ls -A "$HOME"/dotfiles/aliases | grep -E '[^s][^w].$'); do
     source "$HOME"/dotfiles/aliases/"$file"
 done
 
-# scripts
-for file in $(ls -A "$HOME"/dotfiles/scripts | grep '[^s][^w].$') ; do
-    source "$HOME"/dotfiles/scripts/"$file"
+# functions
+for file in $(ls -A "$HOME"/dotfiles/functions | grep '[^s][^w].$') ; do
+    source "$HOME"/dotfiles/functions/"$file"
 done
 
 # zsh
