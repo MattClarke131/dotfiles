@@ -40,10 +40,13 @@ create_backup_file () {
   cp "$1" "$2"
 }
 
+# Make .vim directory if it doesn't exist
+[ -d $HOME/.vim ] || mkdir $HOME/.vim
+
 # Install dotfiles
 echo "Creating symlinks for dot files"
 install_dotfile "$DOTFILES_ROOT"/vimrc "$HOME"/.vimrc "$DOTFILES_OLD_DIR"/vimrc
-install_dotfile "$DOTFILES_ROOT"/vimrc.local "$HOME"/.vimrc.local "$DOTFILES_OLD_DIR"/vimrc.local
+install_dotfile "$DOTFILES_ROOT"/vimrc.local "$HOME"/.vim/vimrc.local "$DOTFILES_OLD_DIR"/vimrc.local
 install_dotfile "$DOTFILES_ROOT"/zshrc "$HOME"/.zshrc "$DOTFILES_OLD_DIR"/zshrc
 install_dotfile "$DOTFILES_ROOT"/tmux.conf "$HOME"/.tmux.conf "$DOTFILES_OLD_DIR"/tmux.conf
 install_dotfile "$DOTFILES_ROOT"/rsync-excludes "$HOME"/.rsync-excludes "$DOTFILES_OLD_DIR"/rsync-excludes
