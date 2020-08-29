@@ -23,6 +23,9 @@
     Plug 'ap/vim-buftabline'
   call plug#end()
 
+" LEADER
+  let mapleader=" "
+
 
 " NERDTREE
   " OPTIONS
