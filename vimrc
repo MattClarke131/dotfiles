@@ -48,10 +48,10 @@
   " wanted default mappings
       nmap ]c <Plug>(GitGutterNextHunk)
       nmap [c <Plug>(GitGutterPrevHunk)
-  " hunk preview
-      nmap <Leader>hp <Plug>(GitGutterPreviewHunk)
-  " hunk stage
-      nmap <Leader>hs <Plug>(GitGutterStageHunk)
+  " git hunk preview
+      nmap <Leader>gp <Plug>(GitGutterPreviewHunk)
+  " git hunk stage
+      nmap <Leader>gs <Plug>(GitGutterStageHunk)
   " git highlight
       nmap <Plug>(GitGutterLineHightlightsToggle) :GitGutterLineHighlightsToggle<CR>
       nmap <Leader>gh <Plug>(GitGutterLineHightlightsToggle)
