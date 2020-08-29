@@ -60,9 +60,6 @@
       nmap \hu nop
 
 " MAPPING
-  " Switch ; and : mappin in normal mode
-      " nnoremap ; :
-      " nnoremap : ;
   " unmap EX mode
      nmap Q <nop>
   " map 'kj' to esc. `^ is to keep cursor in it's position
@@ -81,6 +78,9 @@
       nmap L $
   " togglepaste
       set pastetoggle=<Leader>tp
+  " Switch ; and : mappin in normal mode
+      " nnoremap ; :
+      " nnoremap : ;
 
 
 " BEHAVIOR
