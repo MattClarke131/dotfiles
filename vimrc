@@ -20,6 +20,7 @@
     Plug 'airblade/vim-gitgutter'
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
+    Plug 'ap/vim-buftabline'
   call plug#end()
 
 
