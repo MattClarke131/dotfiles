@@ -14,7 +14,7 @@ DOTFILES_ROOT=$(pwd -P)
 #create subdirectory for current time this script is run
 DOTFILES_OLD_DIR=$DOTFILES_ROOT/dotfiles_old/$(date +%G-%m-%d_%H-%M-%S)
 mkdir -p "$DOTFILES_OLD_DIR"
-mkdir $DOTFILES_OLD_DIR/vim
+mkdir "$DOTFILES_OLD_DIR"/vim
 
 
 install_dotfile () {
@@ -41,7 +41,9 @@ create_backup_file () {
 }
 
 # Make .vim directory if it doesn't exist
-[ -d $HOME/.vim ] || mkdir $HOME/.vim
+[ -d "$HOME"/.vim ] || mkdir "$HOME"/.vim
+# Make .vim/sessions directory if it doesn't exist
+[ -d "$HOME"/.vim/sessions ] || mkdir "$HOME"/.vim/sessions
 
 # Install dotfiles
 echo "################################################################################"
@@ -58,4 +60,5 @@ echo "symlinks created"
 echo "################################################################################"
 
 echo "sourcing zshrc"
+# shellcheck source=/home/matt/.zshrc
 source "$HOME"/.zshrc
