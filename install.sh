@@ -59,6 +59,7 @@ echo "##########################################################################
 echo "symlinks created"
 echo "################################################################################"
 
+set +e
 echo "sourcing zshrc"
 # shellcheck source=/home/matt/.zshrc
 source "$HOME"/.zshrc
