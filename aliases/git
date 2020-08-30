@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 # git aliases
 
 alias rpull="pull --rebase"

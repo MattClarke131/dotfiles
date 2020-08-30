@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 #### DESCRIPTION: Finds and deletes all .swp files within current directory (and its children)
 
 num_processes=$(ps -aux | grep vim | wc -l)

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 #### Description: Fetches repositories, echos if repo is behind
 ####              If this is run in a cron, it will generate mail
 

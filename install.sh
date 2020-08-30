@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 # ^ logical link to path
 
 # This script will create symlinks to dot files
