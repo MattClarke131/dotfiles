@@ -117,6 +117,7 @@ done
 for file in $(ls -A "$HOME"/dotfiles/functions | grep '[^s][^w].$') ; do
     source "$HOME"/dotfiles/functions/"$file"
 done
+unset file
 
 # zsh
 if [[ -f "$HOME"/dotfiles/zshrc.local ]]; then
