@@ -10,6 +10,9 @@ setup crons
 
 `$ crontab -e`
 
+install submodules
+git submodule update
+
 ### customization
 git ignores files ending in `.local`. These files are for commands that I don't want on a public repo
 
