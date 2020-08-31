@@ -44,6 +44,8 @@
 
 
 " GITGUTTER
+  " disable default keybindings
+      let g:gitgutter_map_keys=0
   " MAPPING
   " wanted default mappings
       nmap ]c <Plug>(GitGutterNextHunk)
@@ -52,6 +54,8 @@
       nmap <Leader>gp <Plug>(GitGutterPreviewHunk)
   " git hunk stage
       nmap <Leader>gs <Plug>(GitGutterStageHunk)
+  " git hunk undo
+      nmap <Leader>gu <Plug>(GitGutterUndoHunk)
   " git highlight
       nmap <Plug>(GitGutterLineHightlightsToggle) :GitGutterLineHighlightsToggle<CR>
       nmap <Leader>gh <Plug>(GitGutterLineHightlightsToggle)
