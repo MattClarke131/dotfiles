@@ -120,8 +120,8 @@ done
 unset file
 
 # zsh
-if [[ -f "$HOME"/dotfiles/zshrc.local ]]; then
-  source "$HOME"/dotfiles/zshrc.local
+if [[ -f "$HOME"/dotfiles/zsh/zshrc.local ]]; then
+  source "$HOME"/dotfiles/zsh/zshrc.local
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
