@@ -68,11 +68,10 @@
      nmap Q <nop>
   " map 'kj' to esc. `^ is to keep cursor in it's position
       inoremap kj <esc>`^
-  " map 'lkj' to esc and save.
-      inoremap lkj <esc>`^:w<CR>
-      nnoremap lkj :w<CR>
-  " map ';lkj' to esc and save.
-      inoremap ;lkj <esc>`^:wq<CR>
+  " map <Leader>s to esc and save.
+      nnoremap <Leader>s :w<CR>
+  " map ';lkj' to save and quit.
+      inoremap ;lkj <esc>:wq<CR>
       nnoremap ;lkj :wq<CR>
   " move normally between wrapped lines
       nmap j gj
