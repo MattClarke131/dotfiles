@@ -13,11 +13,5 @@ do
   then
     cd "$REPO" || exit
     git fetch
-
-    diff=$(git diff origin/$(git_main_branch) $(git_main_branch) | wc -c)
-    if [ $diff -ne 0 ]
-    then
-      echo "$REPO has updates!"
-    fi
   fi
 done
