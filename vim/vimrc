@@ -71,8 +71,8 @@
   " map <Leader>s to esc and save.
       nnoremap <Leader>s :w<CR>
   " map ';lkj' to save and quit.
-      inoremap ;lkj <esc>:wq<CR>
-      nnoremap ;lkj :wq<CR>
+      inoremap <Leader>;lkj <esc>:wq<CR>
+      nnoremap <Leader>;lkj :q<CR>
   " move normally between wrapped lines
       nmap j gj
       nmap k gk
@@ -111,8 +111,8 @@
   " Quick buffer navigation
     nnoremap <Leader>l :bnext<CR>
     nnoremap <Leader>h :bprev<CR>
-    nnoremap <Leader>j :w<CR>:e<Space>
-    nnoremap <Leader>k :w<CR>:bd<CR>
+    nnoremap <Leader>j :e<Space>
+    nnoremap <Leader>k :bd<CR>
   " keeps lines above and below when scrolling
       set scrolloff=20
   " use mouse for navigation
