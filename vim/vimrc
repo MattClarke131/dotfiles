@@ -21,6 +21,7 @@
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
     Plug 'ap/vim-buftabline'
+    Plug 'tpope/vim-fugitive'
   call plug#end()
 
 " LEADER
@@ -62,6 +63,10 @@
 
   " unwanted default mappings
       nmap \hu nop
+
+" VIM FUGITIVE
+  " git blame
+      nmap <Leader>gb
 
 " MAPPING
   " unmap EX mode
