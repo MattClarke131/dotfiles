@@ -4,5 +4,5 @@
 *.secret
 *.swp
 
-Ignore backup dotfiles
+# Ignore backup dotfiles
 dotfiles_old
