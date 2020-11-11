@@ -179,6 +179,6 @@
 
 " SOURCE LOCAL VIMRC
 try
-  so $HOME/.vim/vimrc.local
+  so $HOME/dotfiles/vim/vimrc.local
 catch
 endtry
