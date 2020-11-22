@@ -16,6 +16,7 @@ DOTFILES_OLD_DIR=$DOTFILES_ROOT/dotfiles_old/$(date +%G-%m-%d_%H-%M-%S)
 mkdir -p "$DOTFILES_OLD_DIR"
 mkdir "$DOTFILES_OLD_DIR"/vim
 mkdir "$DOTFILES_OLD_DIR"/zsh
+mkdir "$DOTFILES_OLD_DIR"/git
 
 
 install_dotfile () {
@@ -56,7 +57,7 @@ install_dotfile "$DOTFILES_ROOT"/zsh/zshrc "$HOME"/.zshrc "$DOTFILES_OLD_DIR"/zs
 install_dotfile "$DOTFILES_ROOT"/zsh/p10k.zsh "$HOME"/.p10k.zsh "$DOTFILES_OLD_DIR"/zsh/p10k.zsh
 install_dotfile "$DOTFILES_ROOT"/tmux.conf "$HOME"/.tmux.conf "$DOTFILES_OLD_DIR"/tmux.conf
 install_dotfile "$DOTFILES_ROOT"/rsync-excludes "$HOME"/.rsync-excludes "$DOTFILES_OLD_DIR"/rsync-excludes
-install_dotfile "$DOTFILES_ROOT"/gitconfig "$HOME"/.gitconfig "$DOTFILES_OLD_DIR"/gitconfig
+install_dotfile "$DOTFILES_ROOT"/git/gitconfig "$HOME"/.gitconfig "$DOTFILES_OLD_DIR"/git/gitconfig
 echo "################################################################################"
 echo "symlinks created"
 echo "################################################################################"
