@@ -22,6 +22,8 @@
     Plug 'junegunn/fzf.vim'
     Plug 'ap/vim-buftabline'
     Plug 'tpope/vim-fugitive'
+    Plug 'leafgarland/typescript-vim'
+    Plug 'pangloss/vim-javascript'
   call plug#end()
 
 " LEADER
