@@ -6,5 +6,6 @@
 	date = local
 [pager]
 	branch = false
+	stash = false
 [rebase]
 	autosquash = true
