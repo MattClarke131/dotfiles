@@ -129,7 +129,7 @@
   " display command always
       set showcmd
   " display line char length guide
-      set colorcolumn=81
+      set colorcolumn=101
       highlight ColorColumn ctermbg=darkcyan
   " display whitespace characters
 "      if has("patch-7.4.710")
