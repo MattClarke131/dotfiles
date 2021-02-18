@@ -43,8 +43,9 @@
 
 " FZF
   " MAPPING
-      nnoremap <Leader>f :FZF<Enter>
-      nnoremap <Leader>b :Buffers
+      nnoremap <Leader>ff :FZF<Enter>
+      nnoremap <Leader>fb :Buffers<Enter>
+      nnoremap <Leader>fh :History<Enter>
 
 
 " GITGUTTER
