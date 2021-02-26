@@ -114,6 +114,10 @@
   " Vim monitors file changes in realtime
   " autoread only reads the file when vim does an action
     set autoread
+  " save undo trees in a file
+  set undofile
+  set undodir=$HOME/.vim/undo
+  set undolevels=10000
 
 
 " NAVIGATION"
