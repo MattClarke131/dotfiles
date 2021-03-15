@@ -32,6 +32,9 @@ source "$ZSH"/oh-my-zsh.sh
 
 export EDITOR="vim"
 
+# Don't overwrite files by default when using '>'
+set -o noclobber
+
 # Turn off all beeps
 unsetopt BEEP
 

@@ -1,5 +1,9 @@
 #!/usr/bin/env zsh
 
+# OVERWRITE ALIASES
+alias cp='cp -i'
+alias mv='mv -i'
+
 # ALIASES
 alias lA="ls -A"
 alias -g g="| grep"
