@@ -25,6 +25,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 plugins=(
   git
+  fasd
 )
 
 source "$ZSH"/oh-my-zsh.sh
