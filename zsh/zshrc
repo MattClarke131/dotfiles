@@ -7,43 +7,32 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Path to your oh-my-zsh installation.
- export ZSH="$HOME"/.oh-my-zsh
-
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-# ZSH_THEME="robbyrussell"
-
-HYPHEN_INSENSITIVE=true
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-COMPLETION_WAITING_DOTS="true"
-
-# Show history  time stamp
-HIST_STAMPS="yyyy-mm-dd"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Oh My Zsh
+export ZSH="$HOME"/.oh-my-zsh
+# Plugins
 plugins=(
   git
   fasd
 )
-
 source "$ZSH"/oh-my-zsh.sh
 
+
+# SETTINGS
 export EDITOR="vim"
-
-# Don't overwrite files by default when using '>'
-set -o noclobber
-
-# Turn off all beeps
-unsetopt BEEP
+unsetopt BEEP                   # Turn off all beeps
+setopt interactive_comments     # Allow interactive comments
+setopt noclobber                # Don't overwrite files by default when using '>'
+setopt autopushd                # cd acts like pushd
+setopt autocd
+HYPHEN_INSENSITIVE=true
+COMPLETION_WAITING_DOTS=true
+HIST_STAMPS='yyyy-mm-dd'        # Show history time stamp
 
 # aliases
-# WARNING: currently file is becoming a global variable. I don't know how to stop that
-# TODO
 for file in $(ls -A "$HOME"/dotfiles/aliases | grep -E '[^s][^w].$'); do
     source "$HOME"/dotfiles/aliases/"$file"
 done
+unset file
 
 # functions
 for file in $(ls -A "$HOME"/dotfiles/functions | grep '[^s][^w].$') ; do
