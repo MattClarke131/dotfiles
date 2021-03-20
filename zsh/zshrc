@@ -27,6 +27,7 @@ setopt autocd
 HYPHEN_INSENSITIVE=true
 COMPLETION_WAITING_DOTS=true
 HIST_STAMPS='yyyy-mm-dd'        # Show history time stamp
+bindkey -v                      # vi mode
 
 # aliases
 for file in $(ls -A "$HOME"/dotfiles/aliases | grep -E '[^s][^w].$'); do
