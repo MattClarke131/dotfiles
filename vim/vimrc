@@ -26,6 +26,10 @@
     Plug 'pangloss/vim-javascript'
   call plug#end()
 
+" .vim DIRECTORY
+  set directory=$HOME/.vim/swapfiles//
+  set undodir=$HOME/.vim/undofiles//
+
 " LEADER
   let mapleader=" "
 
@@ -115,12 +119,12 @@
   " autoread only reads the file when vim does an action
     set autoread
   " save undo trees in a file
-  set undofile
-  set undodir=$HOME/.vim/undo
-  set undolevels=10000
+    set undofile
+    set undodir=$HOME/.vim/undo
+    set undolevels=10000
 
 
-" NAVIGATION"
+" NAVIGATION
   " Quick buffer navigation
     nnoremap <Leader>l :bnext<CR>
     nnoremap <Leader>h :bprev<CR>

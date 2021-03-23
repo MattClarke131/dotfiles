@@ -46,6 +46,10 @@ create_backup_file () {
 [ -d "$HOME"/.vim ] || mkdir "$HOME"/.vim
 # Make .vim/sessions directory if it doesn't exist
 [ -d "$HOME"/.vim/sessions ] || mkdir "$HOME"/.vim/sessions
+# Make .vim/swapfiles directory if it doesn't exist
+[ -d "$HOME"/.vim/swapfiles ] || mkdir "$HOME"/.vim/swapfiles
+# Make .vim/undofiles directory if it doesn't exist
+[ -d "$HOME"/.vim/undofiles ] || mkdir "$HOME"/.vim/undofiles
 
 # Install dotfiles
 echo "################################################################################"
