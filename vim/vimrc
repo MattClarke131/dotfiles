@@ -120,7 +120,6 @@
     set autoread
   " save undo trees in a file
     set undofile
-    set undodir=$HOME/.vim/undo
     set undolevels=10000
 
 
