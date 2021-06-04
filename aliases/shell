@@ -5,6 +5,7 @@ alias cp='cp -i'
 alias mv='mv -i'
 
 # ALIASES
+alias ls="ls --group-directories-first --color=tty"
 alias lA="ls -A"
 alias -g g="| grep"
 alias -g gi="| grep -i"
