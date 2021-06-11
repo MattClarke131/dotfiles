@@ -50,7 +50,8 @@
       nnoremap <Leader>ff :FZF<Enter>
       nnoremap <Leader>fb :Buffers<Enter>
       nnoremap <Leader>fh :History<Enter>
-
+      nnoremap <Leader>fc :Commands
+      nnoremap <Leader>fm :Maps
 
 " GITGUTTER
   " disable default keybindings
