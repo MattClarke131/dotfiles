@@ -4,7 +4,7 @@
 alias rpull="pull --rebase"
 alias gcob="git checkout -b"
 alias gcop="git checkout -p"
-alias grbo='git rebase origin/"$(git_current_branch)"'
+alias grbo='git rebase origin/"$(git_main_branch)"'
 alias gbm='git branch --move'
 alias gdm="git diff $(git_current_branch)"
 alias gstam="git stash push -m"
