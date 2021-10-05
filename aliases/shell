@@ -14,6 +14,8 @@ alias cl="clear"
 alias ..='cd ..; ls'
 alias ...='cd ...; ls'
 alias ....='cd ....; ls'
+alias pud='pushd'
+alias pod='popd'
 
 # FUNCTIONS
 # ls after cd
