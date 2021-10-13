@@ -9,6 +9,8 @@ alias gbm='git branch --move'
 alias gdm='git diff "$(git_main_branch)"'
 alias gstam="git stash push -m"
 alias gstap="git stash push -p"
+alias grevc="git revert --continue"
+alias greva="git revert --abort"
 alias vgdm=vim_git_diff
 function vim_git_diff {
   vim $(gd --name-only main | xargs)
