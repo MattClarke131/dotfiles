@@ -5,7 +5,12 @@ alias cp='cp -i'
 alias mv='mv -i'
 
 # ALIASES
-alias ls="ls --group-directories-first --color=tty"
+# ls behaves strangely on newer versions of macOS
+if [ "$OSTYPE"==linux-gnu ]; then  # Is this the Ubuntu system?
+    alias ll='ls -Flh --group-directories-first'
+else
+    alias ll='gls -Flh --group-directories-first'
+fi
 alias lA="ls -A"
 alias -g g="| grep"
 alias -g gi="| grep -i"
