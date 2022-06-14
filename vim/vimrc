@@ -173,6 +173,8 @@
       set expandtab
   " spellchecking
       set spelllang=en-us
+  " disable syntax highlighting for files > 250k
+      au BufReadPost * if getfsize(bufname("%")) > 250*1024 | set syntax= ai | endif
 
 
 " SEARCH
