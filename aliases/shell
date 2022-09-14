@@ -6,14 +6,17 @@ alias mv='mv -i'
 
 # ALIASES
 # ls behaves strangely on newer versions of macOS
-if [ "$OSTYPE"==linux-gnu ]; then
-    alias l='\ls --color=tty --group-directories-first'
+if [ "$OSTYPE" = 'linux-gnu' ]; then
+    alias l="\ls --group-directories-first --color=tty"
+    alias ll="\ls -lAh --group-directories-first --color=tty"
+    alias la="\ls -A --group-directories-first --color=tty"
 else
-    alias l='gls -Flh --group-directories-first'
+    alias l="\gls --group-directories-first --color=tty"
+    alias ll="\gls -lAh --group-directories-first --color=tty"
+    alias la="\gls -A --group-directories-first --color=tty"
 fi
-alias ll="\ls -lAh --group-directories-first --color=tty"
+
 alias ls="echo use l"
-alias lA="\ls -A --group-directories-first --color=tty"
 alias -g g="| grep"
 alias -g gi="| grep -i"
 alias cd="echo use c"
