@@ -25,6 +25,10 @@ alias ....='\cd ....; ls'
 alias pud='\pushd'
 alias pod='\popd'
 
+# Programs
+alias v="\nvim"
+alias vim="echo use v"
+
 # FUNCTIONS
 # ls after cd
 function c() {
