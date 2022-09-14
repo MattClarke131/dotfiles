@@ -25,13 +25,13 @@ COMPLETION_WAITING_DOTS=true
 HIST_STAMPS='yyyy-mm-dd'        # Show history time stamp
 
 # aliases
-for file in $(ls -A "$HOME"/dotfiles/aliases | grep -E '[^s][^w].$'); do
+for file in $(\ls -A "$HOME"/dotfiles/aliases | grep -E '[^s][^w].$'); do
     source "$HOME"/dotfiles/aliases/"$file"
 done
 unset file
 
 # functions
-for file in $(ls -A "$HOME"/dotfiles/functions | grep '[^s][^w].$') ; do
+for file in $(\ls -A "$HOME"/dotfiles/functions | grep '[^s][^w].$') ; do
     source "$HOME"/dotfiles/functions/"$file"
 done
 unset file

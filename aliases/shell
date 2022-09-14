@@ -6,27 +6,30 @@ alias mv='mv -i'
 
 # ALIASES
 # ls behaves strangely on newer versions of macOS
-if [ "$OSTYPE"==linux-gnu ]; then  # Is this the Ubuntu system?
-    alias ll='ls -Flh --group-directories-first'
+if [ "$OSTYPE"==linux-gnu ]; then
+    alias l='\ls --color=tty --group-directories-first'
 else
-    alias ll='gls -Flh --group-directories-first'
+    alias l='gls -Flh --group-directories-first'
 fi
-alias lA="ls -A"
+alias ll="\ls -lAh --group-directories-first --color=tty"
+alias ls="echo use l"
+alias lA="\ls -A --group-directories-first --color=tty"
 alias -g g="| grep"
 alias -g gi="| grep -i"
-alias cddot="cd ~/dotfiles"
+alias cd="echo use c"
+alias cddot="\cd ~/dotfiles"
 alias cl="clear"
-alias ..='cd ..; ls'
-alias ...='cd ...; ls'
-alias ....='cd ....; ls'
-alias pud='pushd'
-alias pod='popd'
+alias ..='\cd ..; ls'
+alias ...='\cd ...; ls'
+alias ....='\cd ....; ls'
+alias pud='\pushd'
+alias pod='\popd'
 
 # FUNCTIONS
 # ls after cd
-function cs() {
-  cd "$1" || exit
-  ls
+function c() {
+  \cd "$1" || exit
+  l
 }
 
 # mkdir and change to it
