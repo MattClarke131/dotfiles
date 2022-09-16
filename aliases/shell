@@ -16,10 +16,12 @@ else
     alias la="\gls -A --group-directories-first --color=tty"
 fi
 
+# Reminders
 alias ls="echo use l"
+alias cd="echo use l"
+
 alias -g g="| grep"
 alias -g gi="| grep -i"
-alias cd="echo use c"
 alias cddot="\cd ~/dotfiles"
 alias cl="clear"
 alias ..='\cd ..; \ls'
@@ -35,8 +37,7 @@ alias vim="echo use v"
 # FUNCTIONS
 # ls after cd
 function c() {
-  \cd "$1" || exit
-  l
+  \cd "$1"; l  || exit
 }
 
 # mkdir and change to it
