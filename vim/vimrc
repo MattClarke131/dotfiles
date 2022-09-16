@@ -21,7 +21,7 @@
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
     Plug 'ap/vim-buftabline'
-    Plug 'tpope/vim-fugitive'
+    "Plug 'tpope/vim-fugitive'
     Plug 'leafgarland/typescript-vim'
     Plug 'pangloss/vim-javascript'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
