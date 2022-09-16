@@ -22,9 +22,9 @@ alias -g gi="| grep -i"
 alias cd="echo use c"
 alias cddot="\cd ~/dotfiles"
 alias cl="clear"
-alias ..='\cd ..; ls'
-alias ...='\cd ...; ls'
-alias ....='\cd ....; ls'
+alias ..='\cd ..; \ls'
+alias ...='\cd ...; \ls'
+alias ....='\cd ....; \ls'
 alias pud='\pushd'
 alias pod='\popd'
 
