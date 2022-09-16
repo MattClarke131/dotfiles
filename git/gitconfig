@@ -1,7 +1,7 @@
 [user]
 	email = mattclarkeruns@gmail.com
 [core]
-	editor = vim
+	editor = nvim
 [log]
 	date = local
 [pager]
