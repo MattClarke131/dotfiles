@@ -11,11 +11,11 @@ alias gstam="git stash push -m"
 alias gstap="git stash push -p"
 alias grevc="git revert --continue"
 alias greva="git revert --abort"
-alias vgdm='vim_git_diff main'
+alias vgdm='vim_git_diff $(git merge-base "$(git_current_branch)" "$(git_main_branch)")'
 alias vgd=vim_git_diff
 
 function vim_git_diff() {
-  vim $(gd --name-only $1 | xargs)
+  nvim $(gd --name-only $1 | xargs)
 }
 
 # remove oh my zsh git pull aliases
