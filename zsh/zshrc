@@ -1,5 +1,8 @@
 #!/usr/bin/env zsh
 
+# Set PATH, MANPATH, etc., for Homebrew.
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
 # Oh My Zsh
 export ZSH="$HOME"/.oh-my-zsh
 
@@ -46,7 +49,7 @@ if command -v bat &> /dev/null
 then
   export FZF_DEFAULT_OPTS="--preview 'bat --style=numbers --color=always --line-range :500 {}'"
 else
-  export FZF_DEFAULT_OPTS="--preview 'cat {}'"
+  export FZF_DEFAULT_OPTS="--preview '\cat {}'"
   echo "********************************************************************************\n"
   echo "Install bat!"
   echo "********************************************************************************\n"
@@ -60,6 +63,3 @@ if [[ -f "$HOME"/dotfiles/git-config.sh ]]; then
 fi
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-# Set PATH, MANPATH, etc., for Homebrew.
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
