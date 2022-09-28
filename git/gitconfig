@@ -1,5 +1,6 @@
 [user]
 	email = mattclarkeruns@gmail.com
+	name = Matt Clarke
 [core]
 	editor = nvim
 [log]
