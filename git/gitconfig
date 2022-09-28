@@ -3,6 +3,7 @@
 	name = Matt Clarke
 [core]
 	editor = nvim
+	pager = delta
 [log]
 	date = local
 [pager]
