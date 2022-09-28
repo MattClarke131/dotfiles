@@ -41,6 +41,16 @@ if [[ -f "$HOME"/dotfiles/zsh/zshrc.local ]]; then
   source "$HOME"/dotfiles/zsh/zshrc.local
 fi
 
+# FZF
+if command -v bat &> /dev/null
+then
+  export FZF_DEFAULT_OPTS="--preview 'bat --style=numbers --color=always --line-range :500 {}'"
+else
+  echo "********************************************************************************\n"
+  echo "Install bat!"
+  echo "********************************************************************************\n"
+fi
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # git config

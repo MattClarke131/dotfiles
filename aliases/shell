@@ -1,5 +1,8 @@
 #!/usr/bin/env zsh
 
+# Tools
+alias cat='bat'
+
 # OVERWRITE ALIASES
 alias cp='cp -i'
 alias mv='mv -i'
