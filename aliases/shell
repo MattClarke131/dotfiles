@@ -18,7 +18,7 @@ fi
 
 # Reminders
 alias ls="echo use l"
-alias cd="echo use l"
+alias cd="echo use c"
 
 alias -g g="| grep"
 alias -g gi="| grep -i"
