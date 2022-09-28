@@ -46,6 +46,7 @@ if command -v bat &> /dev/null
 then
   export FZF_DEFAULT_OPTS="--preview 'bat --style=numbers --color=always --line-range :500 {}'"
 else
+  export FZF_DEFAULT_OPTS="--preview 'cat {}'"
   echo "********************************************************************************\n"
   echo "Install bat!"
   echo "********************************************************************************\n"
