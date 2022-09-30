@@ -8,6 +8,12 @@
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 ```
+
+1. Install brew packages
+```bash
+brew bundle install
+```
+
 1. setup crons
 ```bash
 crontab -e
