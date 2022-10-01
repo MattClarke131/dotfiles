@@ -51,11 +51,17 @@ create_backup_file () {
 # Make .vim/undofiles directory if it doesn't exist
 [ -d "$HOME"/.vim/undofiles ] || mkdir "$HOME"/.vim/undofiles
 
+# Make .config directory if it doesn't exist
+[ -d "$HOME"/.config ] || mkdir "$HOME"/.config
+# Make .config/nvim directory if it doesn't exist
+[ -d "$HOME"/.config/nvim ] || mkdir "$HOME"/.config/nvim
+
 # Install dotfiles
 echo "################################################################################"
 echo "Creating symlinks for dot files"
 echo "################################################################################"
 install_dotfile "$DOTFILES_ROOT"/vim/vimrc "$HOME"/.vimrc "$DOTFILES_OLD_DIR"/vim/vimrc
+install_dotfile "$DOTFILES_ROOT"/vim/init.vim "$HOME"/.config/nvim "$DOTFILES_OLD_DIR"/vim/init.vim
 install_dotfile "$DOTFILES_ROOT"/zsh/zshrc "$HOME"/.zshrc "$DOTFILES_OLD_DIR"/zsh/zshrc
 install_dotfile "$DOTFILES_ROOT"/zsh/p10k.zsh "$HOME"/.p10k.zsh "$DOTFILES_OLD_DIR"/zsh/p10k.zsh
 install_dotfile "$DOTFILES_ROOT"/tmux.conf "$HOME"/.tmux.conf "$DOTFILES_OLD_DIR"/tmux.conf
