@@ -28,7 +28,16 @@ setopt autopushd                # cd acts like pushd
 setopt autocd
 HYPHEN_INSENSITIVE=true
 COMPLETION_WAITING_DOTS=true
-HIST_STAMPS='yyyy-mm-dd'        # Show history time stamp
+# history options
+setopt EXTENDED_HISTORY            # Record timestamp
+HIST_STAMPS='yyyy-mm-dd'           # Show history time stamp
+export HISTTIMEFORMAT="[%F %T] "   # Timestamp format
+export HISTFILESIZE=1000000        # Max history file size
+export HISTSIZE=1000000            # Max history to load in memory
+setopt INC_APPEND_HISTORY          # Save to history immediately
+setopt HIST_FIND_NO_DUPS           # Only show commands once when searching with CTRL+R
+
+
 
 # aliases
 for file in $(\ls -A "$HOME"/dotfiles/aliases | grep -E '[^s][^w].$'); do
