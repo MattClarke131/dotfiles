@@ -5,6 +5,7 @@ alias rpull="pull --rebase"
 alias gcob="git checkout -b"
 alias gcop="git checkout -p"
 alias gcfix="git commit --fixup"
+alias gmv="git mv"
 alias grbo='git rebase origin/"$(git_current_branch)"'
 alias grbmi='git rebase -i $(git_main_branch)'
 alias grbim='git rebase -i $(git_main_branch)'
