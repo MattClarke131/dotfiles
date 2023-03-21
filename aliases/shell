@@ -51,3 +51,6 @@ function mcd () {
   mkdir -p "$1"
   cd "$1" || exit
 }
+
+# language specific
+alias python=python3
