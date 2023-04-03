@@ -17,9 +17,14 @@ alias grevc="git revert --continue"
 alias greva="git revert --abort"
 alias vgdm='vim_git_diff $(git merge-base "$(git_current_branch)" "$(git_main_branch)")'
 alias vgd=vim_git_diff
+alias vcd=vim_commit_diff
 
 function vim_git_diff() {
   nvim $(gd --name-only $1 | xargs)
+}
+
+function vim_commit_diff() {
+  nvim $(git diff-tree --no-commit-id --name-only -r $1 | xargs)
 }
 
 # remove oh my zsh git pull aliases
