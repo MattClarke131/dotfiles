@@ -61,7 +61,7 @@ echo "##########################################################################
 echo "Creating symlinks for dot files"
 echo "################################################################################"
 install_dotfile "$DOTFILES_ROOT"/vim/vimrc "$HOME"/.vimrc "$DOTFILES_OLD_DIR"/vim/vimrc
-install_dotfile "$DOTFILES_ROOT"/vim/init.vim "$HOME"/.config/nvim "$DOTFILES_OLD_DIR"/vim/init.vim
+install_dotfile "$DOTFILES_ROOT"/vim/init.lua "$HOME"/.config/nvim "$DOTFILES_OLD_DIR"/vim/init.lua
 install_dotfile "$DOTFILES_ROOT"/zsh/zshrc "$HOME"/.zshrc "$DOTFILES_OLD_DIR"/zsh/zshrc
 install_dotfile "$DOTFILES_ROOT"/zsh/p10k.zsh "$HOME"/.p10k.zsh "$DOTFILES_OLD_DIR"/zsh/p10k.zsh
 install_dotfile "$DOTFILES_ROOT"/tmux.conf "$HOME"/.tmux.conf "$DOTFILES_OLD_DIR"/tmux.conf
