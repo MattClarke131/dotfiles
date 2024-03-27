@@ -10,7 +10,8 @@ fi
 export ZSH="$HOME"/.oh-my-zsh
 
 # OMZ SETTINGS
-ZSH_THEME="robbyrussell"
+# ZSH_THEME="robbyrussell"
+ZSH_THEME="agnoster"
 ZSH_DISABLE_COMPFIX=true
 
 # PLUGINS
