@@ -11,6 +11,7 @@ export ZSH="$HOME"/.oh-my-zsh
 
 # OMZ SETTINGS
 ZSH_THEME="robbyrussell"
+ZSH_DISABLE_COMPFIX=true
 
 # PLUGINS
 plugins=(
