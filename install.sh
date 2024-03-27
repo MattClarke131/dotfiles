@@ -11,7 +11,7 @@ set -e
 cd "$(dirname "$0")"
 DOTFILES_ROOT=$(pwd -P)
 
-#create subdirectory for current time this script is run
+# create subdirectory for current time this script is run
 DOTFILES_OLD_DIR=$DOTFILES_ROOT/dotfiles_old/$(date +%G-%m-%d_%H-%M-%S)
 mkdir -p "$DOTFILES_OLD_DIR"
 mkdir "$DOTFILES_OLD_DIR"/vim
@@ -59,7 +59,6 @@ create_backup_file () {
 # Install dotfiles
 echo "################################################################################"
 echo "Creating symlinks for dot files"
-echo "################################################################################"
 install_dotfile "$DOTFILES_ROOT"/vim/vimrc "$HOME"/.vimrc "$DOTFILES_OLD_DIR"/vim/vimrc
 install_dotfile "$DOTFILES_ROOT"/vim/init.lua "$HOME"/.config/nvim "$DOTFILES_OLD_DIR"/vim/init.lua
 install_dotfile "$DOTFILES_ROOT"/zsh/zshrc "$HOME"/.zshrc "$DOTFILES_OLD_DIR"/zsh/zshrc
@@ -69,9 +68,14 @@ install_dotfile "$DOTFILES_ROOT"/rsync-excludes "$HOME"/.rsync-excludes "$DOTFIL
 install_dotfile "$DOTFILES_ROOT"/git/gitconfig "$HOME"/.gitconfig "$DOTFILES_OLD_DIR"/git/gitconfig
 echo "################################################################################"
 echo "symlinks created"
-echo "################################################################################"
 
 set +e
+echo "################################################################################"
 echo "sourcing zshrc"
 # shellcheck source=/home/matt/.zshrc
 source "$HOME"/.zshrc
+
+
+echo "################################################################################"
+echo "INSTALLATION COMPLETE"
+echo "################################################################################"

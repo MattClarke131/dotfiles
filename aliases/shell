@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
 # Tools
+# Use bat instead of cat if available
 if command -v bat &> /dev/null
 then
   alias cat='bat'
@@ -26,16 +27,6 @@ fi
 alias ls="echo use l"
 alias cd="echo use c"
 
-alias -g g="| grep"
-alias -g gi="| grep -i"
-alias cddot="\cd ~/dotfiles"
-alias cl="clear"
-alias ..='\cd ..; \ls'
-alias ...='\cd ...; \ls'
-alias ....='\cd ....; \ls'
-alias pud='\pushd'
-alias pod='\popd'
-
 # Programs
 alias v="\nvim"
 alias vim="echo use v"
@@ -54,3 +45,14 @@ function mcd () {
 
 # language specific
 alias python=python3
+
+# MISC
+alias -g g="| grep"
+alias -g gi="| grep -i"
+alias cddot="\cd ~/dotfiles"
+alias cl="clear"
+alias ..='\cd ..; \ls'
+alias ...='\cd ...; \ls'
+alias ....='\cd ....; \ls'
+alias pud='\pushd'
+alias pod='\popd'
