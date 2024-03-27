@@ -15,6 +15,7 @@ ZSH_THEME="robbyrussell"
 # PLUGINS
 plugins=(
   git
+  zsh-autosuggestions
   fasd
 )
 source "$ZSH"/oh-my-zsh.sh
