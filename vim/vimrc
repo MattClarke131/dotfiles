@@ -24,7 +24,7 @@
     "Plug 'tpope/vim-fugitive'
     Plug 'leafgarland/typescript-vim'
     Plug 'pangloss/vim-javascript'
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    "Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'github/copilot.vim'
   call plug#end()
 
