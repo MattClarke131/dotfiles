@@ -8,6 +8,8 @@ fi
 
 # Oh My Zsh
 export ZSH="$HOME"/.oh-my-zsh
+export ZSH_COMPDUMP=$ZSH/cache/completions/.zcompdump-$HOST
+
 
 # OMZ SETTINGS
 ZSH_THEME="robbyrussell"
