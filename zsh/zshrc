@@ -41,6 +41,15 @@ setopt autocd
 HYPHEN_INSENSITIVE=true
 COMPLETION_WAITING_DOTS=true
 
+# COLORS
+export LESS_TERMCAP_mb=$'\e[1;32m'
+export LESS_TERMCAP_md=$'\e[1;32m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[01;33m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[1;4;31m'
+
 # HISTORY OPTIONS
 setopt EXTENDED_HISTORY            # Record timestamp
 HIST_STAMPS='yyyy-mm-dd'           # Show history time stamp
