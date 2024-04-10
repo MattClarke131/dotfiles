@@ -1,17 +1,21 @@
 #!/usr/bin/env zsh
 
-# Tools
-# Use bat instead of cat if available
-if command -v bat &> /dev/null
-then
-  alias cat='bat'
-fi
-
-# OVERWRITE ALIASES
+################################################################################
+# DIRECTORY ALIASES
+################################################################################
+# Navigation
 alias cp='cp -i'
 alias mv='mv -i'
-
-# ALIASES
+# alias -='\cd -' # Efforts to correct this have failed
+alias cddot="\cd ~/dotfiles"
+alias ..='\cd ..; \ls'
+alias ...='\cd ...; \ls'
+alias ....='\cd ....; \ls'
+alias pud='\pushd'
+alias pod='\popd'
+# Reminders
+alias ls="echo use l"
+alias cd="echo use c"
 # ls behaves strangely on newer versions of macOS
 if [ "$OSTYPE" = 'linux-gnu' ]; then
     alias l="\ls --group-directories-first --color=tty"
@@ -22,37 +26,33 @@ else
     alias ll="\gls -lAh --group-directories-first --color=tty"
     alias la="\gls -A --group-directories-first --color=tty"
 fi
-
-# Reminders
-alias ls="echo use l"
-alias cd="echo use c"
-
-# Programs
-alias v="\nvim"
-alias vim="echo use v"
-
-# FUNCTIONS
+# functions
 # ls after cd
 function c() {
   \cd "$1"; l  || exit
 }
-
 # mkdir and change to it
 function mcd () {
   mkdir -p "$1"
   cd "$1" || exit
 }
+################################################################################
 
-# language specific
+
+# PROGRAMS
+alias v="\nvim"
+alias vim="echo use v"
 alias python=python3
-
-# MISC
 alias -g g="| grep"
 alias -g gi="| grep -i"
-alias cddot="\cd ~/dotfiles"
+
+
+# TOOLS
+# Use bat instead of cat if available
+if command -v bat &> /dev/null
+then
+  alias cat='bat'
+fi
+
+# MISC
 alias cl="clear"
-alias ..='\cd ..; \ls'
-alias ...='\cd ...; \ls'
-alias ....='\cd ....; \ls'
-alias pud='\pushd'
-alias pod='\popd'
