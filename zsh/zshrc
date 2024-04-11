@@ -5,13 +5,10 @@ if [ "$OSTYPE" = 'linux-gnu' ]
 then
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
-
-# Oh My Zsh
+# OH MY ZSH
 export ZSH="$HOME"/.oh-my-zsh
 export ZSH_COMPDUMP=$ZSH/cache/completions/.zcompdump-$HOST
-
-
-# OMZ SETTINGS
+# omz settings
 ZSH_THEME="robbyrussell"
 # ZSH_THEME_RANDOM_CANDIDATES=(
 #   agnoster
@@ -25,7 +22,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # PLUGINS
 plugins=(
   git
-  zsh-autosuggestions
+  #zsh-autosuggestions
   fasd
 )
 source "$ZSH"/oh-my-zsh.sh
