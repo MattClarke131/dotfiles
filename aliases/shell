@@ -8,9 +8,9 @@ alias cp='cp -i'
 alias mv='mv -i'
 # alias -='\cd -' # Efforts to correct this have failed
 alias cddot="\cd ~/dotfiles"
-alias ..='\cd ..; \ls'
-alias ...='\cd ...; \ls'
-alias ....='\cd ....; \ls'
+alias ..='\cd ..; l'
+alias ...='\cd ...; l'
+alias ....='\cd ....; l'
 alias pud='\pushd'
 alias pod='\popd'
 # Reminders
