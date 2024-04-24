@@ -45,6 +45,8 @@ alias vim="echo use v"
 alias python=python3
 alias -g g="| grep"
 alias -g gi="| grep -i"
+# ripgrep
+alias rg="rg --no-ignore"
 
 
 # TOOLS
