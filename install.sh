@@ -56,6 +56,11 @@ create_backup_file () {
 # Make .config/nvim directory if it doesn't exist
 [ -d "$HOME"/.config/nvim ] || mkdir "$HOME"/.config/nvim
 
+# Make .tmux/plugins directory if it doesn't exist
+[ -d "$HOME"/.tmux/plugins ] || mkdir -p "$HOME"/.tmux/plugins
+# copy tpm submodule into plugins directory if  it doesn't exist
+[ -d "$HOME"/.tmux/plugins/tpm ] || cp -r "$DOTFILES_ROOT"/submodules/tpm "$HOME"/.tmux/plugins/
+
 # Install dotfiles
 echo "################################################################################"
 echo "Creating symlinks for dot files"
