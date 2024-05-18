@@ -87,7 +87,14 @@ else
 fi
 
 # FZF
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+if command -v fzf &> /dev/null
+then
+  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+else
+  echo "********************************************************************************\n"
+  echo "Install fzf!"
+  echo "********************************************************************************\n"
+fi
 
 # GIT CONFIG
 if [[ -f "$HOME"/dotfiles/git-config.sh ]]; then
