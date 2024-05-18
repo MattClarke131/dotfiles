@@ -7,3 +7,8 @@ source ~/.vimrc
 
 -- Language Server Protocol
 require'lspconfig'.tsserver.setup{}
+
+-- Highlight yanked text
+vim.api.nvim_exec([[
+autocmd TextYankPost * silent! lua vim.highlight.on_yank {higroup='Visual', timeout=1000}
+]], false)
