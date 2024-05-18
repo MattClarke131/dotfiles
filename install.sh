@@ -12,11 +12,11 @@ cd "$(dirname "$0")"
 DOTFILES_ROOT=$(pwd -P)
 
 # create subdirectory for current time this script is run
-DOTFILES_OLD_DIR=$DOTFILES_ROOT/dotfiles_old/$(date +%G-%m-%d_%H-%M-%S)
-mkdir -p "$DOTFILES_OLD_DIR"
-mkdir "$DOTFILES_OLD_DIR"/vim
-mkdir "$DOTFILES_OLD_DIR"/zsh
-mkdir "$DOTFILES_OLD_DIR"/git
+BACKUP_DOTFILES=$DOTFILES_ROOT/backup-dotfiles/$(date +%G-%m-%d_%H-%M-%S)
+mkdir -p "$BACKUP_DOTFILES"
+mkdir "$BACKUP_DOTFILES"/vim
+mkdir "$BACKUP_DOTFILES"/zsh
+mkdir "$BACKUP_DOTFILES"/git
 
 
 install_dotfile () {
@@ -64,21 +64,24 @@ create_backup_file () {
 # Install dotfiles
 echo "################################################################################"
 echo "Creating symlinks for dot files"
-install_dotfile "$DOTFILES_ROOT"/vim/vimrc "$HOME"/.vimrc "$DOTFILES_OLD_DIR"/vim/vimrc
-install_dotfile "$DOTFILES_ROOT"/vim/init.lua "$HOME"/.config/nvim "$DOTFILES_OLD_DIR"/vim/init.lua
-install_dotfile "$DOTFILES_ROOT"/zsh/zshrc "$HOME"/.zshrc "$DOTFILES_OLD_DIR"/zsh/zshrc
-install_dotfile "$DOTFILES_ROOT"/zsh/p10k.zsh "$HOME"/.p10k.zsh "$DOTFILES_OLD_DIR"/zsh/p10k.zsh
-install_dotfile "$DOTFILES_ROOT"/tmux.conf "$HOME"/.tmux.conf "$DOTFILES_OLD_DIR"/tmux.conf
-install_dotfile "$DOTFILES_ROOT"/rsync-excludes "$HOME"/.rsync-excludes "$DOTFILES_OLD_DIR"/rsync-excludes
-install_dotfile "$DOTFILES_ROOT"/git/gitconfig "$HOME"/.gitconfig "$DOTFILES_OLD_DIR"/git/gitconfig
-echo "################################################################################"
+echo "--------------------------------------------------------------------------------"
+install_dotfile "$DOTFILES_ROOT"/vim/vimrc "$HOME"/.vimrc "$BACKUP_DOTFILES"/vim/vimrc
+install_dotfile "$DOTFILES_ROOT"/vim/init.lua "$HOME"/.config/nvim "$BACKUP_DOTFILES"/vim/init.lua
+install_dotfile "$DOTFILES_ROOT"/zsh/zshrc "$HOME"/.zshrc "$BACKUP_DOTFILES"/zsh/zshrc
+install_dotfile "$DOTFILES_ROOT"/zsh/p10k.zsh "$HOME"/.p10k.zsh "$BACKUP_DOTFILES"/zsh/p10k.zsh
+install_dotfile "$DOTFILES_ROOT"/tmux.conf "$HOME"/.tmux.conf "$BACKUP_DOTFILES"/tmux.conf
+install_dotfile "$DOTFILES_ROOT"/rsync-excludes "$HOME"/.rsync-excludes "$BACKUP_DOTFILES"/rsync-excludes
+install_dotfile "$DOTFILES_ROOT"/git/gitconfig "$HOME"/.gitconfig "$BACKUP_DOTFILES"/git/gitconfig
+echo "--------------------------------------------------------------------------------"
 echo "symlinks created"
+echo "################################################################################"
 
 set +e
 echo "################################################################################"
 echo "sourcing zshrc"
 # shellcheck source=/home/matt/.zshrc
 source "$HOME"/.zshrc
+echo "################################################################################"
 
 
 echo "################################################################################"
