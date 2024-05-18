@@ -23,7 +23,7 @@
     Plug 'leafgarland/typescript-vim'
     Plug 'pangloss/vim-javascript'
     "Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    "Plug 'github/copilot.vim'
+    Plug 'github/copilot.vim'
     Plug 'neovim/nvim-lspconfig'
   call plug#end()
 
