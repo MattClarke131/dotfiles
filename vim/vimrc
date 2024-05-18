@@ -1,5 +1,3 @@
-"mclarke vimrc
-
 " VIM PLUG BUNDLER INIT
   if empty(glob('~/.vim/autoload/plug.vim'))
     silent !curl -flo ~/.vim/autoload/plug.vim --create-dirs
@@ -34,6 +32,7 @@
   set undodir=$HOME/.vim/undofiles//
 
 " LEADER
+" Needs to be defined before references to it?
   let mapleader=" "
 
 
