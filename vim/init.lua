@@ -29,11 +29,11 @@ require('lazy').setup({
   'neovim/nvim-lspconfig',
   'github/copilot.vim',
   {'nvim-treesitter/nvim-treesitter',
-    build = ':TSUpdate',
-    ensure_installed = { 'javascript' },
+    ensure_installed = {
+    'javascript', 'jsx', 'typescript', 'tsx', 'json', 'lua', 'python', 'c', 'vim', 'zsh', 'bash', 'dockerfile', 'html', 'css', 'scss', 'yaml', 'scheme', 'lisp'
+    },
     highlight = {
       enable = true,
-      -- additional_vim_regex_highlighting = false,
     },
     auto_install = true,
   },
