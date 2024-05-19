@@ -25,15 +25,33 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
+    -- language processing and syntax
   'neovim/nvim-lspconfig',
-    'scrooloose/nerdtree',
-    'airblade/vim-gitgutter',
-    'junegunn/fzf',
-    -- 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-    'ap/vim-buftabline',
-    'leafgarland/typescript-vim',
-    'pangloss/vim-javascript',
-    'github/copilot.vim',
+  'github/copilot.vim',
+  {'nvim-treesitter/nvim-treesitter',
+    build = ':TSUpdate',
+    ensure_installed = { 'javascript' },
+    highlight = {
+      enable = true,
+      -- additional_vim_regex_highlighting = false,
+    },
+    auto_install = true,
+  },
+  -- possibly unnecessary with treesitter
+  -- 'leafgarland/typescript-vim',
+  -- 'pangloss/vim-javascript',
+
+  -- tools
+  'scrooloose/nerdtree',
+  'junegunn/fzf',
+  -- 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+  -- try fzf-lua
+  -- https://github.com/ibhagwan/fzf-lua
+  -- 'ibhagwan/fzf-lua'
+
+  -- visual changes
+  'airblade/vim-gitgutter',
+  'ap/vim-buftabline',
 })
 
 -- Language Server Protocol
