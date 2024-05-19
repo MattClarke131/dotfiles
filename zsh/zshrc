@@ -79,6 +79,8 @@ fi
 if command -v bat &> /dev/null
 then
   export FZF_DEFAULT_OPTS="--preview 'bat --style=numbers --color=always --line-range :500 {}'"
+  # use rg, exclude .git, node_modules, and submodules
+  export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*" --glob "!node_modules/*" --glob "~/dotfiles/submodules/*"'
 else
   export FZF_DEFAULT_OPTS="--preview '\cat {}'"
   echo "********************************************************************************\n"
