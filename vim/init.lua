@@ -1,4 +1,4 @@
--- I forget, but I believe this has something to do with neoVim
+-- Use vimrc file
 vim.cmd([[
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
@@ -44,10 +44,6 @@ require('lazy').setup({
   -- tools
   'scrooloose/nerdtree',
   'junegunn/fzf',
-  -- 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-  -- try fzf-lua
-  -- https://github.com/ibhagwan/fzf-lua
-  -- 'ibhagwan/fzf-lua'
 
   -- visual changes
   'airblade/vim-gitgutter',
@@ -57,55 +53,75 @@ require('lazy').setup({
   {'neanias/everforest-nvim', background = 'hard'},
   'rebelot/kanagawa.nvim',
   'rmehri01/onenord.nvim',
+
+  -- to try
+  -- 'nvim-telescope/telescope.nvim',
+  -- 'tpope/vim-fugitive',
+  -- 'nvim-lualine/lualine.nvim',
+  -- 'ibhagwan/fzf-lua'
+  --
 })
 
 -- Language Server Protocol
 require'lspconfig'.tsserver.setup{}
 
-vim.api.nvim_exec([[
-" NERDTREE
-  " OPTIONS
-  " Close nerd tree on file open
-      let NERDTreeQuitOnOpen = 1
-  " Delete buffer if file is deleted with NERDTree
-      let NERDTreeAutoDeleteBuffer = 1
-  " MAPPING
-      nnoremap <Leader>nf :NERDTreeToggle<Enter>
-      nnoremap <silent> <Leader>nv :NERDTreeFind<Enter>
+-- Plugin Keybindings
+-- Nerdtree
+-- Options
+-- Close nerd tree on file open
+vim.g.NERDTreeQuitOnOpen = 1
+
+-- Delete buffer if file is deleted with NERDTree
+vim.g.NERDTreeAutoDeleteBuffer = 1
+
+-- Mapping
+vim.keymap.set('n', '<Leader>nf', ':NERDTreeToggle<Enter>', { noremap = true})
+vim.keymap.set('n', '<Leader>nv', ':NERDTreeFind<Enter>', { noremap = true, silent = true})
 
 
-" FZF
-  " MAPPING
-      nnoremap <Leader>ff :FZF<Enter>
-      nnoremap <Leader>fb :Buffers<Enter>
-      nnoremap <Leader>fh :History<Enter>
-      nnoremap <Leader>fc :Commands
-      nnoremap <Leader>fm :Maps
+-- FZF
+-- Options
+-- Use ripgrep
+vim.g.fzf_command_prefix = 'rg --files --hidden --follow --glob "!.git/* --glob "!node_modules/*" --glob "!~/dotfiles/submodules/*"'
+-- Mapping
+-- Find files
+vim.keymap.set('n', '<Leader>ff', ':FZF<Enter>', { noremap = true})
+-- Find buffers
+vim.keymap.set('n', '<Leader>fb', ':Buffers<Enter>', { noremap = true})
+-- Find history
+vim.keymap.set('n', '<Leader>fh', ':History<Enter>', { noremap = true})
+-- Find commands
+vim.keymap.set('n', '<Leader>fc', ':Commands<Enter>', { noremap = true})
+-- Find maps
+vim.keymap.set('n', '<Leader>fm', ':Maps<Enter>', { noremap = true})
+-- Find lines
+vim.keymap.set('n', '<Leader>fl', ':Lines<Enter>', { noremap = true})
+-- Find commits
+vim.keymap.set('n', '<Leader>fg', ':Commits<Enter>', { noremap = true})
+-- Find colors
+vim.keymap.set('n', '<Leader>fs', ':Colors<Enter>', { noremap = true})
 
-" GITGUTTER
-  " disable default keybindings
-      let g:gitgutter_map_keys=0
-  " MAPPING
-  " wanted default mappings
-      nmap ]c <Plug>(GitGutterNextHunk)
-      nmap [c <Plug>(GitGutterPrevHunk)
-  " git hunk preview
-      nmap <Leader>gp <Plug>(GitGutterPreviewHunk)
-  " git hunk stage
-      nmap <Leader>gs <Plug>(GitGutterStageHunk)
-  " git hunk undo
-      nmap <Leader>gu <Plug>(GitGutterUndoHunk)
-  " git highlight
-      nmap <Plug>(GitGutterLineHightlightsToggle) :GitGutterLineHighlightsToggle<CR>
-      nmap <Leader>gh <Plug>(GitGutterLineHightlightsToggle)
 
-  " unwanted default mappings
-      nmap \hu nop
+-- Gitgutter
+-- Options
+-- Disable default keybindings
+vim.g.gitgutter_map_keys = 0
+-- Mapping
+-- next hunk
+vim.keymap.set('n', '<Leader>gn', ':GitGutterNextHunk<Enter>', { noremap = true})
+-- previous hunk
+vim.keymap.set('n', '<Leader>gp', ':GitGutterPrevHunk<Enter>', { noremap = true})
+-- preview hunk
+vim.keymap.set('n', '<Leader>gP', ':GitGutterPreviewHunk<Enter>', { noremap = true})
+-- stage hunk
+vim.keymap.set('n', '<Leader>gs', ':GitGutterStageHunk<Enter>', { noremap = true})
+-- undo hunk
+vim.keymap.set('n', '<Leader>gu', ':GitGutterUndoHunk<Enter>', { noremap = true})
+-- toggle line highlights
+vim.keymap.set('n', '<Leader>gh', ':GitGutterLineHighlightsToggle<Enter>', { noremap = true})
 
-" VIM FUGITIVE
-  " git blame
-      nmap <Leader>gb :Git blame<CR>
-]], false)
--- Set colorscheme
+-- Buftabline
+-- Enable buftabline numbers
+vim.g.buftabline_numbers = 1
 
 vim.cmd [[colorscheme everforest]]
