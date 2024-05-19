@@ -14,17 +14,6 @@
 
 " BUNDLES / PLUGINS
   call plug#begin('~/.vim/bundle')
-    Plug 'scrooloose/nerdtree'
-    Plug 'airblade/vim-gitgutter'
-    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-    Plug 'junegunn/fzf.vim'
-    Plug 'ap/vim-buftabline'
-    "Plug 'tpope/vim-fugitive'
-    Plug 'leafgarland/typescript-vim'
-    Plug 'pangloss/vim-javascript'
-    "Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'github/copilot.vim'
-    Plug 'neovim/nvim-lspconfig'
   call plug#end()
 
 " .vim DIRECTORY

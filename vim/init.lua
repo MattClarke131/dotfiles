@@ -5,9 +5,6 @@ let &packpath = &runtimepath
 source ~/.vimrc
 ]])
 
--- Language Server Protocol
-require'lspconfig'.tsserver.setup{}
-
 -- Highlight yanked text
 vim.api.nvim_exec([[
 autocmd TextYankPost * silent! lua vim.highlight.on_yank {higroup='Visual', timeout=1000}
@@ -28,7 +25,19 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
+  'neovim/nvim-lspconfig',
+    'scrooloose/nerdtree',
+    'airblade/vim-gitgutter',
+    'junegunn/fzf',
+    -- 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+    'ap/vim-buftabline',
+    'leafgarland/typescript-vim',
+    'pangloss/vim-javascript',
+    'github/copilot.vim',
 })
+
+-- Language Server Protocol
+require'lspconfig'.tsserver.setup{}
 
 vim.api.nvim_exec([[
 " NERDTREE
