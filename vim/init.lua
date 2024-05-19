@@ -29,3 +29,48 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
 })
+
+vim.api.nvim_exec([[
+" NERDTREE
+  " OPTIONS
+  " Close nerd tree on file open
+      let NERDTreeQuitOnOpen = 1
+  " Delete buffer if file is deleted with NERDTree
+      let NERDTreeAutoDeleteBuffer = 1
+  " MAPPING
+      nnoremap <Leader>nf :NERDTreeToggle<Enter>
+      nnoremap <silent> <Leader>nv :NERDTreeFind<Enter>
+
+
+" FZF
+  " MAPPING
+      nnoremap <Leader>ff :FZF<Enter>
+      nnoremap <Leader>fb :Buffers<Enter>
+      nnoremap <Leader>fh :History<Enter>
+      nnoremap <Leader>fc :Commands
+      nnoremap <Leader>fm :Maps
+
+" GITGUTTER
+  " disable default keybindings
+      let g:gitgutter_map_keys=0
+  " MAPPING
+  " wanted default mappings
+      nmap ]c <Plug>(GitGutterNextHunk)
+      nmap [c <Plug>(GitGutterPrevHunk)
+  " git hunk preview
+      nmap <Leader>gp <Plug>(GitGutterPreviewHunk)
+  " git hunk stage
+      nmap <Leader>gs <Plug>(GitGutterStageHunk)
+  " git hunk undo
+      nmap <Leader>gu <Plug>(GitGutterUndoHunk)
+  " git highlight
+      nmap <Plug>(GitGutterLineHightlightsToggle) :GitGutterLineHighlightsToggle<CR>
+      nmap <Leader>gh <Plug>(GitGutterLineHightlightsToggle)
+
+  " unwanted default mappings
+      nmap \hu nop
+
+" VIM FUGITIVE
+  " git blame
+      nmap <Leader>gb :Git blame<CR>
+]], false)
