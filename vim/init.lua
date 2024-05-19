@@ -52,6 +52,11 @@ require('lazy').setup({
   -- visual changes
   'airblade/vim-gitgutter',
   'ap/vim-buftabline',
+
+  -- themes
+  {'neanias/everforest-nvim', background = 'hard'},
+  'rebelot/kanagawa.nvim',
+  'rmehri01/onenord.nvim',
 })
 
 -- Language Server Protocol
@@ -101,3 +106,6 @@ vim.api.nvim_exec([[
   " git blame
       nmap <Leader>gb :Git blame<CR>
 ]], false)
+-- Set colorscheme
+
+vim.cmd [[colorscheme everforest]]
