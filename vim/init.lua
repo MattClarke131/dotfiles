@@ -65,6 +65,9 @@ require('lazy').setup({
 -- Language Server Protocol
 require'lspconfig'.tsserver.setup{}
 
+-- Leader
+vim.g.mapleader = ' '
+
 -- Plugin Keybindings
 -- Nerdtree
 -- Options
@@ -124,4 +127,46 @@ vim.keymap.set('n', '<Leader>gh', ':GitGutterLineHighlightsToggle<Enter>', { nor
 -- Enable buftabline numbers
 vim.g.buftabline_numbers = 1
 
+-- Keybindings
+-- unmap EX mode
+vim.keymap.set('n', 'Q', '<nop>', { noremap = true})
+-- map 'kj' to esc. `^ is to keep cursor in it's position
+vim.keymap.set('i', 'kj', '<esc>`^', { noremap = true})
+-- map <Leader>s to esc and save.
+vim.keymap.set('n', '<Leader>s', ':w<Enter>', { noremap = true})
+-- map ';lkj' to save and quit.
+vim.keymap.set('i', '<Leader>;lkj', '<esc>:wq<Enter>', { noremap = true})
+vim.keymap.set('n', '<Leader>;lkj', ':q<Enter>', { noremap = true})
+-- move normally between wrapped lines
+vim.keymap.set('n', 'j', 'gj', { noremap = true})
+vim.keymap.set('n', 'k', 'gk', { noremap = true})
+-- move to the end of the line
+vim.keymap.set('n', 'L', '$', { noremap = true})
+-- move to the beginning of the line
+vim.keymap.set('n', 'H', '^', { noremap = true})
+-- toggle paste mode
+vim.keymap.set('n', '<Leader>tp', ':set paste!<Enter>', { noremap = true})
+-- switch ; and :
+-- turns out the default is useful
+-- vim.keymap.set('n', ';', ':', { noremap = true})
+
+-- Navigation
+-- Quick buffer navigation
+vim.keymap.set('n', '<Leader>l', ':bnext<Enter>', { noremap = true})
+vim.keymap.set('n', '<Leader>h', ':bprev<Enter>', { noremap = true})
+vim.keymap.set('n', '<Leader>j', ':e<Space>', { noremap = true})
+vim.keymap.set('n', '<Leader>k', ':bd<Enter>', { noremap = true})
+-- keeps lines above and below when scrolling
+vim.opt.scrolloff = 20
+-- use mouse for navigation
+vim.opt.mouse = 'a'
+
+-- Language specific keybindings
+-- Insert debugger
+-- JS
+vim.keymap.set('n', '<Leader>qd', 'odebugger;<esc>', { noremap = true})
+vim.keymap.set('n', '<Leader>qD', 'Odebugger;<esc>', { noremap = true})
+
+
+-- Themes
 vim.cmd [[colorscheme everforest]]

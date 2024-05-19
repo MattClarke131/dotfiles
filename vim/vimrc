@@ -2,46 +2,9 @@
   set directory=$HOME/.vim/swapfiles//
   set undodir=$HOME/.vim/undofiles//
 
-" LEADER
-" Needs to be defined before references to it?
-  let mapleader=" "
-
-" MAPPING
-  " unmap EX mode
-     nmap Q <nop>
-  " map 'kj' to esc. `^ is to keep cursor in it's position
-      inoremap kj <esc>`^
-  " map <Leader>s to esc and save.
-      nnoremap <Leader>s :w<CR>
-  " map ';lkj' to save and quit.
-      inoremap <Leader>;lkj <esc>:wq<CR>
-      nnoremap <Leader>;lkj :q<CR>
-  " move normally between wrapped lines
-      nmap j gj
-      nmap k gk
-  " begin / end line map
-      nmap H ^
-      nmap L $
-  " togglepaste
-      set pastetoggle=<Leader>tp
-  " Switch ; and : mappin in normal mode
-      " nnoremap ; :
-      " nnoremap : ;
-
 " LANGUAGE SPECIFIC
   " JS
   autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 expandtab
-
-" Insert Debugger
-  " php below
-    autocmd Filetype php nnoremap <buffer> <Leader>qd oDebug_Psysh::break(get_defined_vars());<esc>
-  " php above
-    autocmd Filetype php nnoremap <buffer> <Leader>qD ODebug_Psysh::break(get_defined_vars());<esc>
-  " javascript below
-    autocmd Filetype javascript nnoremap <buffer> <Leader>qd odebugger;<esc>
-  " javascript above
-    autocmd Filetype javascript nnoremap <buffer> <Leader>qD Odebugger;<esc>
-
 
 " BEHAVIOR
   " Controls how quickly vim write a swp file (among other things)
@@ -56,17 +19,6 @@
     set undofile
     set undolevels=10000
 
-
-" NAVIGATION
-  " Quick buffer navigation
-    nnoremap <Leader>l :bnext<CR>
-    nnoremap <Leader>h :bprev<CR>
-    nnoremap <Leader>j :e<Space>
-    nnoremap <Leader>k :bd<CR>
-  " keeps lines above and below when scrolling
-      set scrolloff=20
-  " use mouse for navigation
-      set mouse=a
 
 " DISPLAY
   " display command always
