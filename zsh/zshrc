@@ -37,6 +37,10 @@ setopt autopushd                # cd acts like pushd
 setopt autocd
 HYPHEN_INSENSITIVE=true
 COMPLETION_WAITING_DOTS=true
+# Prevent CTRL+D from logging out immediately
+# Waits 1 second for the second CTRL+D
+# If you want to log out immediately, just press CTRL+D twice
+export IGNOREEOF=1
 
 # COLORS
 export LESS_TERMCAP_mb=$'\e[1;32m'
