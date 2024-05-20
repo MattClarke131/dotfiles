@@ -14,7 +14,7 @@ DOTFILES_ROOT=$(pwd -P)
 # create subdirectory for current time this script is run
 BACKUP_DOTFILES=$DOTFILES_ROOT/backup-dotfiles/$(date +%G-%m-%d_%H-%M-%S)
 mkdir -p "$BACKUP_DOTFILES"
-mkdir "$BACKUP_DOTFILES"/vim
+mkdir "$BACKUP_DOTFILES"/nvim
 mkdir "$BACKUP_DOTFILES"/zsh
 mkdir "$BACKUP_DOTFILES"/git
 
@@ -53,8 +53,6 @@ create_backup_file () {
 
 # Make .config directory if it doesn't exist
 [ -d "$HOME"/.config ] || mkdir "$HOME"/.config
-# Make .config/nvim directory if it doesn't exist
-[ -d "$HOME"/.config/nvim ] || mkdir "$HOME"/.config/nvim
 
 # Make .tmux/plugins directory if it doesn't exist
 [ -d "$HOME"/.tmux/plugins ] || mkdir -p "$HOME"/.tmux/plugins
@@ -65,8 +63,10 @@ create_backup_file () {
 echo "################################################################################"
 echo "Creating symlinks for dot files"
 echo "--------------------------------------------------------------------------------"
-install_dotfile "$DOTFILES_ROOT"/vim/vimrc "$HOME"/.vimrc "$BACKUP_DOTFILES"/vim/vimrc
-install_dotfile "$DOTFILES_ROOT"/vim/init.lua "$HOME"/.config/nvim "$BACKUP_DOTFILES"/vim/init.lua
+#install_dotfile "$DOTFILES_ROOT"/vim/vimrc "$HOME"/.vimrc "$BACKUP_DOTFILES"/vim/vimrc
+#install_dotfile "$DOTFILES_ROOT"/vim/init.lua "$HOME"/.config/nvim "$BACKUP_DOTFILES"/vim/init.lua
+#install_dotfile "$DOTFILES_ROOT"/nvim/ "$HOME"/.config/nvim/ "$BACKUP_DOTFILES"/nvim/
+ln -sfv "$DOTFILES_ROOT"/nvim/ "$HOME"/.config/nvim
 install_dotfile "$DOTFILES_ROOT"/zsh/zshrc "$HOME"/.zshrc "$BACKUP_DOTFILES"/zsh/zshrc
 install_dotfile "$DOTFILES_ROOT"/zsh/p10k.zsh "$HOME"/.p10k.zsh "$BACKUP_DOTFILES"/zsh/p10k.zsh
 install_dotfile "$DOTFILES_ROOT"/tmux.conf "$HOME"/.tmux.conf "$BACKUP_DOTFILES"/tmux.conf
