@@ -13,6 +13,7 @@ end
 -- Nvim tree
 vim.keymap.set('n', '<Leader>nf', ':NvimTreeToggle<Enter>', { noremap = true })
 
+
 -- Telescope
 local builtin = require('telescope.builtin')
 -- Find files
@@ -96,6 +97,5 @@ vim.keymap.set('n', '<Leader>k', ':bd<Enter>', { noremap = true })
 -- JS Insert debugger
 vim.keymap.set('n', '<Leader>qd', 'odebugger;<esc>', { noremap = true })
 vim.keymap.set('n', '<Leader>qD', 'Odebugger;<esc>', { noremap = true })
-
 
 return { on_attach  = on_attach }

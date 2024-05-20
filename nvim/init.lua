@@ -152,60 +152,6 @@ require('lazy').setup({
 -- Language Server Protocol
 require'lspconfig'.tsserver.setup{}
 
--- Plugin Keybindings
--- Nerdtree
-
--- Mapping
-vim.keymap.set('n', '<Leader>nf', ':NERDTreeToggle<Enter>', { noremap = true })
-vim.keymap.set('n', '<Leader>nv', ':NERDTreeFind<Enter>', { noremap = true, silent = true })
-
-
--- Telescope
--- Mapping
-local builtin = require('telescope.builtin')
--- Find files
-vim.keymap.set('n', '<leader>ff', builtin.find_files)
--- Find buffers
-vim.keymap.set('n', '<Leader>fb', builtin.buffers)
--- Find lines with rg
-vim.keymap.set('n', '<Leader>fr', builtin.live_grep)
--- Find commands
-vim.keymap.set('n', '<Leader>fc', builtin.command_history)
--- Find vim options
-vim.keymap.set('n', '<Leader>fv', builtin.vim_options)
--- List registers
-vim.keymap.set('n', '<Leader>fp', builtin.registers)
--- List keymaps
-vim.keymap.set('n', '<Leader>fm', builtin.keymaps)
--- Find commits
-vim.keymap.set('n', '<Leader>fcc', builtin.git_commits)
--- Find commits only for this buffer
-vim.keymap.set('n', '<Leader>fcb', builtin.git_commits)
--- rp string under cursor or current selection
-vim.keymap.set('n', '<Leader>fs', builtin.git_commits)
-
-
--- Gitgutter
--- Options
--- Disable default keybindings
-vim.g.gitgutter_map_keys = 0
--- Mapping
--- next hunk
-vim.keymap.set('n', '<Leader>gn', '<Plug>(GitGutterNextHunk)', { noremap = true })
--- previous hunk
-vim.keymap.set('n', '<Leader>gp', '<Plug>(GitGutterPrevHunk)', { noremap = true })
--- preview hunk
-vim.keymap.set('n', '<Leader>gP', '<Plug>(GitGutterPreviewHunk)', { noremap = true })
--- stage hunk
-vim.keymap.set('n', '<Leader>gs', '<Plug>(GitGutterStageHunk)', { noremap = true })
--- undo hunk
-vim.keymap.set('n', '<Leader>gu', '<Plug>(GitGutterUndoHunk)', { noremap = true })
--- toggle line highlights
-vim.keymap.set('n', '<Leader>gh', '<Plug>(GitGutterLineHighlightsToggle)', { noremap = true })
--- next/previous hunk
-vim.keymap.set('n', ']]', ':silent! GitGutterNextHunk<Enter>', { noremap = true, silent = true })
-vim.keymap.set('n', '[[', ':silent! GitGutterPrevHunk<Enter>', { noremap = true, silent = true })
-
 
 -- Buftabline
 -- Enable buftabline numbers
@@ -216,46 +162,6 @@ vim.g.buftabline_numbers = 1
 vim.opt.wildmenu = true
 vim.opt.wildmode = 'list:longest,full'
 vim.opt.wildignore = '*.DS_STORE,*.db,node_modules/**,*.jpg,*.png,*.gif'
-
--- Keybindings
--- unmap EX mode
-vim.keymap.set('n', 'Q', '<nop>', { noremap = true })
--- map 'kj' to esc. `^ is to keep cursor in it's position
-vim.keymap.set('i', 'kj', '<esc>`^', { noremap = true })
--- map <Leader>s to esc and save.
-vim.keymap.set('n', '<Leader>s', ':w<Enter>', { noremap = true })
--- map ';lkj' to save and quit.
-vim.keymap.set('i', '<Leader>;lkj', '<esc>:wq<Enter>', { noremap = true })
-vim.keymap.set('n', '<Leader>;lkj', ':q<Enter>', { noremap = true })
--- move normally between wrapped lines
-vim.keymap.set('n', 'j', 'gj', { noremap = true })
-vim.keymap.set('n', 'k', 'gk', { noremap = true })
--- move to the end of the line
-vim.keymap.set('n', 'L', '$', { noremap = true })
--- move to the beginning of the line
-vim.keymap.set('n', 'H', '^', { noremap = true })
--- toggle paste mode
-vim.keymap.set('n', '<Leader>tp', ':set paste!<Enter>', { noremap = true })
--- switch ; and :
--- turns out the default is useful
--- vim.keymap.set('n', ';', ':', { noremap = true })
-
--- Navigation
--- Quick buffer navigation
-vim.keymap.set('n', '<Leader>l', ':bnext<Enter>', { noremap = true })
-vim.keymap.set('n', '<Leader>h', ':bprev<Enter>', { noremap = true })
-vim.keymap.set('n', '<Leader>j', ':e<Space>', { noremap = true })
-vim.keymap.set('n', '<Leader>k', ':bd<Enter>', { noremap = true })
--- keeps lines above and below when scrolling
-vim.opt.scrolloff = 20
--- use mouse for navigation
-vim.opt.mouse = 'a'
-
--- Language specific keybindings
--- Insert debugger
--- JS
-vim.keymap.set('n', '<Leader>qd', 'odebugger;<esc>', { noremap = true })
-vim.keymap.set('n', '<Leader>qD', 'Odebugger;<esc>', { noremap = true })
 
 -- Behavior
 -- Options
@@ -274,6 +180,12 @@ vim.opt.autoread = true
 vim.opt.undofile = true
 -- controls how quickly vim writes a swp file (among other things)
 vim.opt.updatetime = 100
+
+-- Navigation
+-- keeps lines above and below when scrolling
+vim.opt.scrolloff = 20
+-- use mouse for navigation
+vim.opt.mouse = 'a'
 
 -- Search
 -- ignore case when searching, except when using capital letters
@@ -325,3 +237,5 @@ vim.opt.spelllang = 'en-us'
 
 -- Set colorscheme
 vim.cmd [[colorscheme everforest]]
+
+require('core.keymaps')
