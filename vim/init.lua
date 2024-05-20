@@ -33,6 +33,7 @@ require('lazy').setup({
   -- tools
   'scrooloose/nerdtree',
   'junegunn/fzf',
+  'junegunn/fzf.vim',
 
   -- visual changes
   'airblade/vim-gitgutter',
