@@ -1,0 +1,21 @@
+require('telescope').setup {
+  extensions = {
+    -- to try
+    -- https://github.com/dhruvmanila/browser-bookmarks.nvim
+    -- clipboard manager
+    -- https://github.com/AckslD/nvim-neoclip.lua
+    -- file browsers
+    -- https://github.com/salorak/whaler.nvim
+    -- https://github.com/nvim-telescope/telescope-file-browser.nvim
+    -- menu creator
+    -- https://github.com/octarect/telescope-menu.nvim
+    -- undo tree explorer
+    -- https://github.com/debugloop/telescope-undo.nvim
+  },
+  pickers = {
+    find_files = {
+      -- `hidden = true` will still show the inside of `.git/` as it's not `.gitignore`d.
+      find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*", "--glob", "!**/node_modules/*", "--glob", "**/dotfiles/submodules/*" },
+    }
+  },
+}
