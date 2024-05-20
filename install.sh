@@ -66,7 +66,7 @@ echo "--------------------------------------------------------------------------
 #install_dotfile "$DOTFILES_ROOT"/vim/vimrc "$HOME"/.vimrc "$BACKUP_DOTFILES"/vim/vimrc
 #install_dotfile "$DOTFILES_ROOT"/vim/init.lua "$HOME"/.config/nvim "$BACKUP_DOTFILES"/vim/init.lua
 #install_dotfile "$DOTFILES_ROOT"/nvim/ "$HOME"/.config/nvim/ "$BACKUP_DOTFILES"/nvim/
-ln -sfv "$DOTFILES_ROOT"/nvim $HOME/.config/
+ln -sfvn "$DOTFILES_ROOT"/nvim $HOME/.config/nvim
 install_dotfile "$DOTFILES_ROOT"/zsh/zshrc "$HOME"/.zshrc "$BACKUP_DOTFILES"/zsh/zshrc
 install_dotfile "$DOTFILES_ROOT"/zsh/p10k.zsh "$HOME"/.p10k.zsh "$BACKUP_DOTFILES"/zsh/p10k.zsh
 install_dotfile "$DOTFILES_ROOT"/tmux.conf "$HOME"/.tmux.conf "$BACKUP_DOTFILES"/tmux.conf
