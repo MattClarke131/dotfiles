@@ -121,8 +121,8 @@ vim.g.NERDTreeQuitOnOpen = 1
 vim.g.NERDTreeAutoDeleteBuffer = 1
 
 -- Mapping
-vim.keymap.set('n', '<Leader>nf', ':NERDTreeToggle<Enter>', { noremap = true})
-vim.keymap.set('n', '<Leader>nv', ':NERDTreeFind<Enter>', { noremap = true, silent = true})
+vim.keymap.set('n', '<Leader>nf', ':NERDTreeToggle<Enter>', { noremap = true })
+vim.keymap.set('n', '<Leader>nv', ':NERDTreeFind<Enter>', { noremap = true, silent = true })
 
 
 -- FZF
@@ -131,21 +131,21 @@ vim.keymap.set('n', '<Leader>nv', ':NERDTreeFind<Enter>', { noremap = true, sile
 vim.g.fzf_command_prefix = 'rg --files --hidden --follow --glob "!.git/* --glob "!node_modules/*" --glob "!~/dotfiles/submodules/*"'
 -- Mapping
 -- Find files
-vim.keymap.set('n', '<Leader>ff', ':FZF<Enter>', { noremap = true})
+vim.keymap.set('n', '<Leader>ff', ':FZF<Enter>', { noremap = true })
 -- Find buffers
-vim.keymap.set('n', '<Leader>fb', ':Buffers<Enter>', { noremap = true})
+vim.keymap.set('n', '<Leader>fb', ':Buffers<Enter>', { noremap = true })
 -- Find history
-vim.keymap.set('n', '<Leader>fh', ':History<Enter>', { noremap = true})
+vim.keymap.set('n', '<Leader>fh', ':History<Enter>', { noremap = true })
 -- Find commands
-vim.keymap.set('n', '<Leader>fc', ':Commands<Enter>', { noremap = true})
+vim.keymap.set('n', '<Leader>fc', ':Commands<Enter>', { noremap = true })
 -- Find maps
-vim.keymap.set('n', '<Leader>fm', ':Maps<Enter>', { noremap = true})
+vim.keymap.set('n', '<Leader>fm', ':Maps<Enter>', { noremap = true })
 -- Find lines
-vim.keymap.set('n', '<Leader>fl', ':Lines<Enter>', { noremap = true})
+vim.keymap.set('n', '<Leader>fl', ':Lines<Enter>', { noremap = true })
 -- Find commits
-vim.keymap.set('n', '<Leader>fg', ':Commits<Enter>', { noremap = true})
+vim.keymap.set('n', '<Leader>fg', ':Commits<Enter>', { noremap = true })
 -- Find colors
-vim.keymap.set('n', '<Leader>fs', ':Colors<Enter>', { noremap = true})
+vim.keymap.set('n', '<Leader>fs', ':Colors<Enter>', { noremap = true })
 
 
 -- Gitgutter
@@ -182,33 +182,33 @@ vim.opt.wildignore = '*.DS_STORE,*.db,node_modules/**,*.jpg,*.png,*.gif'
 
 -- Keybindings
 -- unmap EX mode
-vim.keymap.set('n', 'Q', '<nop>', { noremap = true})
+vim.keymap.set('n', 'Q', '<nop>', { noremap = true })
 -- map 'kj' to esc. `^ is to keep cursor in it's position
-vim.keymap.set('i', 'kj', '<esc>`^', { noremap = true})
+vim.keymap.set('i', 'kj', '<esc>`^', { noremap = true })
 -- map <Leader>s to esc and save.
-vim.keymap.set('n', '<Leader>s', ':w<Enter>', { noremap = true})
+vim.keymap.set('n', '<Leader>s', ':w<Enter>', { noremap = true })
 -- map ';lkj' to save and quit.
-vim.keymap.set('i', '<Leader>;lkj', '<esc>:wq<Enter>', { noremap = true})
-vim.keymap.set('n', '<Leader>;lkj', ':q<Enter>', { noremap = true})
+vim.keymap.set('i', '<Leader>;lkj', '<esc>:wq<Enter>', { noremap = true })
+vim.keymap.set('n', '<Leader>;lkj', ':q<Enter>', { noremap = true })
 -- move normally between wrapped lines
-vim.keymap.set('n', 'j', 'gj', { noremap = true})
-vim.keymap.set('n', 'k', 'gk', { noremap = true})
+vim.keymap.set('n', 'j', 'gj', { noremap = true })
+vim.keymap.set('n', 'k', 'gk', { noremap = true })
 -- move to the end of the line
-vim.keymap.set('n', 'L', '$', { noremap = true})
+vim.keymap.set('n', 'L', '$', { noremap = true })
 -- move to the beginning of the line
-vim.keymap.set('n', 'H', '^', { noremap = true})
+vim.keymap.set('n', 'H', '^', { noremap = true })
 -- toggle paste mode
-vim.keymap.set('n', '<Leader>tp', ':set paste!<Enter>', { noremap = true})
+vim.keymap.set('n', '<Leader>tp', ':set paste!<Enter>', { noremap = true })
 -- switch ; and :
 -- turns out the default is useful
--- vim.keymap.set('n', ';', ':', { noremap = true})
+-- vim.keymap.set('n', ';', ':', { noremap = true })
 
 -- Navigation
 -- Quick buffer navigation
-vim.keymap.set('n', '<Leader>l', ':bnext<Enter>', { noremap = true})
-vim.keymap.set('n', '<Leader>h', ':bprev<Enter>', { noremap = true})
-vim.keymap.set('n', '<Leader>j', ':e<Space>', { noremap = true})
-vim.keymap.set('n', '<Leader>k', ':bd<Enter>', { noremap = true})
+vim.keymap.set('n', '<Leader>l', ':bnext<Enter>', { noremap = true })
+vim.keymap.set('n', '<Leader>h', ':bprev<Enter>', { noremap = true })
+vim.keymap.set('n', '<Leader>j', ':e<Space>', { noremap = true })
+vim.keymap.set('n', '<Leader>k', ':bd<Enter>', { noremap = true })
 -- keeps lines above and below when scrolling
 vim.opt.scrolloff = 20
 -- use mouse for navigation
@@ -217,8 +217,8 @@ vim.opt.mouse = 'a'
 -- Language specific keybindings
 -- Insert debugger
 -- JS
-vim.keymap.set('n', '<Leader>qd', 'odebugger;<esc>', { noremap = true})
-vim.keymap.set('n', '<Leader>qD', 'Odebugger;<esc>', { noremap = true})
+vim.keymap.set('n', '<Leader>qd', 'odebugger;<esc>', { noremap = true })
+vim.keymap.set('n', '<Leader>qD', 'Odebugger;<esc>', { noremap = true })
 
 -- Behavior
 -- Options
@@ -247,7 +247,7 @@ vim.opt.incsearch = true
 -- highlight matches
 vim.opt.hlsearch = true
 -- unhighlight matches on pressing enter
-vim.keymap.set('n', '<CR>', ':nohls<CR><CR>', { noremap = true, silent = true})
+vim.keymap.set('n', '<CR>', ':nohls<CR><CR>', { noremap = true, silent = true })
 
 -- Display
 -- Themes
