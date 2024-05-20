@@ -31,7 +31,14 @@ require('lazy').setup({
   -- 'pangloss/vim-javascript',
 
   -- tools
-  'scrooloose/nerdtree',
+  {'preservim/nerdtree',
+    config = function()
+      -- Close nerd tree on file open
+      vim.g.NERDTreeQuitOnOpen = 1
+      -- Delete buffer if file is deleted with NERDTree
+      vim.g.NERDTreeAutoDeleteBuffer = 1
+    end
+  },
   {'nvim-telescope/telescope.nvim',
     dependencies = { 
       'nvim-lua/plenary.nvim',
@@ -147,12 +154,6 @@ vim.g.mapleader = ' '
 
 -- Plugin Keybindings
 -- Nerdtree
--- Options
--- Close nerd tree on file open
-vim.g.NERDTreeQuitOnOpen = 1
-
--- Delete buffer if file is deleted with NERDTree
-vim.g.NERDTreeAutoDeleteBuffer = 1
 
 -- Mapping
 vim.keymap.set('n', '<Leader>nf', ':NERDTreeToggle<Enter>', { noremap = true })
