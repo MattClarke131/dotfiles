@@ -38,6 +38,9 @@ require('lazy').setup({
   -- visual changes
   'airblade/vim-gitgutter',
   'ap/vim-buftabline',
+  {'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+  },
 
   -- themes
   {'neanias/everforest-nvim', background = 'hard'},
