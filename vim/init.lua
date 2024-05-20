@@ -101,17 +101,21 @@ vim.keymap.set('n', '<Leader>fs', ':Colors<Enter>', { noremap = true})
 vim.g.gitgutter_map_keys = 0
 -- Mapping
 -- next hunk
-vim.keymap.set('n', '<Leader>gn', ':GitGutterNextHunk<Enter>', { noremap = true})
+vim.keymap.set('n', '<Leader>gn', '<Plug>(GitGutterNextHunk)', { noremap = true })
 -- previous hunk
-vim.keymap.set('n', '<Leader>gp', ':GitGutterPrevHunk<Enter>', { noremap = true})
+vim.keymap.set('n', '<Leader>gp', '<Plug>(GitGutterPrevHunk)', { noremap = true })
 -- preview hunk
-vim.keymap.set('n', '<Leader>gP', ':GitGutterPreviewHunk<Enter>', { noremap = true})
+vim.keymap.set('n', '<Leader>gP', '<Plug>(GitGutterPreviewHunk)', { noremap = true })
 -- stage hunk
-vim.keymap.set('n', '<Leader>gs', ':GitGutterStageHunk<Enter>', { noremap = true})
+vim.keymap.set('n', '<Leader>gs', '<Plug>(GitGutterStageHunk)', { noremap = true })
 -- undo hunk
-vim.keymap.set('n', '<Leader>gu', ':GitGutterUndoHunk<Enter>', { noremap = true})
+vim.keymap.set('n', '<Leader>gu', '<Plug>(GitGutterUndoHunk)', { noremap = true })
 -- toggle line highlights
-vim.keymap.set('n', '<Leader>gh', ':GitGutterLineHighlightsToggle<Enter>', { noremap = true})
+vim.keymap.set('n', '<Leader>gh', '<Plug>(GitGutterLineHighlightsToggle)', { noremap = true })
+-- next/previous hunk
+vim.keymap.set('n', ']]', ':silent! GitGutterNextHunk<Enter>', { noremap = true, silent = true })
+vim.keymap.set('n', '[[', ':silent! GitGutterPrevHunk<Enter>', { noremap = true, silent = true })
+
 
 -- Buftabline
 -- Enable buftabline numbers
