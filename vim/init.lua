@@ -71,7 +71,19 @@ require'lualine'.setup{
   sections = {
     lualine_a = {'mode'},
     lualine_b = {'diff'},
-    lualine_c = {'branch',},
+    lualine_c = {
+      'branch',
+      {
+        function()  -- Custom component for macro recording
+          local recording_register = vim.fn.reg_recording()
+          if recording_register ~= '' then
+            return 'Recording @' .. recording_register
+          end
+          return ''
+        end,
+        color = { fg = '#ff9e64', gui = 'bold' }, -- Optional: color customization
+      }
+  },
     lualine_x = {'searchcount', 'progress'},
     lualine_y = {'location', 'filename'},
     -- find something custom to put here
@@ -256,6 +268,9 @@ vim.opt.syntax = 'on'
 vim.api.nvim_exec([[
 autocmd TextYankPost * silent! lua vim.highlight.on_yank {higroup='Visual', timeout=1000}
 ]], false)
+-- Hide cmd line
+vim.opt.cmdheight = 0
+
 
 -- Formatting
 -- auto indent
