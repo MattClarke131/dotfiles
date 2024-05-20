@@ -32,8 +32,32 @@ require('lazy').setup({
 
   -- tools
   'scrooloose/nerdtree',
-  'junegunn/fzf',
-  'junegunn/fzf.vim',
+  {'nvim-telescope/telescope.nvim',
+    dependencies = { 
+      'nvim-lua/plenary.nvim',
+      'BurntSushi/ripgrep',
+      'nvim-treesitter/nvim-treesitter',
+    },
+    extensions = {
+      -- to try
+      -- https://github.com/dhruvmanila/browser-bookmarks.nvim
+      -- clipboard manager
+      -- https://github.com/AckslD/nvim-neoclip.lua
+      -- file browsers
+      -- https://github.com/salorak/whaler.nvim
+      -- https://github.com/nvim-telescope/telescope-file-browser.nvim
+      -- menu creator
+      -- https://github.com/octarect/telescope-menu.nvim
+      -- undo tree explorer
+      -- https://github.com/debugloop/telescope-undo.nvim
+    },
+    pickers = {
+      find_files = {
+        -- `hidden = true` will still show the inside of `.git/` as it's not `.gitignore`d.
+        find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*", "--glob", "!**/node_modules/*" }
+      }
+    },
+  },
 
   -- visual changes
   {'airblade/vim-gitgutter',
@@ -64,10 +88,7 @@ require('lazy').setup({
   'rmehri01/onenord.nvim',
 
   -- to try
-  -- 'nvim-telescope/telescope.nvim',
   -- 'tpope/vim-fugitive',
-  -- 'ibhagwan/fzf-lua'
-  --
 })
 
 -- Language Server Protocol
@@ -141,27 +162,29 @@ vim.keymap.set('n', '<Leader>nf', ':NERDTreeToggle<Enter>', { noremap = true })
 vim.keymap.set('n', '<Leader>nv', ':NERDTreeFind<Enter>', { noremap = true, silent = true })
 
 
--- FZF
--- Options
--- Use ripgrep
-vim.g.fzf_command_prefix = 'rg --files --hidden --follow --glob "!.git/* --glob "!node_modules/*" --glob "!~/dotfiles/submodules/*"'
+-- Telescope
 -- Mapping
+local builtin = require('telescope.builtin')
 -- Find files
-vim.keymap.set('n', '<Leader>ff', ':FZF<Enter>', { noremap = true })
+vim.keymap.set('n', '<leader>ff', builtin.find_files)
 -- Find buffers
-vim.keymap.set('n', '<Leader>fb', ':Buffers<Enter>', { noremap = true })
--- Find history
-vim.keymap.set('n', '<Leader>fh', ':History<Enter>', { noremap = true })
+vim.keymap.set('n', '<Leader>fb', builtin.buffers)
+-- Find lines with rg
+vim.keymap.set('n', '<Leader>fr', builtin.live_grep)
 -- Find commands
-vim.keymap.set('n', '<Leader>fc', ':Commands<Enter>', { noremap = true })
--- Find maps
-vim.keymap.set('n', '<Leader>fm', ':Maps<Enter>', { noremap = true })
--- Find lines
-vim.keymap.set('n', '<Leader>fl', ':Lines<Enter>', { noremap = true })
+vim.keymap.set('n', '<Leader>fc', builtin.command_history)
+-- Find vim options
+vim.keymap.set('n', '<Leader>fv', builtin.vim_options)
+-- List registers
+vim.keymap.set('n', '<Leader>fp', builtin.registers)
+-- List keymaps
+vim.keymap.set('n', '<Leader>fm', builtin.keymaps)
 -- Find commits
-vim.keymap.set('n', '<Leader>fg', ':Commits<Enter>', { noremap = true })
--- Find colors
-vim.keymap.set('n', '<Leader>fs', ':Colors<Enter>', { noremap = true })
+vim.keymap.set('n', '<Leader>fcc', builtin.git_commits)
+-- Find commits only for this buffer
+vim.keymap.set('n', '<Leader>fcb', builtin.git_commits)
+-- rp string under cursor or current selection
+vim.keymap.set('n', '<Leader>fs', builtin.git_commits)
 
 
 -- Gitgutter
