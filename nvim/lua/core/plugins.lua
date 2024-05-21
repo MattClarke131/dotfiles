@@ -56,10 +56,6 @@ require('lazy').setup({
   -- https://github.com/nvim-tree/nvim-tree.lua
 })
 
--- Language Server Protocol
--- unsure if needed
-require'lspconfig'.tsserver.setup{}
-
 require('core.plugin_config.lualine')
 require('core.plugin_config.nvim-treesitter')
 require('core.plugin_config.telescope')

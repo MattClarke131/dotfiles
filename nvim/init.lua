@@ -3,6 +3,7 @@ vim.g.mapleader = ' '
 
 require('core.plugins')
 require('core.keymaps')
+require('core.language-servers')
 
 -- Buftabline
 -- Enable buftabline numbers
