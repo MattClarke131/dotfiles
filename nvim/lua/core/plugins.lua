@@ -14,15 +14,20 @@ vim.opt.rtp:prepend(lazypath)
 
 --Plugins
 require('lazy').setup({
-    -- language processing and syntax
-  'neovim/nvim-lspconfig',
+-- language processing and syntax
   'github/copilot.vim',
+  --parser generator for syntax highlighting
   'nvim-treesitter/nvim-treesitter',
+  -- package manager for LSPs, DAPs, linters, and formatters
+  'williamboman/mason.nvim',
+  'williamboman/mason-lspconfig.nvim',
+  -- language server protocol config
+  'neovim/nvim-lspconfig',
   -- possibly unnecessary with treesitter
   -- 'leafgarland/typescript-vim',
   -- 'pangloss/vim-javascript',
 
-  -- tools
+-- tools
   'nvim-telescope/telescope.nvim',
   {"nvim-tree/nvim-tree.lua",
     version = "*",
@@ -35,7 +40,7 @@ require('lazy').setup({
     end,
   },
 
-  -- visual changes
+-- visual changes
   {'nvim-lualine/lualine.nvim',
   dependencies = {
     'nvim-lua/plenary.nvim',
@@ -46,13 +51,13 @@ require('lazy').setup({
   'airblade/vim-gitgutter',
   'ap/vim-buftabline',
 
-  -- themes
+-- themes
   {'neanias/everforest-nvim', background = 'hard'},
   'rebelot/kanagawa.nvim',
   'rmehri01/onenord.nvim',
   "ellisonleao/gruvbox.nvim",
 
-  -- to try
+-- to try
   -- 'tpope/vim-fugitive',
   -- file explorer
   -- https://github.com/nvim-tree/nvim-tree.lua

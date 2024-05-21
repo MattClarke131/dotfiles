@@ -10,10 +10,8 @@ local on_attach = function (_, bufnr)
   vim.keymap.set('n', '<Leader>gh', vim.lsp.buf.hover, { buffer = bufnr })
 end
 
-
 -- Nvim tree
 vim.keymap.set('n', '<Leader>nf', ':NvimTreeToggle<Enter>', { noremap = true })
-
 
 -- Telescope
 local builtin = require('telescope.builtin')
