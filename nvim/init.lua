@@ -17,9 +17,9 @@ vim.opt.wildignore = '*.DS_STORE,*.db,node_modules/**,*.jpg,*.png,*.gif'
 -- Behavior
 -- Options
 -- set undo directory
-vim.opt.undodir = '~/.vim/undofiles'
+vim.opt.undodir = vim.fn.expand('~/.vim/undofiles')
 -- set swap directory
-vim.opt.directory = '~/.vim/swapfiles'
+vim.opt.directory = vim.fn.expand('~/.vim/swapfiles')
 
 -- Turn off audio bell, turn on visual bell
 vim.opt.errorbells = false
