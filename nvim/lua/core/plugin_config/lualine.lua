@@ -31,7 +31,7 @@ require('lualine').setup {
       lualine_x = {'searchcount', 'progress'},
       lualine_y = {'location', 'filename'},
       -- find something custom to put here
-      lualine_z = {}
+      lualine_z = { 'g:help_tip' },
       --lualine_a = {'mode'},
       --lualine_b = {'branch'},
       --lualine_c = {'filename'},
