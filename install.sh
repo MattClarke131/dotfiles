@@ -67,6 +67,10 @@ echo "--------------------------------------------------------------------------
 #install_dotfile "$DOTFILES_ROOT"/vim/init.lua "$HOME"/.config/nvim "$BACKUP_DOTFILES"/vim/init.lua
 #install_dotfile "$DOTFILES_ROOT"/nvim/ "$HOME"/.config/nvim/ "$BACKUP_DOTFILES"/nvim/
 ln -sfvn "$DOTFILES_ROOT"/nvim $HOME/.config/nvim
+for d in "$DOTFILES_ROOT"/oh-my-zsh/plugins; do
+    ln -sfvn "$d" "$HOME"/.oh-my-zsh/plugins/
+done
+
 install_dotfile "$DOTFILES_ROOT"/zsh/zshrc "$HOME"/.zshrc "$BACKUP_DOTFILES"/zsh/zshrc
 install_dotfile "$DOTFILES_ROOT"/zsh/p10k.zsh "$HOME"/.p10k.zsh "$BACKUP_DOTFILES"/zsh/p10k.zsh
 install_dotfile "$DOTFILES_ROOT"/tmux.conf "$HOME"/.tmux.conf "$BACKUP_DOTFILES"/tmux.conf
@@ -77,13 +81,11 @@ echo "symlinks created"
 echo "################################################################################"
 
 set +e
-echo "################################################################################"
 echo "sourcing zshrc"
 # shellcheck source=/home/matt/.zshrc
 source "$HOME"/.zshrc
 echo "################################################################################"
 
 
-echo "################################################################################"
 echo "INSTALLATION COMPLETE"
 echo "################################################################################"

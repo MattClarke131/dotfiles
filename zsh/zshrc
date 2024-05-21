@@ -22,7 +22,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # PLUGINS
 plugins=(
   git
-  #zsh-autosuggestions
+  zsh-autosuggestions
   fasd
 )
 source "$ZSH"/oh-my-zsh.sh
