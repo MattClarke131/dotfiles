@@ -10,8 +10,14 @@ local on_attach = function (_, bufnr)
   vim.keymap.set('n', '<Leader>gh', vim.lsp.buf.hover, { buffer = bufnr })
 end
 
+-- help-tips
+-- bind leaderq to function cycleHelpTip in file core/functions/help-tips.la
+vim.keymap.set('n', '<Leader>q', require('core.functions.help-tips').cycleHelpTip)
+
+
 -- Nvim tree
 vim.keymap.set('n', '<Leader>nf', ':NvimTreeToggle<Enter>', { noremap = true })
+
 
 -- Telescope
 local builtin = require('telescope.builtin')

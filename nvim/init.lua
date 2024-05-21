@@ -7,31 +7,10 @@ vim.g.mapleader = ' '
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+require('core.functions.help-tips')
 require('core.plugins')
 require('core.keymaps')
 require('core.language-servers')
 require('core.vim-options')
 
 vim.cmd [[colorscheme everforest]]
-
--- help tips
-local helptips = {
-  'in tree g? for help',
-  'in tree <C-n> create',
-  'gd go to definition',
-  'gr references',
-  'gi implementation',
-  'gh hover',
-  'rn rename',
-  'ca code action',
-  'gc comment',
-  'gcc comment line',
-  'gcu undo comment',
-  'gcap comment paragraph',
-}
-
-math.randomseed(os.time())
-local function getRandomHelpTip()
-  return helptips[math.random(#helptips)]
-end
-vim.g.help_tip = getRandomHelpTip()
