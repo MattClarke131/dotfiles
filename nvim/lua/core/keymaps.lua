@@ -1,7 +1,7 @@
 -- Language server
 -- Keybindings for LSP
 -- bound upon attaching to a buffer
-local on_attach = function (_, bufnr)
+local set_lsp_keymaps = function (_, bufnr)
   vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, { buffer = bufnr })
   vim.keymap.set('n', '<Leader>ca', vim.lsp.buf.code_action, { buffer = bufnr })
 
@@ -120,4 +120,4 @@ vim.keymap.set('n', '<Leader>qd', 'odebugger;<esc>', { noremap = true })
 vim.keymap.set('n', '<Leader>qD', 'Odebugger;<esc>', { noremap = true })
 
 
-return { on_attach  = on_attach }
+return { set_lsp_keymaps  = set_lsp_keymaps, }

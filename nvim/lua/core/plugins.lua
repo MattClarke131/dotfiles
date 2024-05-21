@@ -21,34 +21,24 @@ require('lazy').setup({
   -- package manager for LSPs, DAPs, linters, and formatters
   'williamboman/mason.nvim',
   'williamboman/mason-lspconfig.nvim',
-  -- language server protocol config
   'neovim/nvim-lspconfig',
-  -- possibly unnecessary with treesitter
-  -- 'leafgarland/typescript-vim',
-  -- 'pangloss/vim-javascript',
 
 -- tools
   'nvim-telescope/telescope.nvim',
   {"nvim-tree/nvim-tree.lua",
     version = "*",
-    dependencies = {
-      "nvim-tree/nvim-web-devicons",
-    },
-    lazy = false,
-    config = function()
-      require("nvim-tree").setup {}
-    end,
+    dependencies = { "nvim-tree/nvim-web-devicons" },
   },
   'tpope/vim-commentary',
   'christoomey/vim-tmux-navigator',
 
 -- visual changes
   {'nvim-lualine/lualine.nvim',
-  dependencies = {
-    'nvim-lua/plenary.nvim',
-    'BurntSushi/ripgrep',
-    'nvim-treesitter/nvim-treesitter',
-  },
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'BurntSushi/ripgrep',
+      'nvim-treesitter/nvim-treesitter',
+    },
   },
   'airblade/vim-gitgutter',
   'ap/vim-buftabline',
@@ -69,3 +59,4 @@ require('core.plugin_config.lualine')
 require('core.plugin_config.nvim-treesitter')
 require('core.plugin_config.telescope')
 require('core.plugin_config.gitgutter')
+require('core.plugin_config.nvim-tree')
