@@ -7,3 +7,4 @@
 # Ignore backup dotfiles
 dotfiles_old
 backup-dotfiles
+submodules/*

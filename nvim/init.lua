@@ -85,4 +85,3 @@ vim.opt.tabstop = 2
 vim.opt.expandtab = true
 -- spellchecking
 vim.opt.spelllang = 'en-us'
-

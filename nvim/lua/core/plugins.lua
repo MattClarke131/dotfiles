@@ -31,9 +31,7 @@ require('lazy').setup({
       vim.g.NERDTreeAutoDeleteBuffer = 1
     end
   },
-  {'nvim-telescope/telescope.nvim',
-    dependencies = { 'nvim-lua/plenary.nvim' },
-  },
+  'nvim-telescope/telescope.nvim',
 
   -- visual changes
   {'nvim-lualine/lualine.nvim',
