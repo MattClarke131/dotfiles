@@ -7,6 +7,7 @@
 alias cp='cp -i'
 alias mv='mv -i'
 # alias -='\cd -' # Efforts to correct this have failed
+alias dot="\cd ~/dotfiles"
 alias cddot="\cd ~/dotfiles"
 alias ..='\cd ..; l'
 alias ...='\cd ...; l'
