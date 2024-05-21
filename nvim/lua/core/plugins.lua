@@ -24,13 +24,15 @@ require('lazy').setup({
 
   -- tools
   'nvim-telescope/telescope.nvim',
-  {'preservim/nerdtree',
+  {"nvim-tree/nvim-tree.lua",
+    version = "*",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
+    lazy = false,
     config = function()
-      -- Close nerd tree on file open
-      vim.g.NERDTreeQuitOnOpen = 1
-      -- Delete buffer if file is deleted with NERDTree
-      vim.g.NERDTreeAutoDeleteBuffer = 1
-    end
+      require("nvim-tree").setup {}
+    end,
   },
 
   -- visual changes
