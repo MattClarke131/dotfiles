@@ -40,6 +40,7 @@ require('lazy').setup({
     end,
   },
   'tpope/vim-commentary',
+  'christoomey/vim-tmux-navigator',
 
 -- visual changes
   {'nvim-lualine/lualine.nvim',

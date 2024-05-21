@@ -15,6 +15,14 @@ end
 vim.keymap.set('n', '<Leader>q', require('core.functions.help-tips').cycleHelpTip)
 
 
+-- Vim Tmux Navigator
+vim.keymap.set('n', '<C-h>', ':TmuxNavigateLeft<Enter>', { noremap = true })
+vim.keymap.set('n', '<C-j>', ':TmuxNavigateDown<Enter>', { noremap = true })
+vim.keymap.set('n', '<C-k>', ':TmuxNavigateUp<Enter>', { noremap = true })
+vim.keymap.set('n', '<C-l>', ':TmuxNavigateRight<Enter>', { noremap = true })
+vim.keymap.set('n', '<C-\\>', ':TmuxNavigatePrevious<Enter>', { noremap = true })
+
+
 -- Nvim tree
 vim.keymap.set('n', '<Leader>nf', ':NvimTreeToggle<Enter>', { noremap = true })
 
