@@ -24,6 +24,10 @@ local helptips = {
   'gh hover',
   'rn rename',
   'ca code action',
+  'gc comment',
+  'gcc comment line',
+  'gcu undo comment',
+  'gcap comment paragraph',
 }
 
 math.randomseed(os.time())

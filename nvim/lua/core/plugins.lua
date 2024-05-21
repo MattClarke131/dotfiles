@@ -39,6 +39,7 @@ require('lazy').setup({
       require("nvim-tree").setup {}
     end,
   },
+  'tpope/vim-commentary',
 
 -- visual changes
   {'nvim-lualine/lualine.nvim',

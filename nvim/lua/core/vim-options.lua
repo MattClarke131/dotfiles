@@ -64,6 +64,7 @@ vim.api.nvim_exec([[
 vim.opt.cmdheight = 0
 
 -- Formatting
+vim.opt.filetype = 'on'
 -- auto indent
 vim.opt.autoindent = true
 -- 2 spaces instead of tabs
