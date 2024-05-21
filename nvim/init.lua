@@ -10,8 +10,9 @@ vim.g.loaded_netrwPlugin = 1
 require('core.plugins')
 require('core.keymaps')
 require('core.language-servers')
+require('core.vim-options')
 
-vim.cmd [[colorscheme everforest]]
+im.cmd [[colorscheme everforest]]
 
 -- help tips
 local helptips = {
