@@ -23,6 +23,7 @@ require('lazy').setup({
   -- 'pangloss/vim-javascript',
 
   -- tools
+  'nvim-telescope/telescope.nvim',
   {'preservim/nerdtree',
     config = function()
       -- Close nerd tree on file open
@@ -31,7 +32,6 @@ require('lazy').setup({
       vim.g.NERDTreeAutoDeleteBuffer = 1
     end
   },
-  'nvim-telescope/telescope.nvim',
 
   -- visual changes
   {'nvim-lualine/lualine.nvim',

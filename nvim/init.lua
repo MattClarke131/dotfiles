@@ -5,6 +5,8 @@ require('core.plugins')
 require('core.keymaps')
 require('core.language-servers')
 
+vim.cmd [[colorscheme everforest]]
+
 -- Buftabline
 -- Enable buftabline numbers
 vim.g.buftabline_numbers = 1
@@ -16,7 +18,6 @@ vim.opt.wildmode = 'list:longest,full'
 vim.opt.wildignore = '*.DS_STORE,*.db,node_modules/**,*.jpg,*.png,*.gif'
 
 -- Behavior
--- Options
 -- set undo directory
 vim.opt.undodir = vim.fn.expand('~/.vim/undofiles')
 -- set swap directory
@@ -51,11 +52,7 @@ vim.opt.hlsearch = true
 vim.keymap.set('n', '<CR>', ':nohls<CR><CR>', { noremap = true, silent = true })
 
 -- Display
--- Themes
-vim.cmd [[colorscheme everforest]]
-
 -- Options
--- Display line numbers
 vim.opt.number = true
 -- display whitespace characters
 vim.opt.list = true
@@ -70,11 +67,10 @@ vim.opt.showmatch = true
 vim.opt.syntax = 'on'
 -- Highlight yanked text
 vim.api.nvim_exec([[
-autocmd TextYankPost * silent! lua vim.highlight.on_yank {higroup='Visual', timeout=1000}
+  autocmd TextYankPost * silent! lua vim.highlight.on_yank {higroup='Visual', timeout=1000}
 ]], false)
 -- Hide cmd line
 vim.opt.cmdheight = 0
-
 
 -- Formatting
 -- auto indent
