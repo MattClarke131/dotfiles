@@ -1,3 +1,11 @@
+local function macro_status()  -- Custom component for macro recording
+  local recording_register = vim.fn.reg_recording()
+  if recording_register ~= '' then
+    return '@' .. recording_register
+  end
+  return ''
+end
+
 require('lualine').setup {
     options = {
       icons_enabled = true,
@@ -18,13 +26,7 @@ require('lualine').setup {
       lualine_c = {
         'branch',
         {
-          function()  -- Custom component for macro recording
-            local recording_register = vim.fn.reg_recording()
-            if recording_register ~= '' then
-              return '@' .. recording_register
-            end
-            return ''
-          end,
+          macro_status,
           color = { fg = '#ff9e64', gui = 'bold' }, -- Optional: color customization
         }
     },
