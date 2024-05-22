@@ -13,7 +13,7 @@ local helptips = {
   'gcap comment paragraph',
 
 -- lsp
-  'LSP: n mode: \'gd\' go to definition',
+  'LSP: n mode: \'gd\' go to def (no Leader), <C-t> go back',
   'LSP: n mode: \'gr\' references',
   'LSP: n mode: \'gi\' implementation',
   'LSP: n mode: \'gh\' hover-info',

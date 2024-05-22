@@ -1,11 +1,15 @@
 -- Language server
 -- Keybindings for LSP
 -- bound upon attaching to a buffer
+local go_to_declaration = function ()
+  vim.cmd('tag ' .. vim.fn.expand('<cword>'))
+end
 local set_lsp_keymaps = function (_, bufnr)
   vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, { buffer = bufnr })
   vim.keymap.set('n', '<Leader>ca', vim.lsp.buf.code_action, { buffer = bufnr })
 
-  vim.keymap.set('n', '<Leader>gd', vim.lsp.buf.definition, { buffer = bufnr })
+  --vim.keymap.set('n', '<Leader>gd', vim.lsp.buf.definition, { buffer = bufnr })
+  vim.keymap.set('n', 'gd', go_to_declaration, { buffer = bufnr })
   vim.keymap.set('n', '<Leader>gi', vim.lsp.buf.implementation, { buffer = bufnr })
   vim.keymap.set('n', '<Leader>gh', vim.lsp.buf.hover, { buffer = bufnr })
 end
