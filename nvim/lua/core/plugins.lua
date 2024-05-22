@@ -14,6 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 
 --Plugins
 require('lazy').setup({
+
 -- language processing and syntax
   'github/copilot.vim',
   --parser generator for syntax highlighting
@@ -22,6 +23,8 @@ require('lazy').setup({
   'williamboman/mason.nvim',
   'williamboman/mason-lspconfig.nvim',
   'neovim/nvim-lspconfig',
+  -- diagnostics / references / etc
+  {'folke/trouble.nvim', dependencies = { "nvim-tree/nvim-web-devicons" } },
 
 -- tools
   'nvim-telescope/telescope.nvim',
@@ -60,3 +63,4 @@ require('core.plugin_config.nvim-treesitter')
 require('core.plugin_config.telescope')
 require('core.plugin_config.gitgutter')
 require('core.plugin_config.nvim-tree')
+require('core.plugin_config.trouble')

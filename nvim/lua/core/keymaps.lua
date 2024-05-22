@@ -75,6 +75,7 @@ vim.keymap.set('n', '<Leader>ggh', '<Plug>(GitGutterLineHighlightsToggle)', { no
 vim.keymap.set('n', ']]', ':silent! GitGutterNextHunk<Enter>', { noremap = true, silent = true })
 vim.keymap.set('n', '[[', ':silent! GitGutterPrevHunk<Enter>', { noremap = true, silent = true })
 
+
 -- Commentary
 vim.keymap.set('n', 'gc', '<Plug>Commentary')
 vim.keymap.set('x', 'gc', '<Plug>Commentary')
@@ -82,6 +83,15 @@ vim.keymap.set('o', 'gc', '<Plug>Commentary')
 vim.keymap.set('n', 'gcc', '<Plug>CommentaryLine')
 vim.keymap.set('n', 'gcu', '<Plug>Commentary<Plug>Commentary', { silent = true })
 
+
+-- Trouble
+local trouble = require('trouble')
+vim.keymap.set('n', '<leader>xx', trouble.toggle)
+vim.keymap.set('n', '<leader>xw', function() trouble.toggle('workspace_diagnostics') end)
+vim.keymap.set('n', '<leader>xd', function() trouble.toggle('document_diagnostics') end)
+vim.keymap.set('n', '<leader>xq', function() trouble.toggle('quickfix') end)
+vim.keymap.set('n', '<leader>xl', function() trouble.toggle('loclist') end)
+vim.keymap.set('n', 'gR',         function() trouble.toggle('lsp_references') end)
 
 
 -- Non-plugin keybindings

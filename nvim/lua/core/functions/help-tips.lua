@@ -5,11 +5,13 @@ local helptips = {
   'Tree: \'a\' create',
   'n mode: \'nf\' open tree',
   'n mode: \'nf\' open tree',
+
 -- commentary
   'gc comment',
   'gcc comment line',
   'gcu undo comment',
   'gcap comment paragraph',
+
 -- lsp
   'LSP: n mode: \'gd\' go to definition',
   'LSP: n mode: \'gr\' references',
@@ -17,6 +19,7 @@ local helptips = {
   'LSP: n mode: \'gh\' hover-info',
   'LSP: n mode: \'rn\' rename',
   'LSP: n mode: \'ca\' code action',
+
 -- telescope
   'TS: n mode: \'fp\' list registers',
   'TS: n mode: \'fcc\' commits',
@@ -27,6 +30,7 @@ local helptips = {
   'TS: n mode: \'fm\' keymaps',
   'TS: n mode: \'/\' rg buff',
   'TS: C-Q: open buff w/ results',
+
 -- gitgutter
   'GG: n mode: \'ggn\' next hunk',
   'GG: n mode: \'ggp\' prev hunk',
@@ -36,6 +40,14 @@ local helptips = {
   'GG: n mode: \'ggh\' toggle gitgut',
   'GG: n mode: \']]\' next hunk',
   'GG: n mode: \'[[\' prev hunk',
+
+  -- trouble
+  'Trouble: \'xx\' toggle',
+  'Trouble: \'xw\' workspace',
+  'Trouble: \'xd\' document',
+  'Trouble: \'xq\' quickfix',
+  'Trouble: \'xl\' loclist',
+  'Trouble: \'gR\' lsp refs (no leader)',
 }
 
 local function cycleHelpTip()
