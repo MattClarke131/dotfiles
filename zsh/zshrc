@@ -111,3 +111,5 @@ if [[ -f "$HOME"/dotfiles/git-config.sh ]]; then
 fi
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+source /home/matt/.config/broot/launcher/bash/br

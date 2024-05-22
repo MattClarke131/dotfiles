@@ -18,7 +18,6 @@ alias pod='\popd'
 
 # Reminders
 alias ls="echo use l"
-alias cd="echo use c"
 
 # ls behaves strangely on newer versions of macOS
 if [ "$OSTYPE" = 'linux-gnu' ]; then
@@ -53,7 +52,6 @@ alias -g g="| grep"
 alias -g gi="| grep -i"
 # ripgrep
 alias rg="rg --no-ignore"
-alias br="broot"
 
 # TOOLS
 # Use bat instead of cat if available
