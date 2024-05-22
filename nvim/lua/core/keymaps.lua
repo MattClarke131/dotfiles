@@ -97,6 +97,10 @@ vim.keymap.set('n', '<leader>xq', function() trouble.toggle('quickfix') end)
 vim.keymap.set('n', '<leader>xl', function() trouble.toggle('loclist') end)
 vim.keymap.set('n', 'gR',         function() trouble.toggle('lsp_references') end)
 
+-- Noice
+-- Dismiss noice
+vim.keymap.set('n', '<Leader>nn', ':NoiceDismiss<Enter>', { noremap = true })
+
 
 -- Non-plugin keybindings
 -- unmap EX mode

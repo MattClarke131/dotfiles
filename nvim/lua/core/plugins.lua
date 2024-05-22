@@ -45,6 +45,13 @@ require('lazy').setup({
   },
   'airblade/vim-gitgutter',
   'ap/vim-buftabline',
+  {"folke/noice.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    },
+  },
 
 -- themes
   {'neanias/everforest-nvim', background = 'hard'},
@@ -64,3 +71,4 @@ require('core.plugin_config.telescope')
 require('core.plugin_config.gitgutter')
 require('core.plugin_config.nvim-tree')
 require('core.plugin_config.trouble')
+require('core.plugin_config.noice')
