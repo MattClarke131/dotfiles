@@ -25,6 +25,8 @@ require('lazy').setup({
   'neovim/nvim-lspconfig',
   -- diagnostics / references / etc
   {'folke/trouble.nvim', dependencies = { "nvim-tree/nvim-web-devicons" } },
+  -- auto close
+  'windwp/nvim-autopairs',
 
 -- tools
   'nvim-telescope/telescope.nvim',
@@ -72,3 +74,4 @@ require('core.plugin_config.gitgutter')
 require('core.plugin_config.nvim-tree')
 require('core.plugin_config.trouble')
 require('core.plugin_config.noice')
+require('core.plugin_config.autopairs')
