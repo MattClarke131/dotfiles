@@ -50,6 +50,8 @@ alias vim="echo use v"
 alias python=python3
 alias -g g="| grep"
 alias -g gi="| grep -i"
+alias tree="tree -I 'node_modules|submodules|backup-dotfiles'"
+
 # ripgrep
 alias rg="rg --no-ignore"
 
