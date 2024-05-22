@@ -6,6 +6,7 @@
 # Navigation
 alias cp='cp -i'
 alias mv='mv -i'
+
 # alias -='\cd -' # Efforts to correct this have failed
 alias dot="\cd ~/dotfiles"
 alias cddot="\cd ~/dotfiles"
@@ -14,9 +15,11 @@ alias ...='\cd ...; l'
 alias ....='\cd ....; l'
 alias pud='\pushd'
 alias pod='\popd'
+
 # Reminders
 alias ls="echo use l"
 alias cd="echo use c"
+
 # ls behaves strangely on newer versions of macOS
 if [ "$OSTYPE" = 'linux-gnu' ]; then
     alias l="\ls --group-directories-first --color=tty"
@@ -27,11 +30,13 @@ else
     alias ll="\gls -lAh --group-directories-first --color=tty"
     alias la="\gls -A --group-directories-first --color=tty"
 fi
+
 # functions
 # ls after cd
 function c() {
   \cd "$1"; l  || exit
 }
+
 # mkdir and change to it
 function mcd () {
   mkdir -p "$1"
@@ -48,7 +53,7 @@ alias -g g="| grep"
 alias -g gi="| grep -i"
 # ripgrep
 alias rg="rg --no-ignore"
-
+alias br="broot"
 
 # TOOLS
 # Use bat instead of cat if available
