@@ -25,6 +25,17 @@ require('lualine').setup {
   lualine_b = {
     'branch',
     'diff',
+    --{ 'diagnostics', sources = { 'nvim_lsp' } },
+    {
+      'diagnostics',
+      sources = { 'nvim_lsp' },
+      sections = { 'error', 'warn', 'info', 'hint' },
+      color_error = '#ff0000',
+      color_warn = '#ff8800',
+      color_info = '#00ff00',
+      color_hint = '#00ffff',
+      symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ' },
+    },
   },
   lualine_c = { 'branch' },
     lualine_x = {'searchcount', 'progress'},
