@@ -21,15 +21,12 @@ require('lualine').setup {
     }
   },
   sections = {
-  lualine_a = {'mode'},
-  lualine_b = {'diff'},
-  lualine_c = {
+  lualine_a = {'mode', macro_status, },
+  lualine_b = {
     'branch',
-    {
-      macro_status,
-      color = { fg = '#ff9e64', gui = 'bold' }, -- Optional: color customization
-    }
+    'diff',
   },
+  lualine_c = { 'branch' },
     lualine_x = {'searchcount', 'progress'},
     lualine_y = {'location', 'filename'},
     -- find something custom to put here
