@@ -62,6 +62,8 @@ setopt INC_APPEND_HISTORY          # Save to history immediately
 setopt HIST_FIND_NO_DUPS           # Only show commands once when searching with CTRL+R
 
 
+# SOURCE SECRETS
+[ -f "$HOME/.secrets" ] && source "$HOME/.secrets"
 
 # SOURCE ALIASES
 for file in $(\ls -A "$HOME"/dotfiles/aliases | grep -E '[^s][^w].$'); do
