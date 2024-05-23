@@ -27,5 +27,13 @@ require('noice').setup({
       },
       opts = { skip = true },
     },
+    {
+      filter = {
+        event = "msg_show",
+        kind = "",
+        find = "%d+ lines? [<>]ed %d+ times?",
+      },
+      opts = { skip = true },
+    },
   },
 })
