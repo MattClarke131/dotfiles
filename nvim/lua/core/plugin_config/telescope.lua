@@ -22,3 +22,4 @@ require('telescope').setup {
     -- https://github.com/debugloop/telescope-undo.nvim
   },
 }
+require('telescope').load_extension('noice')
