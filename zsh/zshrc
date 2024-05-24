@@ -107,6 +107,8 @@ else
   echo "********************************************************************************\n"
 fi
 
+source "$HOME"/dotfiles/submodules/fzf-git/fzf-git.sh
+
 # GIT CONFIG
 if [[ -f "$HOME"/dotfiles/git-config.sh ]]; then
   source "$HOME"/dotfiles/git-config.sh
