@@ -85,7 +85,7 @@ fi
 # BAT
 if command -v bat &> /dev/null
 then
-  export FZF_DEFAULT_OPTS="--preview 'bat --style=numbers --color=always --line-range :500 {}'"
+  export FZF_DEFAULT_OPTS="--preview 'bat {}'"
 else
   export FZF_DEFAULT_OPTS="--preview '\cat {}'"
   echo "********************************************************************************\n"

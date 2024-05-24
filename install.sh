@@ -68,6 +68,9 @@ ln -sfvn "$DOTFILES_ROOT"/nvim $HOME/.config/nvim
 # install zsh plugins
 ln -sfvn  "$DOTFILES_ROOT"/submodules/zsh-autosuggestions "$HOME"/.oh-my-zsh/plugins/zsh-autosuggestions
 ln -sfvn  "$DOTFILES_ROOT"/submodules/zsh-syntax-highlighting "$HOME"/.oh-my-zsh/plugins/zsh-syntax-highlighting
+# install bat config
+ln -sfvn "$DOTFILES_ROOT"/bat $HOME/.config/bat
+#
 install_dotfile "$DOTFILES_ROOT"/zsh/zshrc "$HOME"/.zshrc "$BACKUP_DOTFILES"/zsh/zshrc
 install_dotfile "$DOTFILES_ROOT"/zsh/p10k.zsh "$HOME"/.p10k.zsh "$BACKUP_DOTFILES"/zsh/p10k.zsh
 install_dotfile "$DOTFILES_ROOT"/tmux.conf "$HOME"/.tmux.conf "$BACKUP_DOTFILES"/tmux.conf
