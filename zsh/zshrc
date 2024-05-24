@@ -99,7 +99,7 @@ then
   [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
   # use rg
   # exclude .git, node_modules, and submodules
-  export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*" --glob "!node_modules/*" --glob "!~/dotfiles/submodules/**"'
+  export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!{.git,node_modules,~/dotfiles/submodules}/*"'
   export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
 else
   echo "********************************************************************************\n"
