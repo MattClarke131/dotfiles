@@ -47,7 +47,7 @@ vim.keymap.set('n', '<CR>', ':nohls<CR><CR>', { noremap = true, silent = true })
 vim.opt.number = true
 -- display whitespace characters
 vim.opt.list = true
-vim.opt.listchars = {eol = '¬', tab = '>-'}
+vim.opt.listchars = {tab = '>-'}
 -- display status line always
 vim.opt.laststatus = 2
 -- display cursor line
