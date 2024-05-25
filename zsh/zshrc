@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+source "$HOME"/dotfiles/zsh/motd.sh
+
 # Set PATH, MANPATH, etc., for Homebrew.
 if [ "$OSTYPE" = 'linux-gnu' ]
 then
