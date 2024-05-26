@@ -35,5 +35,45 @@ require('noice').setup({
       },
       opts = { skip = true },
     },
+    {
+      filter = {
+        event = "msg_show",
+        kind = "",
+        find = "%d+ more lines?",
+      },
+      opts = { skip = true },
+    },
+    {
+      filter = {
+        event = "msg_show",
+        kind = "",
+        find = "%d+ fewer lines?",
+      },
+      opts = { skip = true },
+    },
+    {
+      filter = {
+        event = "msg_show",
+        kind = "",
+        find = "%d+ lines? yanked",
+      },
+      opts = { skip = true },
+    },
+    {
+      filter = {
+        event = "msg_show",
+        kind = "",
+        find = "%d+ changes?; after",
+      },
+      opts = { skip = true },
+    },
+    {
+      filter = {
+        event = "msg_show",
+        kind = "",
+        find = "%d+ changes?; before",
+      },
+      opts = { skip = true },
+    },
   },
 })
