@@ -12,7 +12,9 @@ alias grbim='git rebase -i $(git_main_branch)'
 alias grbio='git rebase -i origin'
 alias grbi10='git rebase -i HEAD~10'
 alias grbi20='git rebase -i HEAD~20'
-alias grbi50='git rebase -i HEAD~30'
+alias grbi30='git rebase -i HEAD~30'
+alias grbi50='git rebase -i HEAD~50'
+alias grbi100='git rebase -i HEAD~100'
 alias gbm='git branch --move'
 alias gdm='git diff "$(git_main_branch)"'
 alias gstam="git stash push -m"
@@ -22,6 +24,7 @@ alias greva="git revert --abort"
 alias vgdm='vim_git_diff $(git merge-base "$(git_current_branch)" "$(git_main_branch)")'
 alias vgd=vim_git_diff
 alias vcd=vim_commit_diff
+alias vgs=vim_git_staged
 
 function vim_git_diff() {
   nvim $(gd --name-only $1 | xargs)
@@ -29,6 +32,10 @@ function vim_git_diff() {
 
 function vim_commit_diff() {
   nvim $(git diff-tree --no-commit-id --name-only -r $1 | xargs)
+}
+
+function vim_git_staged() {
+  nvim $(git diff --name-only --cached | xargs)
 }
 
 # remove oh my zsh git pull aliases
