@@ -1,8 +1,5 @@
 #!/usr/bin/env zsh
 
-################################################################################
-# DIRECTORY ALIASES
-################################################################################
 # Navigation
 alias cp='cp -i'
 alias mv='mv -i'
@@ -51,6 +48,8 @@ alias python=python3
 alias -g g="| grep"
 alias -g gi="| grep -i"
 alias tree="tree -I 'node_modules|submodules|backup-dotfiles'"
+alias ghce="gh copilot explain"
+alias ghcs="gh copilot suggest"
 
 # ripgrep
 alias rg="rg --no-ignore"
