@@ -25,6 +25,8 @@ alias vgdm='vim_git_diff $(git merge-base "$(git_current_branch)" "$(git_main_br
 alias vgd=vim_git_diff
 alias vcd=vim_commit_diff
 alias vgs=vim_git_staged
+alias vgdu='\nvim $(git ls-files -o --exclude-standard | xargs)'
+alias vgdut='\nvim $(git ls-files -o --exclude-standard | xargs)'
 
 function vim_git_diff() {
   nvim $(gd --name-only $1 | xargs)
