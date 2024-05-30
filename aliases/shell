@@ -45,14 +45,21 @@ function mcd () {
 alias v="\nvim"
 alias vim="echo use v"
 alias python=python3
-alias -g g="| grep"
-alias -g gi="| grep -i"
 alias tree="tree -I 'node_modules|submodules|backup-dotfiles'"
 alias ghce="gh copilot explain"
 alias ghcs="gh copilot suggest"
 
 # ripgrep
-alias rg="rg --no-ignore"
+unalias rg 2>/dev/null
+RG_DEFAULT_COMMAND='rg --no-ignore'
+if command -v rg >/dev/null 2>&1; then
+  alias -g g="| $RG_DEFAULT_COMMAND"
+  alias -g gi="| $RG_DEFAULT_COMMAND -i"
+else
+  alias -g g="| grep"
+  alias -g gi="| grep -i"
+fi
+alias rg="$RG_DEFAULT_COMMAND"
 
 # TOOLS
 # Use bat instead of cat if available
