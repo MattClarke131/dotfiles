@@ -84,18 +84,20 @@ if [[ -f "$HOME"/dotfiles/zsh/zshrc.local ]]; then
   source "$HOME"/dotfiles/zsh/zshrc.local
 fi
 
-# BAT
+# BAT FZF
+FZF_DEFAULT_OPTS="--ansi --multi"
 if command -v bat &> /dev/null
 then
-  export FZF_DEFAULT_OPTS="--preview 'bat {}'"
+  FZF_DEFAULT_OPTS="${FZF_DEFAULT_OPTS} --preview 'bat {}'"
   # Use bat as manpager
   export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 else
-  export FZF_DEFAULT_OPTS="--preview '\cat {}'"
+  FZF_DEFAULT_OPTS="${FZF_DEFAULT_OPTS} --preview 'cat {}'"
   echo "********************************************************************************\n"
   echo "Install bat!"
   echo "********************************************************************************\n"
 fi
+export FZF_DEFAULT_OPTS
 
 # FZF
 if command -v fzf &> /dev/null
@@ -103,7 +105,7 @@ then
   [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
   # use rg
   # exclude .git, node_modules, and submodules
-  export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!{.git,node_modules,~/dotfiles/submodules}/*"'
+  export FZF_DEFAULT_COMMAND='fd --type file --color=always --follow --hidden --no-ignore-vcs --exclude .git --exclude node_modules --exclude backup-dotfiles --exclude submodules'
   export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
 else
   echo "********************************************************************************\n"
