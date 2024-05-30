@@ -114,12 +114,6 @@ else
 fi
 
 source "$HOME"/dotfiles/submodules/fzf-git/fzf-git.sh
-
-# GIT CONFIG
-if [[ -f "$HOME"/dotfiles/git-config.sh ]]; then
-  source "$HOME"/dotfiles/git-config.sh
-fi
-
+test -e "${HOME}/dotfiles/git-config.sh" && source "${HOME}/dotfiles/git-config.sh"
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-source /home/matt/.config/broot/launcher/bash/br
+test -e "${HOME}/.config/broot/launcher/bash/br" && source "${HOME}/.config/broot/launcher/bash/br"
