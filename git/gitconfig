@@ -1,26 +1,26 @@
 [user]
-	email = 4278212+MattClarke131@users.noreply.github.com
-	name = Matt Clarke
+  email = 4278212+MattClarke131@users.noreply.github.com
+  name = Matt Clarke
 
 [core]
-	editor = nvim
-	pager = delta
+  editor = nvim
+  pager = delta
 
 [log]
-	date = local
+  date = local
 
 [pager]
-	branch = false
-	stash = false
+  branch = false
+  stash = false
 
 [rebase]
-	autosquash = true
+  autosquash = true
 
 [init]
-	defaultBranch = main
+  defaultBranch = main
 
 [blame]
-	ignoreRevsFile = .git-blame-ignore-revs
+  ignoreRevsFile = .git-blame-ignore-revs
 
 [delta]
   side-by-side = true
