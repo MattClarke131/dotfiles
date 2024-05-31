@@ -53,11 +53,11 @@ alias ghcs="gh copilot suggest"
 unalias rg 2>/dev/null
 RG_DEFAULT_COMMAND='rg --no-ignore'
 if command -v rg >/dev/null 2>&1; then
-  alias g="| $RG_DEFAULT_COMMAND"
-  alias gi="| $RG_DEFAULT_COMMAND -i"
+  alias -g g="| $RG_DEFAULT_COMMAND"
+  alias -g gi="| $RG_DEFAULT_COMMAND -i"
 else
-  alias g="| grep"
-  alias gi="| grep -i"
+  alias -g g="| grep"
+  alias -g gi="| grep -i"
 fi
 alias rg="$RG_DEFAULT_COMMAND"
 
