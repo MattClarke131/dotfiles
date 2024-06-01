@@ -34,7 +34,23 @@ vim.keymap.set('n', '<Leader>nf', ':NvimTreeToggle<Enter>', { noremap = true })
 -- Telescope
 local builtin = require('telescope.builtin')
 -- Find files
-vim.keymap.set('n', '<Leader>ff', builtin.find_files)
+local function custom_find_files()
+  builtin.find_files {
+    find_command = {
+      'fd',
+      '--type', 'file',
+      -- '--color=always',
+      '--follow',
+      '--hidden',
+      '--no-ignore-vcs',
+      '--exclude', 'node_modules',
+      '--exclude', '.git',
+      '--exclude', 'backup-dotfiles',
+      '--exclude', 'submodules'
+    }
+  }
+end
+vim.keymap.set('n', '<Leader>ff', custom_find_files)
 -- Find buffers
 vim.keymap.set('n', '<Leader>fb', builtin.buffers)
 -- Find lines with rg
