@@ -107,6 +107,7 @@ then
   # exclude .git, node_modules, and submodules
   export FZF_DEFAULT_COMMAND='fd --type file --color=always --follow --hidden --no-ignore-vcs --exclude .git --exclude node_modules --exclude backup-dotfiles --exclude submodules'
   export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
+  export FZF_CTRL_R_OPTS="--no-preview --height 40% --layout=reverse --no-border"
 else
   echo "********************************************************************************\n"
   echo "Install fzf!"
