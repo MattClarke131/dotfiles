@@ -29,7 +29,7 @@ alias vgdu='\nvim $(git ls-files -o --exclude-standard | xargs)'
 alias vgdut='\nvim $(git ls-files -o --exclude-standard | xargs)'
 
 function vim_git_diff() {
-  nvim $(gd --name-only $1 | xargs)
+  nvim $(git -C $(git rev-parse --show-toplevel) diff --name-only $1 | xargs)
 }
 
 function vim_commit_diff() {
