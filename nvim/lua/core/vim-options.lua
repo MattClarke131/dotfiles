@@ -74,3 +74,12 @@ vim.opt.tabstop = 2
 vim.opt.expandtab = true
 -- spellchecking
 vim.opt.spelllang = 'en-us'
+
+-- Set tab width default for markdown files
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  callback = function()
+    vim.o.tabstop = 2
+    vim.o.shiftwidth = 2
+  end,
+})
