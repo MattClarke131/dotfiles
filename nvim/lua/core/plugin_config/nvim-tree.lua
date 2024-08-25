@@ -15,4 +15,7 @@ require('nvim-tree').setup {
     show_on_dirs = true,
     show_on_open_dirs = true,
   },
+  update_focused_file = {
+    enable = true,
+  }
 }
