@@ -13,9 +13,6 @@ alias ....='\cd ....; l'
 alias pud='\pushd'
 alias pod='\popd'
 
-# Reminders
-alias ls="echo use l"
-
 # ls behaves strangely on newer versions of macOS
 if [ "$OSTYPE" = 'linux-gnu' ]; then
     alias l="\ls --group-directories-first --color=tty"
