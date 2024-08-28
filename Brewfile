@@ -1,5 +1,4 @@
 tap "homebrew/bundle"
-tap "homebrew/core"
 brew "bat"
 brew "git-delta"
 brew "neovim"
