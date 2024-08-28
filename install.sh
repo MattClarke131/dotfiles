@@ -79,13 +79,5 @@ install_dotfile "$DOTFILES_ROOT"/git/gitconfig "$HOME"/.gitconfig "$BACKUP_DOTFI
 echo "--------------------------------------------------------------------------------"
 echo "symlinks created"
 echo "################################################################################"
-
-set +e
-echo "sourcing zshrc"
-# shellcheck source=/home/matt/.zshrc
-source "$HOME"/.zshrc
-echo "################################################################################"
-
-
 echo "INSTALLATION COMPLETE"
 echo "################################################################################"
