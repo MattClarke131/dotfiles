@@ -33,7 +33,7 @@ crontab -e
 ```
 ```crontab
 #Git fetch every repo every 5 minutes
- */5 * * * * "$HOME"/dotfiles/scripts/git-fetch.sh > /dev/null &>
+ */5 * * * * "$HOME"/dotfiles/scripts/git-fetch.sh &> /dev/null
 ```
 
 ## customization
