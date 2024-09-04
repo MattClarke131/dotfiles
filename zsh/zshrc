@@ -125,5 +125,9 @@ source "$HOME"/dotfiles/zsh/docker-completions.sh""
 
 source "${HOME}/dotfiles/submodules/fzf-git/fzf-git.sh"
 test -e "${HOME}/dotfiles/git-config.sh" && source "${HOME}/dotfiles/git-config.sh"
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-test -e "${HOME}/.config/broot/launcher/bash/br" && source "${HOME}/.config/broot/launcher/bash/br"
+
+#test -e "${HOME}/.config/broot/launcher/bash/br" && source "${HOME}/.config/broot/launcher/bash/br"
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+fi
