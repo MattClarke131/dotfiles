@@ -11,6 +11,11 @@ require('telescope').setup {
       'submodules'
     },
   },
+  pickers = {
+    colorscheme = {
+      enable_preview = true
+    }
+  },
   extensions = {
     -- to try
     -- https://github.com/dhruvmanila/browser-bookmarks.nvim

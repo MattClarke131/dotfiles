@@ -59,7 +59,7 @@ require('lazy').setup({
   {'neanias/everforest-nvim', background = 'hard'},
   'rebelot/kanagawa.nvim',
   'rmehri01/onenord.nvim',
-  "ellisonleao/gruvbox.nvim",
+  'ellisonleao/gruvbox.nvim',
 
 -- to try
   -- 'tpope/vim-fugitive',
