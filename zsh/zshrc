@@ -27,6 +27,12 @@ plugins=(
   zsh-autosuggestions
   zsh-syntax-highlighting
   fasd
+  docker
+  docker-compose
+  terraform
+  fzf
+  ssh
+  macos
 )
 source "$ZSH"/oh-my-zsh.sh
 
@@ -113,6 +119,9 @@ else
   echo "Install fzf!"
   echo "********************************************************************************\n"
 fi
+
+# Docker
+source "$HOME"/dotfiles/zsh/docker-completions.sh""
 
 source "${HOME}/dotfiles/submodules/fzf-git/fzf-git.sh"
 test -e "${HOME}/dotfiles/git-config.sh" && source "${HOME}/dotfiles/git-config.sh"
