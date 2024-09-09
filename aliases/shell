@@ -50,15 +50,23 @@ alias ghcs="gh copilot suggest"
 
 # ripgrep
 unalias rg 2>/dev/null
-RG_DEFAULT_COMMAND='rg --no-ignore'
+RG_DEFAULT_COMMAND="rg --no-ignore\
+  --glob '!submodules/' \
+  --glob '!backup-dotfiles/' \
+  --glob '!.git/' \
+  --glob '!Brewfile.lock.json' \
+  "
 if command -v rg >/dev/null 2>&1; then
   alias -g g="| $RG_DEFAULT_COMMAND"
   alias -g gi="| $RG_DEFAULT_COMMAND -i"
+  alias -g gv="| $RG_DEFAULT_COMMAND -v"
 else
   alias -g g="| grep"
   alias -g gi="| grep -i"
+  alias -g gv="| grep -v"
 fi
 alias rg="$RG_DEFAULT_COMMAND"
+alias rgg= "\rg"
 
 # TOOLS
 # Use bat instead of cat if available
