@@ -8,7 +8,8 @@ require('telescope').setup {
       'node_modules',
       '.git',
       'backup-dotfiles',
-      'submodules'
+      'submodules',
+      'env',
     },
   },
   pickers = {

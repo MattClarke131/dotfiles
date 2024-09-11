@@ -32,10 +32,10 @@ vim.keymap.set('n', '<Leader>nf', ':NvimTreeToggle<Enter>', { noremap = true })
 
 
 -- Telescope
-local builtin = require('telescope.builtin')
+local telescope = require('telescope.builtin')
 -- Find files
 local function custom_find_files()
-  builtin.find_files {
+  telescope.find_files {
     find_command = {
       'fd',
       '--type', 'file',
@@ -46,36 +46,37 @@ local function custom_find_files()
       '--exclude', 'node_modules',
       '--exclude', '.git',
       '--exclude', 'backup-dotfiles',
-      '--exclude', 'submodules'
+      '--exclude', 'submodules',
+      '--exclude', 'env',
     }
   }
 end
 vim.keymap.set('n', '<Leader>ff', custom_find_files)
 -- Find buffers
-vim.keymap.set('n', '<Leader>fb', builtin.buffers)
+vim.keymap.set('n', '<Leader>fb', telescope.buffers)
 -- Find lines with rg
-vim.keymap.set('n', '<Leader>fr', builtin.live_grep)
+vim.keymap.set('n', '<Leader>fr', telescope.live_grep)
 -- Find Lines in current buffer
 vim.keymap.set('n', '<Leader>/', function()
-  builtin.current_buffer_fuzzy_find { previewer=false }
+  telescope.current_buffer_fuzzy_find { previewer=false }
 end, { silent=true })
 vim.keymap.set('n', '<Leader>f/', function()
-  builtin.current_buffer_fuzzy_find { previewer=false }
+  telescope.current_buffer_fuzzy_find { previewer=false }
 end, { silent=true })
 -- Find commands
-vim.keymap.set('n', '<Leader>fc', builtin.commands)
+vim.keymap.set('n', '<Leader>fc', telescope.commands)
 -- Find vim options
-vim.keymap.set('n', '<Leader>fv', builtin.vim_options)
+vim.keymap.set('n', '<Leader>fv', telescope.vim_options)
 -- List registers
-vim.keymap.set('n', '<Leader>fp', builtin.registers)
+vim.keymap.set('n', '<Leader>fp', telescope.registers)
 -- List keymaps
-vim.keymap.set('n', '<Leader>fm', builtin.keymaps)
+vim.keymap.set('n', '<Leader>fm', telescope.keymaps)
 -- Find commits
-vim.keymap.set('n', '<Leader>fcc', builtin.git_commits)
+vim.keymap.set('n', '<Leader>fcc', telescope.git_commits)
 -- Find commits only for this buffer
-vim.keymap.set('n', '<Leader>fcb', builtin.git_commits)
+vim.keymap.set('n', '<Leader>fcb', telescope.git_commits)
 -- rp string under cursor or current selection
-vim.keymap.set('n', '<Leader>fs', builtin.git_commits)
+vim.keymap.set('n', '<Leader>fs', telescope.git_commits)
 
 
 -- Gitgutter
