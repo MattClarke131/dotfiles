@@ -12,7 +12,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
---Plugins
+-- Plugins
 require('lazy').setup({
 
 -- language processing and syntax
