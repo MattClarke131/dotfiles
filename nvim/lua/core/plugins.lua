@@ -46,12 +46,27 @@ require('lazy').setup({
     },
   },
   'airblade/vim-gitgutter',
-  'ap/vim-buftabline',
+  -- 'ap/vim-buftabline',
   {"folke/noice.nvim",
     event = "VeryLazy",
     dependencies = {
       "MunifTanjim/nui.nvim",
       "rcarriga/nvim-notify",
+    },
+  },
+  {'romgrk/barbar.nvim',
+    version = '^1.0.0',
+    dependencies = {
+      'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
+      'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
+    },
+    opts = {
+      animation = false,
+      tabpages = true,
+      semantic_letters = false,
+      sort = { ignore_case = true },
+      icons = { buffer_index = 'superscript'},
+      letters = 'asdfghjkl;qwertyuiopASDFGHJKL:QWERTYUIOP',
     },
   },
 

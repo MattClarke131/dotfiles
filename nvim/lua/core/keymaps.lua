@@ -118,6 +118,15 @@ vim.keymap.set('n', 'gR',         function() trouble.toggle('lsp_references') en
 -- Dismiss noice
 vim.keymap.set('n', '<Leader>nn', ':NoiceDismiss<Enter>', { noremap = true })
 
+-- Navigation
+-- barbar
+vim.keymap.set('n', '<Leader>h', ':silent! BufferPrevious<Enter>', { noremap = true })
+vim.keymap.set('n', '<Leader>l', ':silent! BufferNext<Enter>', { noremap = true })
+vim.keymap.set('n', '<leader>k', ':silent! BufferClose<Enter>', { noremap = true })
+vim.keymap.set('n', '<Leader>K', ':silent! BufferRestore<Enter>', { noremap = true })
+vim.keymap.set('n', '<Leader>b', ':silent! BufferPick<Enter>', { noremap = true })
+-- Regular navigation
+vim.keymap.set('n', '<Leader>j', ':e<Space>', { noremap = true })
 
 -- Non-plugin keybindings
 -- unmap EX mode
@@ -142,12 +151,6 @@ vim.keymap.set('n', '<Leader>tp', ':set paste!<Enter>', { noremap = true })
 -- turns out the default is useful
 -- vim.keymap.set('n', ';', ':', { noremap = true })
 
--- Navigation
--- Quick buffer navigation
-vim.keymap.set('n', '<Leader>l', ':bnext<Enter>', { noremap = true })
-vim.keymap.set('n', '<Leader>h', ':bprev<Enter>', { noremap = true })
-vim.keymap.set('n', '<Leader>j', ':e<Space>', { noremap = true })
-vim.keymap.set('n', '<Leader>k', ':bd<Enter>', { noremap = true })
 
 -- Language specific keybindings
 -- JS Insert debugger
