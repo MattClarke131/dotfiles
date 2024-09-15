@@ -1,0 +1,105 @@
+# https://starship.rs/config
+add_newline = true
+follow_symlinks = true
+
+right_format = '$all$git_status$cmd_duration'
+format = '$custom$git_branch$directory$character'
+
+[custom.tmux]
+disabled = false
+command = "tmux list-sessions | wc -l"
+when = "pgrep -x tmux && [ -z \"$TMUX\" ]"
+symbol = ""
+format = " [!$symbol]($style) "
+style = "bold green"
+
+[directory]
+style = 'cyan'
+home_symbol = '~'
+
+[username]
+format = '[$user]($style)'
+style_root = 'bold red'
+aliases = { 'matt' = '' }
+
+[hostname]
+ssh_only = false
+format = ' [$hostname]($style)'
+
+[cmd_duration]
+min_time = 2_000
+show_milliseconds = false
+format = ' [$duration]($style)'
+
+[container]
+symbol = '⬢'
+style = 'bold red diamond'
+format = '[$symbol \[$name]]($style)'
+disabled = false
+
+[memory_usage]
+disabled = true
+threshold = -1
+format = '$symbol [${ram}]($style) '
+
+[gcloud]
+disabled = false
+symbol = '☁️'
+format = ' $symbol [$project]($style)'
+[gcloud.project_aliases]
+'bdv-tech' = 'bdv'
+
+[nodejs]
+disabled = false
+symbol = ''
+not_capable_style = 'bold red strikethrough'
+# Only displays when the an engines property in package.json does not match the node.js version
+format = '[$engines_version]($not_capable_style)'
+
+[package]
+disabled = true
+
+[git_branch]
+disabled = false
+symbol = ''
+style = 'bold purple'
+always_show_remote = false
+truncation_length = 16
+truncation_symbol = '…'
+format = '[$symbol$branch(:$remote_branch)]($style) '
+
+[git_commit]
+disabled = false
+format = '[\($hash$tag\)]($style) '
+only_detached = true
+tag_disabled = false
+tag_symbol = '🏷️'
+
+[git_state]
+disabled = false
+rebase = 'REBASING'
+merge = 'MERGING'
+bisect = 'BISECTING'
+am = 'AM'
+am_or_rebase = 'AM/REBASE'
+cherry_pick = '[🍒 PICKING](bold red)'
+revert = 'REVERTING'
+format = ' [\($state( $progres_current/$progress_total)\)]($style)'
+
+[git_metrics]
+disabled = true
+ignore_submodules = false
+format = ' ([$added]($added_style))([$deleted]($deleted_style))'
+
+[git_status]
+disabled = false
+format = ' ([$all_status$ahead_behind]($style))'
+style = 'bold blue'
+stashed = '[s](yellow)'
+ahead = '[↑$count](bold bright-green)'
+behind = '[↓$count](bold bright-red)'
+modified ='[󰇂](green)'
+deleted = '[x](red)'
+
+[lua]
+disabled = true
