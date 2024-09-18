@@ -51,6 +51,8 @@ local function custom_find_files()
     }
   }
 end
+
+vim.keymap.set('n', '<Leader>t', ':Telescope<Enter>', { noremap = true })
 vim.keymap.set('n', '<Leader>ff', custom_find_files)
 -- Find buffers
 vim.keymap.set('n', '<Leader>fb', telescope.buffers)
