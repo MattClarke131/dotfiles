@@ -4,7 +4,7 @@ require('mason-lspconfig').setup({
   ensure_installed = {
     'lua_ls',
     'bashls',
-    -- typescript
+    'ts_ls',
     'vtsls',
   },
 })
