@@ -3,7 +3,8 @@ add_newline = true
 follow_symlinks = true
 
 right_format = '$all$git_status$cmd_duration'
-format = '$custom$git_branch$directory$character'
+format = '''$custom$git_branch
+$directory$character'''
 
 [custom.tmux]
 disabled = false
@@ -64,7 +65,7 @@ disabled = false
 symbol = ''
 style = 'bold purple'
 always_show_remote = false
-truncation_length = 16
+truncation_length = 32
 truncation_symbol = '…'
 format = '[$symbol$branch(:$remote_branch)]($style) '
 
