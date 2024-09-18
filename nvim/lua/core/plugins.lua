@@ -70,6 +70,7 @@ require('lazy').setup({
       letters = 'asdfghjkl;qwertyuiopASDFGHJKL:QWERTYUIOP',
     },
   },
+  "lukas-reineke/indent-blankline.nvim",
 
 -- themes
   {'neanias/everforest-nvim', background = 'hard'},
@@ -91,3 +92,4 @@ require('core.plugin_config.nvim-tree')
 require('core.plugin_config.trouble')
 require('core.plugin_config.noice')
 require('core.plugin_config.autopairs')
+require('core.plugin_config.indent-blankline')
