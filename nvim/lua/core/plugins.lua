@@ -36,6 +36,7 @@ require('lazy').setup({
   },
   'tpope/vim-commentary',
   'christoomey/vim-tmux-navigator',
+  'mbbill/undotree',
 
 -- visual changes
   {'nvim-lualine/lualine.nvim',

@@ -11,6 +11,7 @@ vim.opt.wildignore = '*.DS_STORE,*.db,node_modules/**,*.jpg,*.png,*.gif'
 -- Behavior
 -- set undo directory
 vim.opt.undodir = vim.fn.expand('~/.vim/undofiles')
+vim.opt.undofile = true
 -- set swap directory
 vim.opt.directory = vim.fn.expand('~/.vim/swapfiles')
 

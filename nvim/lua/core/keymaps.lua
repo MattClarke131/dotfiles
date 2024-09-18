@@ -107,6 +107,10 @@ vim.keymap.set('n', 'gcc', '<Plug>CommentaryLine')
 vim.keymap.set('n', 'gcu', '<Plug>Commentary<Plug>Commentary', { silent = true })
 
 
+-- Undotree
+vim.keymap.set('n', '<Leader>u', ':UndotreeToggle<Enter>', { noremap = true })
+
+
 -- Trouble
 local trouble = require('trouble')
 vim.keymap.set('n', '<leader>xx', trouble.toggle)
