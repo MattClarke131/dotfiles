@@ -2,16 +2,16 @@
 add_newline = true
 follow_symlinks = true
 
-right_format = '$all$git_status$cmd_duration'
-format = '''$custom$git_branch
+# right_format = '$all$git_status$cmd_duration'
+format = '''${custom.tmux}$git_branch$git_status$cmd_duration
 $directory$character'''
 
 [custom.tmux]
 disabled = false
 command = "tmux list-sessions | wc -l"
-when = "pgrep -x tmux && [ -z \"$TMUX\" ]"
+when = "pgrep tmux"
 symbol = ""
-format = " [!$symbol]($style) "
+format = "[$symbol$output]($style) "
 style = "bold green"
 
 [directory]
