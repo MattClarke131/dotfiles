@@ -5,9 +5,38 @@
 [core]
   editor = nvim
   pager = delta
+  excludesfile = ~/dotfiles/git/gitignore
+  trustctime = false
+
+[gpg]
+  format = ssh
 
 [log]
-  date = local
+  date = format-local:%a %Y-%m-%d %I:%M:%S %p
+
+[url "git@github.com:"]
+  insteadOf = "https://github.com"
+  insteadOf = "gh:"
+
+[transfer]
+  fsckobjects = true
+
+[fetch]
+  fsckobjects = true
+  prune = true
+  prunetags = true
+
+[receive]
+  fsckobjects = true
+
+[delta]
+  side-by-side = true
+  navigate = true
+  features = side-by-side line-numbers decorations
+  whitespace-error-style = 22 reverse
+  line-numbers = true
+  decorations = true
+  syntax-theme = Monokai Extended
 
 [pager]
   branch = false
@@ -22,11 +51,34 @@
 [blame]
   ignoreRevsFile = .git-blame-ignore-revs
 
-[delta]
-  side-by-side = true
+
+[push]
+  autoSetupRemote = true
+
+[merge]
+  conflictStyle = diff3
+  tool = nvimdiff
+
+[rebase]
+  autoStash = true
+  autoSquash = true
+  missingCommitsCheck = error
+
+[interactive]
+  diffFilter = delta --color-only
+
+[diff]
+  algorithm = histogram
+  submodule = log
+
+[status]
+  submoduleSummary = true
+
+s
 
 [color.status]
   added = green
   deleted = red
   changed = yellow
   untracked = dim green
+
