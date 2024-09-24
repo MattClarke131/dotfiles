@@ -91,21 +91,6 @@ if [[ -f "$HOME"/dotfiles/zsh/zshrc.local ]]; then
   source "$HOME"/dotfiles/zsh/zshrc.local
 fi
 
-# BAT FZF
-FZF_DEFAULT_OPTS="--ansi --multi"
-if command -v bat &> /dev/null
-then
-  FZF_DEFAULT_OPTS="${FZF_DEFAULT_OPTS} --preview 'bat {}'"
-  # Use bat as manpager
-  export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-else
-  FZF_DEFAULT_OPTS="${FZF_DEFAULT_OPTS} --preview 'cat {}'"
-  echo "********************************************************************************\n"
-  echo "Install bat!"
-  echo "********************************************************************************\n"
-fi
-export FZF_DEFAULT_OPTS
-
 # FZF
 if command -v fzf &> /dev/null
 then
@@ -124,8 +109,15 @@ then
     --exclude submodules \
     --exclude env
     '
-  export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
-  # TODO: include syntax highlighting
+  export FZF_DEFAULT_OPTS="--ansi --multi"
+
+  if command -v bat &> /dev/null
+  then
+    export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND} --preview '\cat --style=numbers --color=always --line-range :500 {}'"
+  else
+    export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND} --preview 'bat --style=numbers --color=always --line-range :500 {}'"
+  fi
+
   export FZF_CTRL_R_OPTS="--no-preview --height 40% --layout=reverse --no-border"
 else
   echo "********************************************************************************\n"
