@@ -5,6 +5,7 @@ follow_symlinks = true
 # right_format = '$all$git_status$cmd_duration'
 format = '''${custom.tmux}$git_branch$git_status$cmd_duration
 $directory$character'''
+right_format= '$hostname'
 
 [custom.tmux]
 disabled = false
