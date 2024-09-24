@@ -81,7 +81,6 @@ require('lazy').setup({
 -- to try
   -- 'tpope/vim-fugitive',
   -- file explorer
-  -- https://github.com/nvim-tree/nvim-tree.lua
 })
 
 require('core.plugin_config.lualine')
