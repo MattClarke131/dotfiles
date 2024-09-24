@@ -42,7 +42,6 @@ function mcd () {
 alias v="\nvim"
 alias vfzf="fzf --bind 'enter:become(vim {})'"
 alias vf=vfzf
-alias vim="echo use v"
 alias python=python3
 alias tree="tree -I 'node_modules|submodules|backup-dotfiles'"
 alias ghce="gh copilot explain"
