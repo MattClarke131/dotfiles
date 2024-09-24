@@ -139,10 +139,9 @@ source "$HOME"/dotfiles/zsh/docker-completions.sh""
 source "${HOME}/dotfiles/submodules/fzf-git/fzf-git.sh"
 test -e "${HOME}/dotfiles/git-config.sh" && source "${HOME}/dotfiles/git-config.sh"
 
-#test -e "${HOME}/.config/broot/launcher/bash/br" && source "${HOME}/.config/broot/launcher/bash/br"
-
+# iterm2 shell integration
 if [[ "$OSTYPE" == "darwin"* ]]; then
-  test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+  source "${HOME}/dotfiles/iterm/iterm2_shell_integration.zsh" || echo 'iterm2 shell integration install failed'
 fi
 
 # The next line updates PATH for the Google Cloud SDK.

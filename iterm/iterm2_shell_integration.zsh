@@ -176,3 +176,21 @@ if [[ -o interactive ]]; then
     printf "\033]1337;ShellIntegrationVersion=14;shell=zsh\007"
   fi
 fi
+
+alias imgcat=/Users/matt/.iterm2/imgcat;
+alias imgls=/Users/matt/.iterm2/imgls;
+alias it2api=/Users/matt/.iterm2/it2api;
+alias it2attention=/Users/matt/.iterm2/it2attention;
+alias it2cat=/Users/matt/.iterm2/it2cat;
+alias it2check=/Users/matt/.iterm2/it2check;
+alias it2copy=/Users/matt/.iterm2/it2copy;
+alias it2dl=/Users/matt/.iterm2/it2dl;
+alias it2getvar=/Users/matt/.iterm2/it2getvar;
+alias it2git=/Users/matt/.iterm2/it2git;
+alias it2profile=/Users/matt/.iterm2/it2profile;
+alias it2setcolor=/Users/matt/.iterm2/it2setcolor;
+alias it2setkeylabel=/Users/matt/.iterm2/it2setkeylabel;
+alias it2ssh=/Users/matt/.iterm2/it2ssh;
+alias it2tip=/Users/matt/.iterm2/it2tip;
+alias it2ul=/Users/matt/.iterm2/it2ul;
+alias it2universion=/Users/matt/.iterm2/it2universion
