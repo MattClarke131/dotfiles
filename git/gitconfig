@@ -24,3 +24,9 @@
 
 [delta]
   side-by-side = true
+
+[color.status]
+  added = green
+  deleted = red
+  changed = yellow
+  untracked = dim green
