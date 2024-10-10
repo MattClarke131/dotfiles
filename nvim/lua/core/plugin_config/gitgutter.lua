@@ -4,7 +4,7 @@ vim.g.gitgutter_map_keys = 0
 -- Enable GitGutter line number highlights
 vim.cmd('GitGutterLineNrHighlightsEnable')
 -- Enable GitGutter line highlights
-vim.cmd('GitGutterLineHighlightsEnable')
+vim.cmd('GitGutterLineHighlightsDisable')
 -- Enable GitGutter signs
 vim.cmd('GitGutterSignsEnable')
 
