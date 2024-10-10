@@ -1,33 +1,33 @@
 ## How to install
-1. Clone this repo
+1. Install [oh-my-zsh](https://ohmyz.sh/#install)
+2. Clone this repo
 ```console
 git clone git@github.com:MattClarke131/dotfiles.git
 
 ```
-1. Install submodules
+3. Install submodules
 ```console
 git submodule init
 git submodule update
 ```
-2. Install homebrew
-3. Install homebrew packages
+4. Install [homebrew](https://brew.sh/)
+5. Install homebrew packages
 ```console
 brew bundle install
 ```
-4. Install node packages
+6. Install node packages
 ```console
-npm instal
+npm install
 ```
-4. Run fzf install script
+7. Run fzf install script
 ```console
 $(brew --prefix fzf)/install
 ```
-5. Install [ohmyzsh](https://ohmyz.sh/)
-6. Run install script
+8. Run install script
 ```console
 ./install.sh
 ```
-7. Setup crons
+9. Setup crons
 ```console
 crontab -e
 ```
