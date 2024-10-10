@@ -11,6 +11,7 @@ brew "gist"
 brew "lua-language-server"
 brew "tree"
 brew "sshs"
+brew "starship"
 
 if OS.mac?
   brew "coreutils"
