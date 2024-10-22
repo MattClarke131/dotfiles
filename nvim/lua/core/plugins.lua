@@ -77,6 +77,9 @@ require('lazy').setup({
   'rebelot/kanagawa.nvim',
   'rmehri01/onenord.nvim',
   'ellisonleao/gruvbox.nvim',
+  'glepnir/zephyr-nvim',
+  'sainnhe/sonokai',
+  'sainnhe/edge',
 
 -- to try
   -- 'tpope/vim-fugitive',

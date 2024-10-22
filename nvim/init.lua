@@ -13,4 +13,4 @@ require('core.keymaps')
 require('core.language-servers')
 require('core.vim-options')
 
-vim.cmd [[colorscheme everforest]]
+vim.cmd [[colorscheme edge]]
