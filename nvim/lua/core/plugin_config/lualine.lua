@@ -25,7 +25,10 @@ require('lualine').setup {
   lualine_b = {
     'branch',
     'diff',
-    --{ 'diagnostics', sources = { 'nvim_lsp' } },
+  },
+  lualine_c = {},
+  lualine_x = {'searchcount', 'progress'},
+  lualine_y = {
     {
       'diagnostics',
       sources = { 'nvim_lsp' },
@@ -35,19 +38,10 @@ require('lualine').setup {
       color_info = '#00ff00',
       color_hint = '#00ffff',
       symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ' },
+      always_visible = true,
     },
   },
-  lualine_c = { 'branch' },
-    lualine_x = {'searchcount', 'progress'},
-    lualine_y = {'location', 'filename'},
-    -- find something custom to put here
-    lualine_z = { 'g:help_tip' },
-    --lualine_a = {'mode'},
-    --lualine_b = {'branch'},
-    --lualine_c = {'filename'},
-    --lualine_x = {'encoding', 'fileformat', 'filetype'},
-    --lualine_y = {'progress'},
-    --lualine_z = {'location'}
+  lualine_z = { 'g:help_tip' },
   },
   inactive_sections = {
     lualine_a = {},
