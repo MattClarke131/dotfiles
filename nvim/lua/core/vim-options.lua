@@ -69,17 +69,28 @@ vim.opt.filetype = 'on'
 -- auto indent
 vim.opt.autoindent = true
 -- 2 spaces instead of tabs
+vim.opt.expandtab = true
 vim.opt.shiftwidth = 2
 vim.opt.softtabstop = 2
 vim.opt.tabstop = 2
-vim.opt.expandtab = true
 -- spellchecking
 vim.opt.spelllang = 'en-us'
+-- do not display tabs and spaces
+vim.opt.list = false
 
 -- Set tab width default for markdown files
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "markdown",
   callback = function()
+    vim.o.tabstop = 2
+    vim.o.shiftwidth = 2
+  end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "typescript",
+  callback = function()
+    vim.opt.expandtab = true
     vim.o.tabstop = 2
     vim.o.shiftwidth = 2
   end,
