@@ -72,7 +72,6 @@ ln -sfvn  "$DOTFILES_ROOT"/submodules/zsh-syntax-highlighting "$HOME"/.oh-my-zsh
 ln -sfvn "$DOTFILES_ROOT"/bat $HOME/.config/bat
 #
 install_dotfile "$DOTFILES_ROOT"/zsh/zshrc "$HOME"/.zshrc "$BACKUP_DOTFILES"/zsh/zshrc
-install_dotfile "$DOTFILES_ROOT"/zsh/p10k.zsh "$HOME"/.p10k.zsh "$BACKUP_DOTFILES"/zsh/p10k.zsh
 install_dotfile "$DOTFILES_ROOT"/tmux.conf "$HOME"/.tmux.conf "$BACKUP_DOTFILES"/tmux.conf
 install_dotfile "$DOTFILES_ROOT"/rsync-excludes "$HOME"/.rsync-excludes "$BACKUP_DOTFILES"/rsync-excludes
 install_dotfile "$DOTFILES_ROOT"/git/gitconfig "$HOME"/.gitconfig "$BACKUP_DOTFILES"/git/gitconfig

@@ -4,6 +4,7 @@
   "description": "Dotfiles grammar for tree-sitter",
   "repository": "github:tree-sitter/tree-sitter-dotfiles",
   "license": "MIT",
+  "type": "module",
   "main": "bindings/node",
   "types": "bindings/node",
   "keywords": [
@@ -21,12 +22,19 @@
     "src/**"
   ],
   "dependencies": {
+    "@types/node": "^22.7.7",
+    "chalk": "^5.3.0",
+    "chalk-animation": "^2.0.3",
+    "command-line-args": "^6.0.0",
     "node-addon-api": "^7.1.0",
     "node-gyp-build": "^4.8.0"
   },
   "devDependencies": {
+    "@types/chalk-animation": "^1.6.3",
+    "@types/command-line-args": "^5.2.3",
     "prebuildify": "^6.0.0",
-    "tree-sitter-cli": "^0.22.6"
+    "tree-sitter-cli": "^0.22.6",
+    "typescript": "^5.6.3"
   },
   "peerDependencies": {
     "tree-sitter": "^0.21.0"
