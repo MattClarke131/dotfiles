@@ -95,3 +95,6 @@ require('core.plugin_config.trouble')
 require('core.plugin_config.noice')
 require('core.plugin_config.autopairs')
 require('core.plugin_config.indent-blankline')
+
+-- Disable indent-blankline
+vim.cmd('IBLDisable')
