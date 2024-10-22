@@ -37,6 +37,7 @@ require('lazy').setup({
   'tpope/vim-commentary',
   'christoomey/vim-tmux-navigator',
   'mbbill/undotree',
+  'preservim/tagbar',
 
 -- visual changes
   {'nvim-lualine/lualine.nvim',
@@ -95,6 +96,7 @@ require('core.plugin_config.trouble')
 require('core.plugin_config.noice')
 require('core.plugin_config.autopairs')
 require('core.plugin_config.indent-blankline')
+require('core.plugin_config.tagbar')
 
--- Disable indent-blankline
+-- Start with indent-blankline disabled
 vim.cmd('IBLDisable')

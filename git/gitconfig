@@ -82,3 +82,7 @@ s
   changed = yellow
   untracked = dim green
 
+[advice]
+addIgnoredFile = false
+
+
