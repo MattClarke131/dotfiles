@@ -13,3 +13,6 @@
 [submodule "submodules/fzf-git"]
 	path = submodules/fzf-git
 	url = https://github.com/junegunn/fzf-git.sh
+[submodule "submodules/ctags"]
+	path = submodules/ctags
+	url = git@github.com:universal-ctags/ctags.git
