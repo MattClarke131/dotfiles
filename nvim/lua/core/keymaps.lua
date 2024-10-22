@@ -12,6 +12,7 @@ local set_lsp_keymaps = function (_, bufnr)
   vim.keymap.set('n', 'gd', go_to_declaration, { buffer = bufnr })
   vim.keymap.set('n', '<Leader>gi', vim.lsp.buf.implementation, { buffer = bufnr })
   vim.keymap.set('n', '<Leader>gh', vim.lsp.buf.hover, { buffer = bufnr })
+  vim.keymap.set('n', '<Leader>d', vim.diagnostic.open_float, { buffer = bufnr })
 end
 
 -- help-tips
