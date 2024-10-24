@@ -48,6 +48,7 @@ require('lazy').setup({
     },
   },
   'airblade/vim-gitgutter',
+  'rhysd/conflict-marker.vim',
   -- 'ap/vim-buftabline',
   {"folke/noice.nvim",
     event = "VeryLazy",
