@@ -8,8 +8,8 @@ alias mv='mv -i'
 alias dot="\cd ~/dotfiles"
 alias cddot="\cd ~/dotfiles"
 alias ..='\cd ..; l'
-alias ...='\cd ...; l'
-alias ....='\cd ....; l'
+alias ...='\cd ../..; l'
+alias ....='\cd ../../..; l'
 alias pud='\pushd'
 alias pod='\popd'
 
