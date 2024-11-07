@@ -3,7 +3,7 @@ add_newline = true
 follow_symlinks = true
 
 # right_format = '$all$git_status$cmd_duration'
-format = '''${custom.tmux}$git_branch$git_status$cmd_duration
+format = '''${custom.tmux}$git_branch$git_status$cmd_duration$python
 $directory$character'''
 right_format= '$hostname'
 
@@ -57,6 +57,12 @@ symbol = ''
 not_capable_style = 'bold red strikethrough'
 # Only displays when the an engines property in package.json does not match the node.js version
 format = '[$engines_version]($not_capable_style)'
+
+[python]
+# disabled = false
+symbol = '👾 '
+pyenv_version_name = true
+format = ' 🐍 [$virtualenv]($style)'
 
 [package]
 disabled = true
