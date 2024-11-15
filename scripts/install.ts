@@ -162,6 +162,12 @@ installDotfile(
   null,
   'file'
 )
+installDotfile(
+  `${options.dotRoot}/aider.conf.yml`,
+  `${process.env.HOME}/.aider.conf.yml`,
+  null,
+  'file'
+)
 
 const finishAnimation = chalkAnimation.rainbow('Installation complete!')
 

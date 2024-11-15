@@ -105,6 +105,7 @@ installDotfile(`${options.dotRoot}/bat`, `${process.env.HOME}/.config/bat`, null
 installDotfile(`${options.dotRoot}/tmux.conf`, `${process.env.HOME}/.tmux.conf`, null, 'file');
 installDotfile(`${options.dotRoot}/rsync-excludes`, `${process.env.HOME}/.rsync-excludes`, null, 'file');
 installDotfile(`${options.dotRoot}/git/gitconfig`, `${process.env.HOME}/.gitconfig`, null, 'file');
+installDotfile(`${options.dotRoot}/aider.conf.yml`, `${process.env.HOME}/.aider.conf.yml`, null, 'file');
 const finishAnimation = chalkAnimation.rainbow('Installation complete!');
 setTimeout(() => {
     finishAnimation.stop();

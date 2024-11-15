@@ -75,6 +75,7 @@ install_dotfile "$DOTFILES_ROOT"/zsh/zshrc "$HOME"/.zshrc "$BACKUP_DOTFILES"/zsh
 install_dotfile "$DOTFILES_ROOT"/tmux.conf "$HOME"/.tmux.conf "$BACKUP_DOTFILES"/tmux.conf
 install_dotfile "$DOTFILES_ROOT"/rsync-excludes "$HOME"/.rsync-excludes "$BACKUP_DOTFILES"/rsync-excludes
 install_dotfile "$DOTFILES_ROOT"/git/gitconfig "$HOME"/.gitconfig "$BACKUP_DOTFILES"/git/gitconfig
+install_dotfile "$DOTFILES_ROOT"/aider.conf.yml "$HOME"/.aider.conf.yml "$BACKUP_DOTFILES"/aider.conf.yml
 echo "--------------------------------------------------------------------------------"
 echo "symlinks created"
 echo "################################################################################"
