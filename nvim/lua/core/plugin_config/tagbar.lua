@@ -1,4 +1,4 @@
-vim.g.tagbar_autofocus = 1
+vim.g.tagbar_autofocus = 0
 vim.g.tagbar_case_insensitive = 1
 vim.g.tagbar_wrap = 1
 vim.g.tagbar_sort = 0
