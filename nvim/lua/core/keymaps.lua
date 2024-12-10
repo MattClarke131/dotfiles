@@ -125,6 +125,10 @@ vim.keymap.set('n', 'gR',         function() trouble.toggle('lsp_references') en
 -- Dismiss noice
 vim.keymap.set('n', '<Leader>nn', ':NoiceDismiss<Enter>', { noremap = true })
 
+-- Tagbar
+--
+vim.keymap.set('n', '<Leader>e', ':TagbarToggle<Enter>', { noremap = true })
+
 -- Navigation
 -- barbar
 vim.keymap.set('n', '<Leader>h', ':silent! BufferPrevious<Enter>', { noremap = true })
