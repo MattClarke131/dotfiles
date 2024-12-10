@@ -164,9 +164,27 @@ vim.keymap.set('n', '<Leader>tp', ':set paste!<Enter>', { noremap = true })
 
 
 -- Language specific keybindings
--- JS Insert debugger
-vim.keymap.set('n', '<Leader>qd', 'odebugger;<esc>', { noremap = true })
-vim.keymap.set('n', '<Leader>qD', 'Odebugger;<esc>', { noremap = true })
+-- Define insert debugger function that checks language
+-- and inserts the appropriate debugger
+local function insert_debugger_below()
+  local filetype = vim.bo.filetype
+  if filetype == 'python' then
+    vim.cmd('normal! obreakpoint()')
+  elseif filetype == 'javascript' or filetype == 'typescript' then
+    vim.cmd('normal! odebugger;')
+  end
+end
 
+local function insert_debugger_above()
+  local filetype = vim.bo.filetype
+  if filetype == 'python' then
+    vim.cmd('normal! Obreakpoint()')
+  elseif filetype == 'javascript' or filetype == 'typescript' then
+    vim.cmd('normal! Odebugger;')
+  end
+end
+
+vim.keymap.set('n', '<Leader>qd', insert_debugger_below, { noremap = true })
+vim.keymap.set('n', '<Leader>qD', insert_debugger_above, { noremap = true })
 
 return { set_lsp_keymaps  = set_lsp_keymaps, }
