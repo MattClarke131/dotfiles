@@ -48,6 +48,14 @@ local helptips = {
   'Trouble: \'xq\' quickfix',
   'Trouble: \'xl\' loclist',
   'Trouble: \'gR\' lsp refs (no leader)',
+
+  -- Terminal
+
+  'Ctrl + U: delete from the cursor to the start of the line.',
+  'Ctrl + K: delete from the cursor to the end of the line.',
+  'Ctrl + W: delete from the cursor to the start of the preceding word.',
+  'Ctrl + Y: Paste from yank',
+  'Alt + D: delete from the cursor to the end of the next word.',
 }
 
 local function cycleHelpTip()
