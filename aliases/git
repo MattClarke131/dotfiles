@@ -2,6 +2,7 @@
 # git aliases
 
 alias rpull="pull --rebase"
+alias gbmv="git branch --move"
 alias gcob="git checkout -b"
 alias gcop="git checkout -p"
 alias gcfix="git commit --fixup"
