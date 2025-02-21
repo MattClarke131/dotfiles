@@ -153,7 +153,7 @@
 # Output Settings:
 
 ## Use colors suitable for a dark terminal background (default: False)
-dark-mode: true
+dark-mode: True
 
 ## Use colors suitable for a light terminal background (default: False)
 #light-mode: false
@@ -216,7 +216,7 @@ dark-mode: true
 #auto-commits: true
 
 ## Enable/disable commits when repo is found dirty (default: True)
-dirty-commits: false
+dirty-commits: False
 
 ## Attribute aider code changes in the git author name (default: True)
 #attribute-author: true
@@ -312,7 +312,7 @@ dirty-commits: false
 #just-check-update: false
 
 ## Check for new aider versions on launch
-check-update: true
+check-update: True
 
 ## Install the latest version from the main branch
 #install-main-branch: false
