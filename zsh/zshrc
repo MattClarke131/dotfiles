@@ -2,6 +2,11 @@
 
 source "$HOME"/dotfiles/zsh/motd.sh
 
+## Set PATH
+# used by pipx
+export PATH="$PATH:/Users/matt/.local/bin"
+
+
 # Set PATH, MANPATH, etc., for Homebrew.
 if [ "$OSTYPE" = 'linux-gnu' ]
 then
@@ -23,17 +28,18 @@ HIST_STAMPS="yyyy-mm-dd"
 
 # PLUGINS
 plugins=(
-  git
-  zsh-autosuggestions
-  zsh-syntax-highlighting
-  fasd
   docker
   docker-compose
-  terraform
+  fasd
   fzf
-  ssh
-  macos
   gcloud
+  git
+  macos
+  poetry
+  terraform
+  ssh
+  zsh-autosuggestions
+  zsh-syntax-highlighting
 )
 source "$ZSH"/oh-my-zsh.sh
 
