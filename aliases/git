@@ -17,6 +17,7 @@ alias grbi20='git rebase -i HEAD~20'
 alias grbi30='git rebase -i HEAD~30'
 alias grbi50='git rebase -i HEAD~50'
 alias grbi100='git rebase -i HEAD~100'
+alias gres='git restore'
 alias gbm='git branch --move'
 alias gdm='git diff "$(git_main_branch)"'
 alias gstam="git stash push -m"
