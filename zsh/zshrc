@@ -2,11 +2,12 @@
 
 source "$HOME"/dotfiles/zsh/motd.sh
 
+# Local Environment Variables
+source "$HOME"/.env
+
 ## Set PATH
 # used by pipx
 export PATH="$PATH:/Users/matt/.local/bin"
-
-
 # Set PATH, MANPATH, etc., for Homebrew.
 if [ "$OSTYPE" = 'linux-gnu' ]
 then
