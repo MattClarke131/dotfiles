@@ -58,7 +58,7 @@ vim.keymap.set('n', '<Leader>ff', custom_find_files)
 -- Find buffers
 vim.keymap.set('n', '<Leader>fb', telescope.buffers)
 -- Find lines with rg
-vim.keymap.set('n', '<Leader>fr', telescope.live_grep)
+vim.keymap.set('n', '<Leader>fg', telescope.live_grep)
 -- Find Lines in current buffer
 vim.keymap.set('n', '<Leader>/', function()
   telescope.current_buffer_fuzzy_find { previewer=false }
