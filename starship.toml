@@ -3,7 +3,7 @@ add_newline = true
 follow_symlinks = true
 
 # right_format = '$all$git_status$cmd_duration'
-format = '''${custom.tmux}$git_branch$git_status$cmd_duration$python
+format = '''${custom.tmux}$git_branch$git_status$cmd_duration$python$gcloud
 $directory$character'''
 right_format= '$hostname'
 
