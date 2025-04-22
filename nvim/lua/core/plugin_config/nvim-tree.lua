@@ -3,7 +3,8 @@ require('nvim-tree').setup {
   hijack_netrw = true,
   view = {
     side = 'right',
-    number = true,
+    number = false,
+    adaptive_size = true,
   },
   renderer = {
     highlight_modified = 'icon',
