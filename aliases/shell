@@ -1,5 +1,8 @@
 #!/usr/bin/env zsh
 
+# alias search and exec
+alias a=eval "$(alias | fzf | cut -d '=' -f 1)"
+
 # Navigation
 alias cp='cp -i'
 alias mv='mv -i'
