@@ -35,6 +35,16 @@ function mcd () {
   mkdir -p "$1"
   cd "$1" || exit
 }
+# alias search and exec
+function alias_search_and_exec() {
+  local cmd
+  cmd=$(alias | fzf --height 40% --reverse --inline-info | cut -d '=' -f 1)
+  if [ -n "$cmd" ]; then
+    eval "$cmd"
+  fi
+}
+alias a=alias_search_and_exec
+
 ################################################################################
 
 
