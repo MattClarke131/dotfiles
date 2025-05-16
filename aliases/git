@@ -1,29 +1,34 @@
 #!/usr/bin/env zsh
-# git aliases
 
-alias rpull="pull --rebase"
+# git aliases
+alias gbm='git branch --move'
 alias gbmv="git branch --move"
+alias gcfix="git commit --fixup"
 alias gcob="git checkout -b"
 alias gcop="git checkout -p"
-alias gcfix="git commit --fixup"
-alias gmv="git mv"
-alias grbo='git rebase origin/"$(git_current_branch)"'
-alias grbmi='git rebase -i $(git_main_branch)'
-alias grbim='git rebase -i $(git_main_branch)'
-alias grbio='git rebase -i origin'
+alias gdm='git diff "$(git_main_branch)"'
+alias glo5='git log --oneline --decorate -5'
+alias glo10='git log --oneline --decorate -10'
+alias glo20='git log --oneline --decorate -20'
+alias glo50='git log --oneline --decorate -50'
+alias glo100='git log --oneline --decorate -100'
+alias gmv='git mv'
 alias grbi5='git rebase -i HEAD~5'
 alias grbi10='git rebase -i HEAD~10'
 alias grbi20='git rebase -i HEAD~20'
 alias grbi30='git rebase -i HEAD~30'
 alias grbi50='git rebase -i HEAD~50'
 alias grbi100='git rebase -i HEAD~100'
+alias grbim='git rebase -i $(git_main_branch)'
+alias grbio='git rebase -i origin'
+alias grbmi='git rebase -i $(git_main_branch)'
+alias grbo='git rebase origin/"$(git_current_branch)"'
 alias gres='git restore'
-alias gbm='git branch --move'
-alias gdm='git diff "$(git_main_branch)"'
+alias greva="git revert --abort"
+alias grevc="git revert --continue"
 alias gstam="git stash push -m"
 alias gstap="git stash push -p"
-alias grevc="git revert --continue"
-alias greva="git revert --abort"
+
 alias vgdm='vim_git_diff $(git merge-base "$(git_current_branch)" "$(git_main_branch)")'
 alias vgd=vim_git_diff
 alias vcd=vim_commit_diff
