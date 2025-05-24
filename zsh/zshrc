@@ -83,8 +83,8 @@ setopt HIST_FIND_NO_DUPS           # Only show commands once when searching with
 [ -f "$HOME/.secrets" ] && source "$HOME/.secrets"
 
 # SOURCE ALIASES
-for file in $(\ls -A "$HOME"/dotfiles/aliases | grep -E '[^s][^w].$'); do
-    source "$HOME"/dotfiles/aliases/"$file"
+for file in $(\ls -A "$HOME"/dotfiles/zsh/aliases | grep -E '[^s][^w].$'); do
+    source "$HOME"/dotfiles/zsh/aliases/"$file"
 done
 unset file
 
