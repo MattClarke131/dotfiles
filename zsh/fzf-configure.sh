@@ -50,12 +50,11 @@ _get_fzf_pager() {
 }
 
 # set default command for fzf
+# priority: fd > rg > find
 _get_fzf_default_command() {
   local FZF_DEFAULT_COMMAND=''
 
-  # Check if fd is installed
   if command -v fd &> /dev/null; then
-    # Exclude .git, node_modules, submodules, and env
     FZF_DEFAULT_COMMAND='fd \
       --type file \
       --color=always \

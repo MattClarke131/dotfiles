@@ -14,17 +14,16 @@ alias pud='\pushd'
 alias pod='\popd'
 
 # ls behaves strangely on newer versions of macOS
-if [ "$OSTYPE" = 'linux-gnu' ]; then
-    alias l="\ls --group-directories-first --color=tty"
-    alias ll="\ls -lAh --group-directories-first --color=tty"
-    alias la="\ls -A --group-directories-first --color=tty"
-else
-    alias l="\gls --group-directories-first --color=tty"
-    alias ll="\gls -lAh --group-directories-first --color=tty"
-    alias la="\gls -A --group-directories-first --color=tty"
+# override the default ls with gls
+local LIST_METHOD="ls"
+if expr "$OSTYPE" : 'darwin' >/dev/null; then
+  LIST_METHOD="gls"
 fi
 
-# functions
+alias l="$LIST_METHOD --group-directories-first --color=tty"
+alias ll="$LIST_METHOD -lAh --group-directories-first --color=tty"
+alias la="$LIST_METHOD -A --group-directories-first --color=tty"
+
 # ls after cd
 function c() {
   \cd "$1"; l  || exit
@@ -40,40 +39,47 @@ function mcd () {
 alias a=search_and_print_alias
 
 # PROGRAMS
-alias v="\nvim"
-alias vfzf="fzf --bind 'enter:become(vim {})'"
-alias vf=vfzf
+alias v="$EDITOR"
 alias python=python3
 alias tree="tree -I 'node_modules|submodules|backup-dotfiles'"
 alias ghce="gh copilot explain"
 alias ghcs="gh copilot suggest"
 
-# ripgrep
-unalias rg 2>/dev/null
-RG_DEFAULT_COMMAND="rg --no-ignore\
-  --glob '!submodules/' \
-  --glob '!backup-dotfiles/' \
-  --glob '!.git/' \
-  --glob '!Brewfile.lock.json' \
-  "
-if command -v rg >/dev/null 2>&1; then
-  alias -g g="| $RG_DEFAULT_COMMAND"
-  alias -g gi="| $RG_DEFAULT_COMMAND -i"
-  alias -g gv="| $RG_DEFAULT_COMMAND -v"
-else
-  alias -g g="| grep"
-  alias -g gi="| grep -i"
-  alias -g gv="| grep -v"
-fi
-alias rg="$RG_DEFAULT_COMMAND"
-alias rgg= "\rg"
+# SEARCH TOOL
+local excluded_dirs=(
+  "submodules"
+  "backup-dotfiles"
+  ".git"
+  "node_modules"
+  "__pycache__"
+)
+local excluded_files=(
+  "Brewfile.lock.json"
+)
 
-# TOOLS
-# Use bat instead of cat if available
-if command -v bat &> /dev/null
-then
-  alias cat='bat'
+local SEARCH_COMMAND=""
+if type -p rg >/dev/null 2>&1; then
+    SEARCH_COMMAND="rg --no-ignore"
+    for dir in "${excluded_dirs[@]}"; do
+        SEARCH_COMMAND+=" --glob '!$dir/'"
+    done
+    for file in "${excluded_files[@]}"; do
+        SEARCH_COMMAND+=" --glob '!$file'"
+    done
+else
+  SEARCH_COMMAND="grep -r"
+  for dir in "${excluded_dirs[@]}"; do
+      SEARCH_COMMAND+=" --exclude-dir=$dir"
+  done
+  for file in "${excluded_files[@]}"; do
+      SEARCH_COMMAND+=" --exclude=$file"
+  done
 fi
+
+alias -g g="| $SEARCH_COMMAND"
+alias -g gi="| $SEARCH_COMMAND -i"
+alias -g gv="| $SEARCH_COMMAND -v"
+alias rg="$SEARCH_COMMAND"
 
 # MISC
 alias cl="clear"

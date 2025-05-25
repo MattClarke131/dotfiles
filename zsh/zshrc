@@ -47,7 +47,15 @@ source "$ZSH"/oh-my-zsh.sh
 
 
 # SETTINGS
-export EDITOR="vim"
+# neovim installed?
+if command -v nvim &> /dev/null
+then
+  export VISUAL=nvim
+  export EDITOR=nvim
+else
+  export VISUAL=vim
+  export EDITOR=vim
+fi
 unsetopt BEEP                   # Turn off all beeps
 setopt interactive_comments     # Allow interactive comments
 setopt noclobber                # Don't overwrite files by default when using '>'
@@ -79,10 +87,10 @@ setopt INC_APPEND_HISTORY          # Save to history immediately
 setopt HIST_FIND_NO_DUPS           # Only show commands once when searching with CTRL+R
 
 
-# SOURCE SECRETS
+# SECRETS
 [ -f "$HOME/.secrets" ] && source "$HOME/.secrets"
 
-# SOURCE ALIASES
+# ALIASES
 for file in $(\ls -A "$HOME"/dotfiles/zsh/aliases | grep -E '[^s][^w].$'); do
     source "$HOME"/dotfiles/zsh/aliases/"$file"
 done
@@ -102,9 +110,11 @@ else
   echo "fzf not installed, skipping fzf configuration"
 fi
 
-# Docker
+
+# Docker completions
 source "$HOME"/dotfiles/zsh/docker-completions.sh""
 
+# Git
 source "${HOME}/dotfiles/submodules/fzf-git/fzf-git.sh"
 test -e "${HOME}/dotfiles/git-config.sh" && source "${HOME}/dotfiles/git-config.sh"
 
@@ -119,4 +129,5 @@ if [ -f '/Users/matt/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/matt/googl
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/matt/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/matt/google-cloud-sdk/completion.zsh.inc'; fi
 
+# Prompt customization
 eval "$(starship init zsh)"
