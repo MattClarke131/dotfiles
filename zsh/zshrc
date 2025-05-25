@@ -88,12 +88,6 @@ for file in $(\ls -A "$HOME"/dotfiles/zsh/aliases | grep -E '[^s][^w].$'); do
 done
 unset file
 
-# SOURCE FUNCTIONS
-for file in $(\ls -A "$HOME"/dotfiles/functions | grep '[^s][^w].$') ; do
-    source "$HOME"/dotfiles/functions/"$file"
-done
-unset file
-
 # LOCAL SETINGS
 if [[ -f "$HOME"/dotfiles/zsh/zshrc.local ]]; then
   source "$HOME"/dotfiles/zsh/zshrc.local
@@ -102,36 +96,10 @@ fi
 # FZF
 if command -v fzf &> /dev/null
 then
-  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-  # use rg
-  # exclude .git, node_modules, and submodules
-  export FZF_DEFAULT_COMMAND='fd \
-    --type file \
-    --color=always \
-    --follow \
-    --hidden \
-    --no-ignore-vcs \
-    --exclude .git \
-    --exclude node_modules \
-    --exclude backup-dotfiles \
-    --exclude submodules \
-    --exclude env
-    --exclude .venv
-    '
-  export FZF_DEFAULT_OPTS="--ansi --multi"
-
-  if command -v bat &> /dev/null
-  then
-    export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND} --preview '\cat --style=numbers --color=always --line-range :500 {}'"
-  else
-    export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND} --preview 'bat --style=numbers --color=always --line-range :500 {}'"
-  fi
-
-  export FZF_CTRL_R_OPTS="--no-preview --height 40% --layout=reverse --no-border"
+  source "$HOME"/dotfiles/zsh/fzf-configure.sh
+  source "$HOME"/dotfiles/zsh/fzf-functions.sh
 else
-  echo "********************************************************************************\n"
-  echo "Install fzf!"
-  echo "********************************************************************************\n"
+  echo "fzf not installed, skipping fzf configuration"
 fi
 
 # Docker
