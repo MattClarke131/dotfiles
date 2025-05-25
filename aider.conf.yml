@@ -216,7 +216,7 @@ dark-mode: True
 #auto-commits: true
 
 ## Enable/disable commits when repo is found dirty (default: True)
-dirty-commits: False
+dirty-commits: false
 
 ## Attribute aider code changes in the git author name (default: True)
 attribute-author: false
