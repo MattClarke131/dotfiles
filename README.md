@@ -25,7 +25,7 @@ $(brew --prefix fzf)/install
 ```
 8. Run install script
 ```console
-./install.sh
+  npm run setup
 ```
 9. Setup crons
 ```console

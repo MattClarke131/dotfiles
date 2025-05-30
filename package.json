@@ -1,61 +1,21 @@
 {
-  "name": "tree-sitter-dotfiles",
-  "version": "0.0.1",
-  "description": "Dotfiles grammar for tree-sitter",
-  "repository": "github:tree-sitter/tree-sitter-dotfiles",
-  "license": "MIT",
+  "name": "dotfiles",
+  "version": "1.0.0",
+  "description": "Personal dotfiles and configuration",
   "type": "module",
-  "main": "bindings/node",
-  "types": "bindings/node",
-  "keywords": [
-    "incremental",
-    "parsing",
-    "tree-sitter",
-    "dotfiles"
-  ],
-  "files": [
-    "grammar.js",
-    "binding.gyp",
-    "prebuilds/**",
-    "bindings/node/*",
-    "queries/*",
-    "src/**"
-  ],
+  "scripts": {
+    "setup": "tsx scripts/install.ts"
+  },
   "dependencies": {
-    "@types/node": "^22.7.7",
     "chalk": "^5.3.0",
     "chalk-animation": "^2.0.3",
-    "command-line-args": "^6.0.0",
-    "node-addon-api": "^7.1.0",
-    "node-gyp-build": "^4.8.0"
+    "command-line-args": "^6.0.0"
   },
   "devDependencies": {
     "@types/chalk-animation": "^1.6.3",
     "@types/command-line-args": "^5.2.3",
-    "prebuildify": "^6.0.0",
-    "tree-sitter-cli": "^0.22.6",
+    "@types/node": "^22.7.7",
+    "tsx": "^4.19.4",
     "typescript": "^5.6.3"
-  },
-  "peerDependencies": {
-    "tree-sitter": "^0.21.0"
-  },
-  "peerDependenciesMeta": {
-    "tree-sitter": {
-      "optional": true
-    }
-  },
-  "scripts": {
-    "install": "node-gyp-build",
-    "prebuildify": "prebuildify --napi --strip",
-    "build": "tree-sitter generate --no-bindings",
-    "build-wasm": "tree-sitter build --wasm",
-    "test": "tree-sitter test",
-    "parse": "tree-sitter parse"
-  },
-  "tree-sitter": [
-    {
-      "scope": "source.dotfiles",
-      "injection-regex": "^dotfiles$"
-    }
-  ]
+  }
 }
