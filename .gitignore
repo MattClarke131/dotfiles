@@ -3,6 +3,7 @@
 *.exclude
 *.secret
 *.swp
+.DS_Store
 
 # Ignore backup dotfiles
 dotfiles_old
