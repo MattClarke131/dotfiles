@@ -131,3 +131,4 @@ if [ -f '/Users/matt/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/matt
 
 # Prompt customization
 eval "$(starship init zsh)"
+eval "$(atuin init zsh)"

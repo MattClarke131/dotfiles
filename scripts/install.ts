@@ -42,7 +42,7 @@ const backupDotfiles = () => {
   safeExecute(() => {
     fs.mkdirSync(backupDir, { recursive: true })
 
-    const directories = ['aliases', 'nvim', 'scripts', 'tmux/sessions']
+    const directories = ['zsh/aliases', 'nvim', 'scripts']
     directories.forEach(dir => {
       const dirPath = path.join(backupDir, dir)
       fs.mkdirSync(dirPath, { recursive: true })
@@ -75,12 +75,25 @@ const installDotfile = (
     sourcePath: string,
     destinationPath: string, 
     backupPath: string | null,
-    type: 'file' | 'dir') => {
+    type: 'file' | 'dir',
+    force: boolean = false
+) => {
 
   safeExecute(() => {
     // if sourcePath does not exist throw an error
     if (!fs.existsSync(sourcePath)) {
       throw new Error(`File does not exist: ${sourcePath}`)
+    }
+
+    // Force remove existing file/directory if force is true
+    if (force && fs.existsSync(destinationPath)) {
+      if (fs.lstatSync(destinationPath).isDirectory()) {
+        fs.rmSync(destinationPath, { recursive: true, force: true })
+        console.log(chalk.red('Removed existing directory:'), chalk.red(destinationPath))
+      } else {
+        fs.unlinkSync(destinationPath)
+        console.log(chalk.red('Removed existing file:'), chalk.red(destinationPath))
+      }
     }
 
     // if destinationFile exists, move it to the backup directory
@@ -97,7 +110,7 @@ const installDotfile = (
     // if a symlink already exists at destinationPath, remove it
     if (fs.existsSync(destinationPath) && fs.lstatSync(destinationPath).isSymbolicLink()) {
       fs.unlinkSync(destinationPath)
-      console.log('Removed existing symlink:', chalk.red(destinationPath))
+      console.log(chalk.redBright('Removed existing symlink:'), chalk.redBright(destinationPath))
     }
     fs.symlinkSync(sourcePath, destinationPath, type)
     console.log('Created symlink:', chalk.green(destinationPath))
@@ -118,8 +131,18 @@ ensureDirectoriesExist([
   '.vim/sessions',
   '.vim/swapfiles',
   '.vim/undofiles',
-  '.tmux/plugins/tpm'
+  '.tmux/plugins/tpm',
+  '.oh-my-zsh/custom/plugins',
 ])
+// atuin sucks. It constantly creates ~/.config/atuin, making it hard to symlink
+installDotfile(
+  `${options.dotRoot}/config/atuin`,
+  `${process.env.HOME}/.config/atuin`,
+  null,
+  'dir',
+  true // force
+)
+
 installDotfile(
   `${options.dotRoot}/nvim`,
   `${process.env.HOME}/.config/nvim`,
