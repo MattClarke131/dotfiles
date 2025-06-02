@@ -32,17 +32,6 @@ vim.opt.scrolloff = 20
 -- use mouse for navigation
 vim.opt.mouse = 'a'
 
--- Search
--- ignore case when searching, except when using capital letters
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
--- search as characters are entered
-vim.opt.incsearch = true
--- highlight matches
-vim.opt.hlsearch = true
--- unhighlight matches on pressing enter
-vim.keymap.set('n', '<CR>', ':nohls<CR><CR>', { noremap = true, silent = true })
-
 -- Display
 -- Options
 vim.opt.number = true

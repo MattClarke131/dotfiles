@@ -12,5 +12,7 @@ require('core.plugins')
 require('core.keymaps')
 require('core.language-servers')
 require('core.vim-options')
+-- Beginning to break up vim-options.lua into smaller files
+require('core.editor.search')
 
 vim.cmd [[colorscheme edge]]
