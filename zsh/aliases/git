@@ -23,6 +23,7 @@ alias grbim='git rebase -i $(git_main_branch)'
 alias grbio='git rebase -i origin'
 alias grbmi='git rebase -i $(git_main_branch)'
 alias grbo='git rebase origin/"$(git_current_branch)"'
+alias grbu='git rebase upstream/"$(git_current_branch)"'
 alias gres='git restore'
 alias greva="git revert --abort"
 alias grevc="git revert --continue"
