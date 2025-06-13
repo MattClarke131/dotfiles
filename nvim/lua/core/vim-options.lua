@@ -67,7 +67,8 @@ vim.opt.spelllang = 'en-us'
 -- do not display tabs and spaces
 vim.opt.list = false
 
--- Set tab width default for markdown files
+-- markdown
+-- Set tab width default
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "markdown",
   callback = function()
@@ -76,11 +77,21 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+-- typescript
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "typescript",
   callback = function()
     vim.opt.expandtab = true
     vim.o.tabstop = 2
     vim.o.shiftwidth = 2
+  end,
+})
+
+-- shell
+-- .env.exammple files are shell scripts
+vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
+  pattern = "*.env.example",
+  callback = function()
+    vim.bo.filetype = "sh"
   end,
 })
