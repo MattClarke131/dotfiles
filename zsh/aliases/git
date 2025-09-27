@@ -7,6 +7,7 @@ alias gcfix="git commit --fixup"
 alias gcob="git checkout -b"
 alias gcop="git checkout -p"
 alias gdm='git diff "$(git_main_branch)"'
+alias gfu='git fetch upstream'
 alias glo5='git log --oneline --decorate -5'
 alias glo10='git log --oneline --decorate -10'
 alias glo20='git log --oneline --decorate -20'
