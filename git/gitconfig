@@ -11,6 +11,9 @@
 [gpg]
   format = ssh
 
+[gpg "ssh"]
+	defaultKeyCommand = ssh-add -L
+
 [log]
   date = format-local:%a %Y-%m-%d %I:%M:%S %p
 
@@ -84,5 +87,3 @@ s
 
 [advice]
 addIgnoredFile = false
-
-
