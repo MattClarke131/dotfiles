@@ -22,12 +22,15 @@ alias grbi50='git rebase -i HEAD~50'
 alias grbi100='git rebase -i HEAD~100'
 alias grbim='git rebase -i $(git_main_branch)'
 alias grbio='git rebase -i origin'
+alias grbir='git rebase -i --root'
 alias grbmi='git rebase -i $(git_main_branch)'
 alias grbo='git rebase origin/"$(git_current_branch)"'
 alias grbu='git rebase upstream/"$(git_current_branch)"'
 alias gres='git restore'
 alias greva="git revert --abort"
 alias grevc="git revert --continue"
+alias grs='git remote | sort'
+alias grsv='git remote -v | sort'
 alias gstam="git stash push -m"
 alias gstap="git stash push -p"
 
