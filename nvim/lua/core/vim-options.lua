@@ -47,9 +47,7 @@ vim.opt.showmatch = true
 -- syntax highlighting
 vim.opt.syntax = 'on'
 -- Highlight yanked text
-vim.api.nvim_exec([[
-  autocmd TextYankPost * silent! lua vim.highlight.on_yank {higroup='Visual', timeout=1000}
-]], false)
+vim.cmd[[au TextYankPost * silent! lua vim.highlight.on_yank()]]
 -- Hide cmd line
 vim.opt.cmdheight = 0
 
