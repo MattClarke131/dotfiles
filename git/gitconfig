@@ -77,8 +77,6 @@
 [status]
   submoduleSummary = true
 
-s
-
 [color.status]
   added = green
   deleted = red
@@ -87,3 +85,7 @@ s
 
 [advice]
 addIgnoredFile = false
+
+# KEEP AT THE BOTTOM
+[include]
+  path = ~/.gitconfig.local
