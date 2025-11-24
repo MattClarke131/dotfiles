@@ -75,9 +75,9 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
--- typescript
+-- typescript / javascript
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = "typescript",
+  pattern = "typescript,typescriptreact,javascript,javascriptreact,json",
   callback = function()
     vim.opt.expandtab = true
     vim.o.tabstop = 2
