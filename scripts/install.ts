@@ -191,6 +191,21 @@ installDotfile(
   null,
   'file'
 )
+// Machine-specific gitconfig
+const hostname = require('os').hostname().replace('.local', '')
+const machineGitconfigPath = `${options.dotRoot}/git/gitconfig.${hostname}`
+if (fs.existsSync(machineGitconfigPath)) {
+  installDotfile(
+    machineGitconfigPath,
+    `${process.env.HOME}/.gitconfig.local`,
+    null,
+    'file'
+  )
+  console.log('Installed machine-specific gitconfig for', chalk.cyan(hostname))
+} else {
+  console.log(chalk.yellow('No machine-specific gitconfig found for'), chalk.cyan(hostname))
+}
+
 
 const finishAnimation = chalkAnimation.rainbow('Installation complete!')
 
