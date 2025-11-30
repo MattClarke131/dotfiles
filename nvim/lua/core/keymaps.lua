@@ -1,20 +1,3 @@
--- Language server
--- Keybindings for LSP
--- bound upon attaching to a buffer
-local go_to_declaration = function ()
-  vim.cmd('tag ' .. vim.fn.expand('<cword>'))
-end
-local set_lsp_keymaps = function (_, bufnr)
-  vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, { buffer = bufnr })
-  vim.keymap.set('n', '<Leader>ca', vim.lsp.buf.code_action, { buffer = bufnr })
-
-  --vim.keymap.set('n', '<Leader>gd', vim.lsp.buf.definition, { buffer = bufnr })
-  vim.keymap.set('n', 'gd', go_to_declaration, { buffer = bufnr })
-  vim.keymap.set('n', '<Leader>gi', vim.lsp.buf.implementation, { buffer = bufnr })
-  vim.keymap.set('n', '<Leader>gh', vim.lsp.buf.hover, { buffer = bufnr })
-  vim.keymap.set('n', '<Leader>d', vim.diagnostic.open_float, { buffer = bufnr })
-end
-
 -- help-tips
 -- bind leaderq to function cycleHelpTip in file core/functions/help-tips.la
 vim.keymap.set('n', '<Leader>q', require('core.functions.help-tips').cycleHelpTip)
@@ -112,7 +95,56 @@ vim.keymap.set('n', 'gcu', '<Plug>Commentary<Plug>Commentary', { silent = true }
 vim.keymap.set('n', '<Leader>u', ':UndotreeToggle<Enter>', { noremap = true })
 
 
--- Trouble
+-- LSP
+vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, { desc = "Rename file" });
+vim.keymap.set('n', '<Leader>gd', vim.lsp.buf.definition, { desc = "Go to definition" });
+vim.keymap.set('n', '<Leader>gi', vim.lsp.buf.implementation, { desc = "Go to implementation" });
+vim.keymap.set('n', '<Leader>gr', vim.lsp.buf.references, { desc = "List references" });
+vim.keymap.set('n', '<Leader>gh', vim.lsp.buf.hover, { desc = "Show hover information" });
+vim.keymap.set('n', '<Leader>ca', vim.lsp.buf.code_action)
+-- Insert mode
+vim.keymap.set('i', '<C-Space>', vim.lsp.buf.signature_help, { desc = "Signature help" })
+
+-- Diagnostics
+vim.keymap.set('n', '<Leader>dd', vim.diagnostic.open_float, {
+  noremap = true, desc = "Open floating diagnostic message",
+});
+vim.keymap.set('n', '<Leader>dt', function()
+  vim.diagnostic.config({ virtual_lines = not vim.diagnostic.config().virtual_lines })
+end, { desc = "Toggle virtual lines for diagnostics", noremap = true })
+vim.keymap.set('n', '<Leader>dq', vim.diagnostic.setqflist,
+  { desc = "Set qflist with diagnostics", noremap = true });
+vim.keymap.set('n', '<Leader>dl', vim.diagnostic.setloclist,
+  { desc = "Set loclist with diagnostics", noremap = true });
+
+-- Diagnostic Navigation
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, {
+  noremap = true,
+  desc = "Go to previous diagnostic",
+});
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, {
+  noremap = true,
+  desc = "Go to next diagnostic",
+});
+vim.keymap.set('n', '[e', function()
+  vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.ERROR })
+end, {
+  noremap = true,
+  desc = "Go to previous error",
+});
+vim.keymap.set('n', ']e', function()
+  vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.ERROR })
+end, {
+  noremap = true,
+  desc = "Go to next error",
+});
+vim.keymap.set('n', '[d', vim.diagnostic.goto_next, {
+  noremap = true,
+  desc = "Go to next diagnostic",
+});
+
+
+-- Trouble Diagnostics
 local trouble = require('trouble')
 vim.keymap.set('n', '<leader>xx', trouble.toggle)
 vim.keymap.set('n', '<leader>xw', function() trouble.toggle('workspace_diagnostics') end)
@@ -121,12 +153,12 @@ vim.keymap.set('n', '<leader>xq', function() trouble.toggle('quickfix') end)
 vim.keymap.set('n', '<leader>xl', function() trouble.toggle('loclist') end)
 vim.keymap.set('n', 'gR',         function() trouble.toggle('lsp_references') end)
 
+
 -- Noice
 -- Dismiss noice
 vim.keymap.set('n', '<Leader>nn', ':NoiceDismiss<Enter>', { noremap = true })
 
 -- Tagbar
---
 vim.keymap.set('n', '<Leader>e', ':TagbarToggle<Enter>', { noremap = true })
 
 -- Navigation
@@ -186,5 +218,3 @@ end
 
 vim.keymap.set('n', '<Leader>qd', insert_debugger_below, { noremap = true })
 vim.keymap.set('n', '<Leader>qD', insert_debugger_above, { noremap = true })
-
-return { set_lsp_keymaps  = set_lsp_keymaps, }

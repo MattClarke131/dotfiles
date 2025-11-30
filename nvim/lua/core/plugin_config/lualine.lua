@@ -38,7 +38,7 @@ require('lualine').setup {
       color_info = '#00ff00',
       color_hint = '#00ffff',
       symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ' },
-      always_visible = true,
+      always_visible = false,
     },
   },
   lualine_z = { 'g:help_tip' },

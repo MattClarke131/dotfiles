@@ -9,13 +9,16 @@ require('mason-lspconfig').setup({
   },
 })
 
-local set_keymaps = require('core.keymaps').set_lsp_keymaps
 -- servers
-require('lspconfig').tsserver.setup{
-  on_attach = set_keymaps,
+require('lspconfig').ts_ls.setup{
+  root_dir = require('lspconfig.util').root_pattern(
+    'pnpm-workspace.yaml',
+    'tsconfig.json',
+    'package.json',
+    '.git'
+  ),
 }
 require('lspconfig').lua_ls.setup{
-  on_attach = set_keymaps,
   settings = {
     Lua = {
       diagnostics = {
@@ -24,3 +27,23 @@ require('lspconfig').lua_ls.setup{
     }
   }
 }
+
+-- Diagnostics
+vim.diagnostic.config({
+  virtual_text = false;
+  -- virtual_text = {
+  --   spacing = 4,
+  --   prefix = '●',
+  -- },
+  virtual_lines = true,
+  underline = true,
+  severity_sort = true,
+  float = {
+    border = 'rounded',
+    source = true,
+  },
+  signs = true,
+  -- underline = true,
+  -- update_in_insert = false,
+  -- severity_sort = false,
+})
