@@ -45,7 +45,7 @@ threshold = -1
 format = '$symbol [${ram}]($style) '
 
 [gcloud]
-disabled = false
+disabled = true
 symbol = '☁️'
 format = ' $symbol [$project]($style)'
 [gcloud.project_aliases]
