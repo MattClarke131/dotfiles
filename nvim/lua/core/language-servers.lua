@@ -29,13 +29,14 @@ require('lspconfig').lua_ls.setup{
 }
 
 -- Diagnostics
+-- Using tiny-inline-diagnostic.nvim for virtual text
 vim.diagnostic.config({
-  virtual_text = false;
+  -- virtual_text = false;
   -- virtual_text = {
   --   spacing = 4,
   --   prefix = '●',
   -- },
-  virtual_lines = true,
+  -- virtual_lines = true,
   underline = true,
   severity_sort = true,
   float = {

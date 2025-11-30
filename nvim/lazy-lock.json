@@ -1,6 +1,5 @@
 {
   "barbar.nvim": { "branch": "master", "commit": "53b5a2f34b68875898f0531032fbf090e3952ad7" },
-  "conflict-marker.vim": { "branch": "master", "commit": "62742b2ffe7a433988759c67b5c5a22eff74a14b" },
   "copilot.vim": { "branch": "release", "commit": "8d1e0f86d8aaa64070c080589bc2a516beb4024f" },
   "edge": { "branch": "master", "commit": "8eeab1bc9d93eec3511cb4d3c87d2d599c7ce3d4" },
   "everforest-nvim": { "branch": "main", "commit": "135cc21a45756e688dd1a3cbeb1c80a04b569b46" },
@@ -27,6 +26,7 @@
   "tagbar": { "branch": "master", "commit": "8de7694c0aeda253073098bbc9fb890b2902ddb8" },
   "telescope-live-grep-args.nvim": { "branch": "master", "commit": "b80ec2c70ec4f32571478b501218c8979fab5201" },
   "telescope.nvim": { "branch": "master", "commit": "a4ed82509cecc56df1c7138920a1aeaf246c0ac5" },
+  "tiny-inline-diagnostic.nvim": { "branch": "main", "commit": "38b06435305c30966b7ceb0a43e460dc43acaada" },
   "trouble.nvim": { "branch": "main", "commit": "85bedb7eb7fa331a2ccbecb9202d8abba64d37b3" },
   "undotree": { "branch": "master", "commit": "b951b87b46c34356d44aa71886aecf9dd7f5788a" },
   "vim-commentary": { "branch": "master", "commit": "64a654ef4a20db1727938338310209b6a63f60c9" },

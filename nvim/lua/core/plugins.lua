@@ -16,6 +16,7 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
 
 -- language processing and syntax
+--------------------------------------
   'github/copilot.vim',
   --parser generator for syntax highlighting
   'nvim-treesitter/nvim-treesitter',
@@ -25,10 +26,13 @@ require('lazy').setup({
   'neovim/nvim-lspconfig',
   -- diagnostics / references / etc
   {'folke/trouble.nvim', dependencies = { "nvim-tree/nvim-web-devicons" } },
+  { "rachartier/tiny-inline-diagnostic.nvim",
+    event = "VeryLazy", priority = 1000, },
   -- auto close
   'windwp/nvim-autopairs',
 
 -- tools
+--------------------------------------
   'nvim-telescope/telescope.nvim',
   'nvim-telescope/telescope-live-grep-args.nvim',
   {"nvim-tree/nvim-tree.lua",
@@ -41,6 +45,7 @@ require('lazy').setup({
   'preservim/tagbar',
 
 -- visual changes
+--------------------------------------
   {'nvim-lualine/lualine.nvim',
     dependencies = {
       'nvim-lua/plenary.nvim',
@@ -76,6 +81,7 @@ require('lazy').setup({
   "lukas-reineke/indent-blankline.nvim",
 
 -- themes
+--------------------------------------
   {'neanias/everforest-nvim', background = 'hard'},
   'rebelot/kanagawa.nvim',
   'rmehri01/onenord.nvim',
@@ -99,6 +105,7 @@ require('core.plugin_config.trouble')
 require('core.plugin_config.autopairs')
 require('core.plugin_config.indent-blankline')
 require('core.plugin_config.tagbar')
+require('core.plugin_config.tiny-inline-diagnostic')
 
 -- Start with indent-blankline disabled
 vim.cmd('IBLDisable')
