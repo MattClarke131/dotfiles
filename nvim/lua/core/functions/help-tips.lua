@@ -9,16 +9,16 @@ local helptips = {
 -- commentary
   'gc comment',
   'gcc comment line',
-  'gcu undo comment',
+  -- 'gcu undo comment',
   'gcap comment paragraph',
 
 -- lsp
-  'LSP: n mode: \'gd\' go to def (no Leader), <C-t> go back',
-  'LSP: n mode: \'gr\' references',
-  'LSP: n mode: \'gi\' implementation',
-  'LSP: n mode: \'gh\' hover-info',
-  'LSP: n mode: \'rn\' rename',
-  'LSP: n mode: \'ca\' code action',
+  'LSP: n mode: \'<L>gd\' go to def , <C-t> go back',
+  'LSP: n mode: \'<L>gr\' references',
+  'LSP: n mode: \'<L>gi\' implementation',
+  'LSP: n mode: \'<L>gh\' hover-info',
+  'LSP: n mode: \'<L>rn\' rename',
+  'LSP: n mode: \'<L>ca\' code action',
 
 -- telescope
   'TS: n mode: \'fp\' list registers',
@@ -42,12 +42,12 @@ local helptips = {
   'GG: n mode: \'[[\' prev hunk',
 
   -- trouble
-  'Trouble: \'xx\' toggle',
-  'Trouble: \'xw\' workspace',
-  'Trouble: \'xd\' document',
-  'Trouble: \'xq\' quickfix',
-  'Trouble: \'xl\' loclist',
-  'Trouble: \'gR\' lsp refs (no leader)',
+  -- 'Trouble: \'xx\' toggle',
+  -- 'Trouble: \'xw\' workspace',
+  -- 'Trouble: \'xd\' document',
+  -- 'Trouble: \'xq\' quickfix',
+  -- 'Trouble: \'xl\' loclist',
+  -- 'Trouble: \'gR\' lsp refs (no leader)',
 
   -- Terminal
 
