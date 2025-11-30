@@ -96,6 +96,14 @@ for file in $(\ls -A "$HOME"/dotfiles/zsh/aliases | grep -E '[^s][^w].$'); do
 done
 unset file
 
+# FUNCTIONS
+for file in $(\ls -A "$HOME"/dotfiles/zsh/functions | grep -E '[^s][^w].$'); do
+    source "$HOME"/dotfiles/zsh/functions/"$file"
+done
+
+# KEYBINDS
+source "$HOME"/dotfiles/zsh/keybinds.sh
+
 # LOCAL SETINGS
 if [[ -f "$HOME"/dotfiles/zsh/zshrc.local ]]; then
   source "$HOME"/dotfiles/zsh/zshrc.local
@@ -104,6 +112,10 @@ fi
 # FZF
 if command -v fzf &> /dev/null
 then
+  source <(fzf --zsh) 2>/dev/null || {
+    # Fallback for older versions of fzf
+    [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+  }
   source "$HOME"/dotfiles/zsh/fzf-configure.sh
   source "$HOME"/dotfiles/zsh/fzf-functions.sh
 else

@@ -3,6 +3,10 @@
 # Navigation
 alias cp='cp -i'
 alias mv='mv -i'
+# mkdir and change to it
+function mcd () {
+  mkdir -p "$1" && cd "$1" || exit
+}
 
 # alias -='\cd -' # Efforts to correct this have failed
 alias dot="\cd ~/dotfiles"
@@ -27,12 +31,6 @@ alias la="$LIST_METHOD -A --group-directories-first --color=tty"
 # ls after cd
 function c() {
   \cd "$1"; l  || exit
-}
-
-# mkdir and change to it
-function mcd () {
-  mkdir -p "$1"
-  cd "$1" || exit
 }
 
 # FZF
