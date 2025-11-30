@@ -1,4 +1,5 @@
 require('noice').setup({
+  debug = true,
   messages = {
     enabled = true,
     view = "virtualtext",

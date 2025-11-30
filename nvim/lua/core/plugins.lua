@@ -30,6 +30,7 @@ require('lazy').setup({
 
 -- tools
   'nvim-telescope/telescope.nvim',
+  'nvim-telescope/telescope-live-grep-args.nvim',
   {"nvim-tree/nvim-tree.lua",
     version = "*",
     dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -48,7 +49,7 @@ require('lazy').setup({
     },
   },
   'airblade/vim-gitgutter',
-  'rhysd/conflict-marker.vim',
+  -- 'rhysd/conflict-marker.vim',
   -- 'ap/vim-buftabline',
   {"folke/noice.nvim",
     event = "VeryLazy",
@@ -94,7 +95,7 @@ require('core.plugin_config.telescope')
 require('core.plugin_config.gitgutter')
 require('core.plugin_config.nvim-tree')
 require('core.plugin_config.trouble')
-require('core.plugin_config.noice')
+-- require('core.plugin_config.noice')
 require('core.plugin_config.autopairs')
 require('core.plugin_config.indent-blankline')
 require('core.plugin_config.tagbar')

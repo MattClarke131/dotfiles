@@ -2,6 +2,7 @@ require('telescope').setup {
   dependencies = {
     'nvim-lua/plenary.nvim',
     'BurntSushi/ripgrep',
+    'nvim-telescope/telescope-live-grep-args.nvim',
   },
   defaults = {
     file_ignore_patterns = {
@@ -31,4 +32,6 @@ require('telescope').setup {
     -- https://github.com/debugloop/telescope-undo.nvim
   },
 }
-require('telescope').load_extension('noice')
+telescope = require('telescope')
+telescope.load_extension('noice')
+telescope.load_extension('live_grep_args')

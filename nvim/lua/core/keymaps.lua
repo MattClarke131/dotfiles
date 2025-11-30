@@ -44,10 +44,10 @@ vim.keymap.set('n', '<Leader>fb', telescope.buffers)
 vim.keymap.set('n', '<Leader>fg', telescope.live_grep)
 -- Find Lines in current buffer
 vim.keymap.set('n', '<Leader>/', function()
-  telescope.current_buffer_fuzzy_find { previewer=false }
+  telescope.current_buffer_fuzzy_find { previewer=true }
 end, { silent=true })
 vim.keymap.set('n', '<Leader>f/', function()
-  telescope.current_buffer_fuzzy_find { previewer=false }
+  telescope.current_buffer_fuzzy_find { previewer=true }
 end, { silent=true })
 -- Find commands
 vim.keymap.set('n', '<Leader>fc', telescope.commands)
