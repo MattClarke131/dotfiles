@@ -36,7 +36,9 @@ plugins=(
   fzf
   gcloud
   git
+  kubectl
   macos
+  opentofu
   poetry
   terraform
   ssh
