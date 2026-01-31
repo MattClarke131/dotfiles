@@ -4,6 +4,13 @@ require('tiny-inline-diagnostic').setup({
   preset = "ghost",
 
   options = {
+    show_source = true,
+    severity = {
+      vim.diagnostic.severity.ERROR,
+      -- vim.diagnostic.severity.WARN,
+      -- vim.diagnostic.severity.INFO,
+      -- vim.diagnostic.severity.HINT,
+    },
     multilines = {
       enabled = true,
     },
@@ -13,9 +20,5 @@ require('tiny-inline-diagnostic').setup({
       mode = "wrap",
       -- padding = 0,
     },
-    -- break_line = {
-    --   enabled = true,
-    --   after = 80,
-    -- },
   }
 })
