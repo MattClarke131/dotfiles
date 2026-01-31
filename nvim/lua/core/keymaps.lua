@@ -97,9 +97,9 @@ vim.keymap.set('n', '<Leader>u', ':UndotreeToggle<Enter>', { noremap = true })
 
 -- LSP
 vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, { desc = "Rename file" });
-vim.keymap.set('n', '<Leader>gd', vim.lsp.buf.definition, { desc = "Go to definition" });
-vim.keymap.set('n', '<Leader>gi', vim.lsp.buf.implementation, { desc = "Go to implementation" });
-vim.keymap.set('n', '<Leader>gr', vim.lsp.buf.references, { desc = "List references" });
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = "Go to definition" });
+vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, { desc = "Go to implementation" });
+vim.keymap.set('n', 'gr', vim.lsp.buf.references, { desc = "List references" });
 vim.keymap.set('n', '<Leader>gh', vim.lsp.buf.hover, { desc = "Show hover information" });
 vim.keymap.set('n', '<Leader>ca', vim.lsp.buf.code_action)
 -- Insert mode
