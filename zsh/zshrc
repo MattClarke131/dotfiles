@@ -134,7 +134,10 @@ test -e "${HOME}/dotfiles/git-config.sh" && source "${HOME}/dotfiles/git-config.
 
 # iterm2 shell integration
 if [[ "$OSTYPE" == "darwin"* ]]; then
-  source "${HOME}/dotfiles/iterm/iterm2_shell_integration.zsh" || echo 'iterm2 shell integration install failed'
+    # Skip iTerm integration when inside nvim
+  if [[ -z "$NVIM" ]]; then
+    source "${HOME}/dotfiles/iterm/iterm2_shell_integration.zsh" || echo 'iterm2 shell integration install failed'
+  fi
 fi
 
 # The next line updates PATH for the Google Cloud SDK.
