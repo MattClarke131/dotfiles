@@ -43,6 +43,9 @@ require('lazy').setup({
   'christoomey/vim-tmux-navigator',
   'mbbill/undotree',
   'preservim/tagbar',
+  { "lionyxml/gitlineage.nvim",
+    dependencies = { "sindrets/diffview.nvim" },
+  },
 
 -- visual changes
 --------------------------------------
@@ -96,6 +99,7 @@ require('lazy').setup({
 })
 
 require('core.plugin_config.lualine')
+require('core.plugin_config.gitlineage')
 require('core.plugin_config.nvim-treesitter')
 require('core.plugin_config.telescope')
 require('core.plugin_config.gitgutter')

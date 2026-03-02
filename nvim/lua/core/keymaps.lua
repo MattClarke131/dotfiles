@@ -83,6 +83,11 @@ vim.keymap.set('n', ']]', ':silent! GitGutterNextHunk<Enter>', { noremap = true,
 vim.keymap.set('n', '[[', ':silent! GitGutterPrevHunk<Enter>', { noremap = true, silent = true })
 
 
+-- Gitlineage
+-- Show git blame info for current line
+vim.keymap.set('n', '<Leader>gl', ':GitLineage<Enter>', { noremap = true })
+
+
 -- Commentary
 vim.keymap.set('n', 'gc', '<Plug>Commentary')
 vim.keymap.set('x', 'gc', '<Plug>Commentary')
