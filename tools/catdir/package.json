@@ -1,0 +1,16 @@
+{
+  "name": "catdir",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "commander": "^14.0.3",
+    "minimatch": "^10.2.4"
+  }
+}
