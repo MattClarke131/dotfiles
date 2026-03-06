@@ -1,5 +1,6 @@
 -- help-tips
--- bind leaderq to function cycleHelpTip in file core/functions/help-tips.la
+
+-- bind <Leader>q to function cycleHelpTip in file core/functions/help-tips.la
 vim.keymap.set('n', '<Leader>q', require('core.functions.help-tips').cycleHelpTip)
 
 
@@ -10,6 +11,10 @@ vim.keymap.set('n', '<C-k>', ':TmuxNavigateUp<Enter>', { noremap = true })
 vim.keymap.set('n', '<C-l>', ':TmuxNavigateRight<Enter>', { noremap = true })
 vim.keymap.set('n', '<C-\\>', ':TmuxNavigatePrevious<Enter>', { noremap = true })
 
+
+-- Smart Paste
+vim.keymap.set('n', '<leader>p', '<Plug>(smart-paste-raw-p)')
+vim.keymap.set('n', '<leader>P', '<Plug>(smart-paste-raw-P)')
 
 -- Nvim tree
 vim.keymap.set('n', '<Leader>nf', ':NvimTreeToggle<Enter>', { noremap = true })
@@ -163,8 +168,10 @@ vim.keymap.set('n', 'gR',         function() trouble.toggle('lsp_references') en
 -- Dismiss noice
 vim.keymap.set('n', '<Leader>nn', ':NoiceDismiss<Enter>', { noremap = true })
 
+
 -- Tagbar
 vim.keymap.set('n', '<Leader>e', ':TagbarToggle<Enter>', { noremap = true })
+
 
 -- Navigation
 -- barbar
@@ -175,6 +182,7 @@ vim.keymap.set('n', '<Leader>K', ':silent! BufferRestore<Enter>', { noremap = tr
 vim.keymap.set('n', '<Leader>b', ':silent! BufferPick<Enter>', { noremap = true })
 -- Regular navigation
 vim.keymap.set('n', '<Leader>j', ':e<Space>', { noremap = true })
+
 
 -- Non-plugin keybindings
 -- unmap EX mode

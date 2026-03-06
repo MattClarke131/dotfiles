@@ -33,19 +33,36 @@ require('lazy').setup({
 
 -- tools
 --------------------------------------
+  -- Search
   'nvim-telescope/telescope.nvim',
   'nvim-telescope/telescope-live-grep-args.nvim',
+  -- File browser
   {"nvim-tree/nvim-tree.lua",
     version = "*",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-  },
+    dependencies = { "nvim-tree/nvim-web-devicons" }, },
+  -- Commenting
   'tpope/vim-commentary',
+  -- Navigation
   'christoomey/vim-tmux-navigator',
+  -- Undo Tree
   'mbbill/undotree',
+  -- Tag view
   'preservim/tagbar',
-  { "lionyxml/gitlineage.nvim",
-    dependencies = { "sindrets/diffview.nvim" },
-  },
+  -- Git history
+  { 'lionyxml/gitlineage.nvim',
+    dependencies = { 'sindrets/diffview.nvim' }, },
+  -- Markdown preview
+  { 'iamcco/markdown-preview.nvim',
+    cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
+    ft = { 'markdown' },
+    build = function() vim.fn['mkdp#util#install']() end, },
+
+-- Behavior
+--------------------------------------
+-- Respect indentation when pasting
+{ 'nemanjamalesija/smart-paste.nvim',
+  event = 'VeryLazy',
+  config = true, },
 
 -- visual changes
 --------------------------------------
