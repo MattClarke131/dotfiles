@@ -1,4 +1,5 @@
-  -- The ordering of mason, mason-lspconfig, and lspconfig is important
+-- The ordering of mason and mason-lspconfig is important.
+-- mason-lspconfig must be set up before enabling LSP servers.
 require('mason').setup()
 require('mason-lspconfig').setup({
   ensure_installed = {
@@ -10,23 +11,26 @@ require('mason-lspconfig').setup({
 })
 
 -- servers
-require('lspconfig').ts_ls.setup{
-  root_dir = require('lspconfig.util').root_pattern(
+vim.lsp.config('ts_ls', {
+  root_markers = {
     'pnpm-workspace.yaml',
     'tsconfig.json',
     'package.json',
-    '.git'
-  ),
-}
-require('lspconfig').lua_ls.setup{
+    '.git',
+  },
+})
+
+vim.lsp.config('lua_ls', {
   settings = {
     Lua = {
       diagnostics = {
-        globals = { 'vim' }
-      }
-    }
-  }
-}
+        globals = { 'vim' },
+      },
+    },
+  },
+})
+
+vim.lsp.enable({ 'ts_ls', 'lua_ls', 'bashls', 'vtsls' })
 
 -- Diagnostics
 -- Using tiny-inline-diagnostic.nvim for virtual text
