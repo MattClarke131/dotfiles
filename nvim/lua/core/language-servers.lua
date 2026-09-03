@@ -7,6 +7,7 @@ require('mason-lspconfig').setup({
     'bashls',
     'ts_ls',
     'vtsls',
+    'dartls',
   },
 })
 
@@ -30,7 +31,7 @@ vim.lsp.config('lua_ls', {
   },
 })
 
-vim.lsp.enable({ 'ts_ls', 'lua_ls', 'bashls', 'vtsls' })
+vim.lsp.enable({ 'ts_ls', 'lua_ls', 'bashls', 'vtsls', 'dartls' })
 
 -- Diagnostics
 -- Using tiny-inline-diagnostic.nvim for virtual text
