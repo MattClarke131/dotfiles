@@ -112,8 +112,6 @@ vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, { desc = "Go to implementa
 vim.keymap.set('n', 'gr', vim.lsp.buf.references, { desc = "List references" });
 vim.keymap.set('n', '<Leader>gh', vim.lsp.buf.hover, { desc = "Show hover information" });
 vim.keymap.set('n', '<Leader>ca', vim.lsp.buf.code_action)
--- Insert mode
-vim.keymap.set('i', '<C-Space>', vim.lsp.buf.signature_help, { desc = "Signature help" })
 
 -- Diagnostics
 vim.keymap.set('n', '<Leader>dd', vim.diagnostic.open_float, {
