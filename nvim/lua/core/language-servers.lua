@@ -12,6 +12,11 @@ require('mason-lspconfig').setup({
 })
 
 -- servers
+-- Advertise blink.cmp's completion capabilities to every server
+vim.lsp.config('*', {
+  capabilities = require('blink.cmp').get_lsp_capabilities(),
+})
+
 vim.lsp.config('ts_ls', {
   root_markers = {
     'pnpm-workspace.yaml',

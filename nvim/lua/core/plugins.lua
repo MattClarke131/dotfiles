@@ -30,6 +30,10 @@ require('lazy').setup({
     event = "VeryLazy", priority = 1000, },
   -- auto close
   'windwp/nvim-autopairs',
+  -- completion
+  { 'saghen/blink.cmp',
+    version = '1.*',
+    dependencies = { 'rafamadriz/friendly-snippets' }, },
 
 -- tools
 --------------------------------------
@@ -117,6 +121,7 @@ require('lazy').setup({
 
 require('core.plugin_config.lualine')
 require('core.plugin_config.gitlineage')
+require('core.plugin_config.blink')
 require('core.plugin_config.nvim-treesitter')
 require('core.plugin_config.telescope')
 require('core.plugin_config.gitgutter')
