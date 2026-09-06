@@ -1,5 +1,19 @@
+local completion_enabled = true
+
+-- Toggle completion on/off, persisting until toggled back (unlike the
+-- default '<C-e>' cancel, which only hides the menu until the next keystroke)
+local function toggle_completion()
+  completion_enabled = not completion_enabled
+  require('blink.cmp').hide()
+  vim.notify('Completion ' .. (completion_enabled and 'enabled' or 'disabled'), vim.log.levels.INFO)
+end
+
 require('blink.cmp').setup({
-  keymap = { preset = 'default' },
+  enabled = function() return completion_enabled end,
+  keymap = {
+    preset = 'default',
+    ['<C-e>'] = false, -- freed up for the toggle below instead of cancel/fallback
+  },
   appearance = {
     nerd_font_variant = 'mono',
   },
@@ -11,3 +25,5 @@ require('blink.cmp').setup({
     default = { 'lsp', 'path', 'snippets', 'buffer' },
   },
 })
+
+vim.keymap.set('i', '<C-e>', toggle_completion, { desc = 'Toggle blink.cmp completion' })
