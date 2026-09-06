@@ -112,6 +112,7 @@ vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, { desc = "Go to implementa
 vim.keymap.set('n', 'gr', vim.lsp.buf.references, { desc = "List references" });
 vim.keymap.set('n', '<Leader>gh', vim.lsp.buf.hover, { desc = "Show hover information" });
 vim.keymap.set('n', '<Leader>ca', vim.lsp.buf.code_action)
+vim.keymap.set('i', '<C-e>', require('core.plugin_config.blink').toggle_completion, { desc = "Toggle completion" })
 
 -- Diagnostics
 vim.keymap.set('n', '<Leader>dd', vim.diagnostic.open_float, {
