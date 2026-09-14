@@ -38,20 +38,26 @@ alias vgdm='vim_git_diff $(git merge-base "$(git_current_branch)" "$(git_main_br
 alias vgd=vim_git_diff
 alias vcd=vim_commit_diff
 alias vgs=vim_git_staged
-alias vgdu='\nvim $(git ls-files -o --exclude-standard | xargs)'
-alias vgdum='\nvim $(git diff --name-only --diff-filter=U | xargs)'
-alias vgdut='\nvim $(git ls-files -o --exclude-standard | xargs)'
+# Open untracked files in editor
+alias vgdu='$EDITOR $(git ls-files -o --exclude-standard | xargs)'
+# Open unmerged files in editor
+alias vgdum='$EDITOR $(git diff --name-only --diff-filter=U | xargs)'
+# Open untracked files in editor
+alias vgdut='$EDITOR $(git ls-files -o --exclude-standard | xargs)'
 
+# Open files changed since given ref in editor
 function vim_git_diff() {
-  nvim $(git -C $(git rev-parse --show-toplevel) diff --name-only $1 | xargs)
+  $EDITOR $(git -C $(git rev-parse --show-toplevel) diff --name-only $1 | xargs)
 }
 
+# Open files changed in given commit in editor
 function vim_commit_diff() {
-  nvim $(git diff-tree --no-commit-id --name-only -r $1 | xargs)
+  $EDITOR $(git diff-tree --no-commit-id --name-only -r $1 | xargs)
 }
 
+# Open staged files in editor
 function vim_git_staged() {
-  nvim $(git diff --name-only --cached | xargs)
+  $EDITOR $(git diff --name-only --cached | xargs)
 }
 
 # remove oh my zsh git pull aliases
