@@ -79,5 +79,10 @@ alias -g gi="| $SEARCH_COMMAND -i"
 alias -g gv="| $SEARCH_COMMAND -v"
 alias rg="$SEARCH_COMMAND"
 
+# Clipboard
+alias -g p="| pbcopy"
+alias -g pb="pbcopy"
+alias -g pe="2>&1 | pbcopy"
+
 # MISC
 alias cl="clear"
