@@ -8,6 +8,8 @@ source "$HOME"/.env
 ## Set PATH
 # used by pipx
 export PATH="$PATH:/Users/matt/.local/bin"
+# used by flutterfire_cli (dart pub global)
+export PATH="$PATH":"$HOME/.pub-cache/bin"
 # Set PATH, MANPATH, etc., for Homebrew.
 if [ "$OSTYPE" = 'linux-gnu' ]
 then
