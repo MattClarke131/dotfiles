@@ -3,6 +3,9 @@
 # Keep this file fast and free of output. Interactive-only setup belongs in zshrc.
 
 ## Set PATH
+# Flutter/Dart pinned via fvm
+[[ -d "$HOME/fvm/default/bin" ]] && export PATH="$HOME/fvm/default/bin:$PATH"
+
 
 # LOCAL SETTINGS
 if [[ -f "$HOME"/dotfiles/zsh/zshenv.local ]]; then
