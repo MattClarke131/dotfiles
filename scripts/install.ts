@@ -42,7 +42,7 @@ const backupDotfiles = () => {
   safeExecute(() => {
     fs.mkdirSync(backupDir, { recursive: true })
 
-    const directories = ['zsh/aliases', 'nvim', 'scripts']
+    const directories = ['zsh', 'zsh/aliases', 'nvim', 'scripts']
     directories.forEach(dir => {
       const dirPath = path.join(backupDir, dir)
       fs.mkdirSync(dirPath, { recursive: true })
@@ -131,9 +131,19 @@ ensureDirectoriesExist([
   '.vim/sessions',
   '.vim/swapfiles',
   '.vim/undofiles',
-  '.tmux/plugins/tpm',
+  '.tmux/plugins',
   '.oh-my-zsh/custom/plugins',
 ])
+// Copy the tpm submodule into place. tmux manages the copy after this.
+const tpmDestination = `${process.env.HOME}/.tmux/plugins/tpm`
+if (!fs.existsSync(tpmDestination)) {
+  safeExecute(() => {
+    fs.cpSync(`${options.dotRoot}/submodules/tpm`, tpmDestination, { recursive: true })
+    console.log('Copied tpm to:', chalk.green(tpmDestination))
+  }, 'Failed to copy tpm:')
+} else {
+  console.log('Directory already exists:', chalk.yellow(tpmDestination))
+}
 // atuin sucks. It constantly creates ~/.config/atuin, making it hard to symlink
 installDotfile(
   `${options.dotRoot}/config/atuin`,
@@ -166,6 +176,18 @@ installDotfile(
   `${process.env.HOME}/.config/bat`,
   null,
   'dir'
+)
+installDotfile(
+  `${options.dotRoot}/zsh/zshrc`,
+  `${process.env.HOME}/.zshrc`,
+  null,
+  'file'
+)
+installDotfile(
+  `${options.dotRoot}/zsh/zshenv`,
+  `${process.env.HOME}/.zshenv`,
+  null,
+  'file'
 )
 installDotfile(
   `${options.dotRoot}/tmux.conf`,
