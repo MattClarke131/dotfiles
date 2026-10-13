@@ -3,10 +3,11 @@
 # A menu script for running favorite commands using fzf
 
 local favorites=(
-  "#1 Getting Things Done::gtd"
+  "#1 GTD::gtd"
   "#2 Dotfiles::cd ~/dotfiles"
-  "#3 Code For Boston::cd ~/dev/boston-liquor-license-tracker"
-  "#4 Weather::curl wttr.in"
+  "#3 Circular Economy (Code for Boston)::cd ~/dev/boston-circular-economy"
+  "#4 frankly::cd ~/dev/frankly/"
+  "#5 Project Seeds::cd ~/dev/project-seeds"
 )
 
 
